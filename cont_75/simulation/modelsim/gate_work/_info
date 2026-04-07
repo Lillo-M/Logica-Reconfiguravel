@@ -1,0 +1,140 @@
+m255
+K3
+13
+cModel Technology
+Z0 d/home/lillo/Documents/Quartus/cont_75/simulation/modelsim
+Econt4
+Z1 w1775421633
+Z2 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
+Z3 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z4 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z5 d/home/lillo/Documents/Quartus/cont_75/simulation/modelsim
+Z6 8/home/lillo/Documents/Quartus/cont_75/cont4.vhd
+Z7 F/home/lillo/Documents/Quartus/cont_75/cont4.vhd
+l0
+L5
+V8SJFG<EH2J=8n^5f<EJQ`2
+Z8 OV;C;10.1d;51
+32
+Z9 !s108 1775439017.572529
+Z10 !s90 -reportprogress|300|-work|work|/home/lillo/Documents/Quartus/cont_75/cont4.vhd|
+Z11 !s107 /home/lillo/Documents/Quartus/cont_75/cont4.vhd|
+Z12 o-work work -O0
+Z13 tExplicit 1
+!s100 ?8P4n4Tf0_WUL;c79=Y]71
+!i10b 1
+Acont4_arch
+R2
+R3
+R4
+DEx4 work 5 cont4 0 22 8SJFG<EH2J=8n^5f<EJQ`2
+l19
+L15
+VL`<ORJT2ZNnXzl@;3>eZX2
+R8
+32
+R9
+R10
+R11
+R12
+R13
+!s100 ARWUk`S`_ERYRVUdIJ@Gf3
+!i10b 1
+Econt_75
+Z14 w1775438935
+R2
+R3
+R4
+R5
+Z15 8/home/lillo/Documents/Quartus/cont_75/cont_75.vhd
+Z16 F/home/lillo/Documents/Quartus/cont_75/cont_75.vhd
+l0
+L5
+V_E_QbMoI2R:^J@WkYILi[2
+R8
+32
+Z17 !s108 1775439017.613839
+Z18 !s90 -reportprogress|300|-work|work|/home/lillo/Documents/Quartus/cont_75/cont_75.vhd|
+Z19 !s107 /home/lillo/Documents/Quartus/cont_75/cont_75.vhd|
+R12
+R13
+!s100 ]F[6O=hKhDz:7F4>E]94D3
+!i10b 1
+Acont_75_arch
+R2
+R3
+R4
+Z20 DEx4 work 7 cont_75 0 22 _E_QbMoI2R:^J@WkYILi[2
+l43
+L15
+VeLAn[Z67XH]9:D_64VQE31
+R8
+32
+R17
+R18
+R19
+R12
+R13
+!s100 C95lK;PMSF:2:F8NSDON<3
+!i10b 1
+Astructure
+Z21 DPx4 ieee 16 vital_primitives 0 22 9W@YP9_VCb?_GCJ8e:;YQ0
+Z22 DPx9 cycloneii 19 cycloneii_atom_pack 0 22 UNhinel8zMjXEk9?9^Dm^2
+Z23 DPx4 ieee 12 vital_timing 0 22 7h8zz2S4HVg:a;2TBMI[j1
+R3
+R4
+Z24 DPx9 cycloneii 20 cycloneii_components 0 22 NCzlAR@4hLKckkj@EBZG_1
+DEx4 work 7 cont_75 0 22 OlIJ8VXADBB5M4Ef3OmZ=3
+l109
+L58
+VVPbIiSQhhmUi_19ChXb9]0
+R8
+31
+Z25 o-93 -work work -O0
+R13
+Fcont_75.vho
+w1775438982
+8cont_75.vho
+!s108 1775438991.238767
+!s90 -reportprogress|300|-93|-work|work|cont_75.vho|
+!s107 cont_75.vho|
+!s100 0gCSiC`YDTTOokDfTLdl<1
+!i10b 1
+Econt_75_tb
+Z26 w1775427096
+R20
+R2
+R3
+R4
+R5
+Z27 8/home/lillo/Documents/Quartus/cont_75/cont_75_tb.vhd
+Z28 F/home/lillo/Documents/Quartus/cont_75/cont_75_tb.vhd
+l0
+L6
+V[^[L[a?8_XdEZb3jjaGdT3
+!s100 3PlKcjja0RAFJ^LE2NVeI3
+R8
+32
+!i10b 1
+Z29 !s108 1775439017.654081
+Z30 !s90 -reportprogress|300|-work|work|/home/lillo/Documents/Quartus/cont_75/cont_75_tb.vhd|
+Z31 !s107 /home/lillo/Documents/Quartus/cont_75/cont_75_tb.vhd|
+R12
+R13
+Acont_75_tb_arch
+R2
+R3
+R4
+DEx4 work 10 cont_75_tb 0 22 [^[L[a?8_XdEZb3jjaGdT3
+l29
+L9
+V>I8LQ@M?^ACa]TeG[o4l[3
+Z32 !s100 <LT_92m9lKh5`KmKj1m3R2
+R8
+32
+!i10b 1
+R29
+R30
+R31
+R12
+R13

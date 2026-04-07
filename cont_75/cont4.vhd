@@ -1,0 +1,36 @@
+library ieee;
+  use ieee.std_logic_1164.all;
+  use ieee.numeric_std.all;
+
+entity cont4 is
+  port (
+    clk    : in    std_logic;
+    en     : in    std_logic;
+    rst    : in    std_logic;
+    clr    : in    std_logic;
+    output : out   std_logic_vector(3 downto 0)
+  );
+end entity cont4;
+
+architecture cont4_arch of cont4 is
+
+  signal counter : unsigned (3 downto 0);
+
+begin
+
+  count : process (clk, clr, rst, en) is
+  begin
+
+    if (rst = '1' or clr = '1') then
+      counter <= x"0";
+    elsif (en = '1') then
+      if (clk'EVENT and clk = '1') then
+        counter <= counter + 1;
+      end if;
+    end if;
+
+  end process count;
+
+  output <= std_logic_vector(counter);
+
+end architecture cont4_arch;

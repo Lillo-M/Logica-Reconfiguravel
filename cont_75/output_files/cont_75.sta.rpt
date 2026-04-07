@@ -1,0 +1,1153 @@
+TimeQuest Timing Analyzer report for cont_75
+Sun Apr  5 22:29:40 2026
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Setup: 'clk'
+ 12. Slow Model Setup: 'cont4:counter_bit_3_downto_0|counter[3]'
+ 13. Slow Model Hold: 'clk'
+ 14. Slow Model Hold: 'cont4:counter_bit_3_downto_0|counter[3]'
+ 15. Slow Model Recovery: 'clk'
+ 16. Slow Model Recovery: 'cont4:counter_bit_3_downto_0|counter[3]'
+ 17. Slow Model Removal: 'clk'
+ 18. Slow Model Removal: 'cont4:counter_bit_3_downto_0|counter[3]'
+ 19. Slow Model Minimum Pulse Width: 'clk'
+ 20. Slow Model Minimum Pulse Width: 'cont4:counter_bit_3_downto_0|counter[3]'
+ 21. Setup Times
+ 22. Hold Times
+ 23. Clock to Output Times
+ 24. Minimum Clock to Output Times
+ 25. Fast Model Setup Summary
+ 26. Fast Model Hold Summary
+ 27. Fast Model Recovery Summary
+ 28. Fast Model Removal Summary
+ 29. Fast Model Minimum Pulse Width Summary
+ 30. Fast Model Setup: 'clk'
+ 31. Fast Model Setup: 'cont4:counter_bit_3_downto_0|counter[3]'
+ 32. Fast Model Hold: 'clk'
+ 33. Fast Model Hold: 'cont4:counter_bit_3_downto_0|counter[3]'
+ 34. Fast Model Recovery: 'cont4:counter_bit_3_downto_0|counter[3]'
+ 35. Fast Model Recovery: 'clk'
+ 36. Fast Model Removal: 'clk'
+ 37. Fast Model Removal: 'cont4:counter_bit_3_downto_0|counter[3]'
+ 38. Fast Model Minimum Pulse Width: 'clk'
+ 39. Fast Model Minimum Pulse Width: 'cont4:counter_bit_3_downto_0|counter[3]'
+ 40. Setup Times
+ 41. Hold Times
+ 42. Clock to Output Times
+ 43. Minimum Clock to Output Times
+ 44. Multicorner Timing Analysis Summary
+ 45. Setup Times
+ 46. Hold Times
+ 47. Clock to Output Times
+ 48. Minimum Clock to Output Times
+ 49. Setup Transfers
+ 50. Hold Transfers
+ 51. Recovery Transfers
+ 52. Removal Transfers
+ 53. Report TCCS
+ 54. Report RSKM
+ 55. Unconstrained Paths
+ 56. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                       ;
++--------------------+--------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version ;
+; Revision Name      ; cont_75                                                            ;
+; Device Family      ; Cyclone II                                                         ;
+; Device Name        ; EP2C35F672C6                                                       ;
+; Timing Models      ; Final                                                              ;
+; Delay Model        ; Combined                                                           ;
+; Rise/Fall Delays   ; Unavailable                                                        ;
++--------------------+--------------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 12     ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                                                                           ;
++-----------------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------------------------------------------+
+; Clock Name                              ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets                                     ;
++-----------------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------------------------------------------+
+; clk                                     ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk }                                     ;
+; cont4:counter_bit_3_downto_0|counter[3] ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { cont4:counter_bit_3_downto_0|counter[3] } ;
++-----------------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Fmax Summary                                                                                                                ;
++------------+-----------------+-----------------------------------------+---------------------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name                              ; Note                                                          ;
++------------+-----------------+-----------------------------------------+---------------------------------------------------------------+
+; 702.25 MHz ; 420.17 MHz      ; clk                                     ; limit due to minimum period restriction (max I/O toggle rate) ;
+; 957.85 MHz ; 500.0 MHz       ; cont4:counter_bit_3_downto_0|counter[3] ; limit due to low minimum pulse width violation (tcl)          ;
++------------+-----------------+-----------------------------------------+---------------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++------------------------------------------------------------------+
+; Slow Model Setup Summary                                         ;
++-----------------------------------------+--------+---------------+
+; Clock                                   ; Slack  ; End Point TNS ;
++-----------------------------------------+--------+---------------+
+; clk                                     ; -0.424 ; -0.472        ;
+; cont4:counter_bit_3_downto_0|counter[3] ; -0.044 ; -0.044        ;
++-----------------------------------------+--------+---------------+
+
+
++------------------------------------------------------------------+
+; Slow Model Hold Summary                                          ;
++-----------------------------------------+--------+---------------+
+; Clock                                   ; Slack  ; End Point TNS ;
++-----------------------------------------+--------+---------------+
+; clk                                     ; -2.552 ; -2.552        ;
+; cont4:counter_bit_3_downto_0|counter[3] ; 0.391  ; 0.000         ;
++-----------------------------------------+--------+---------------+
+
+
++------------------------------------------------------------------+
+; Slow Model Recovery Summary                                      ;
++-----------------------------------------+--------+---------------+
+; Clock                                   ; Slack  ; End Point TNS ;
++-----------------------------------------+--------+---------------+
+; clk                                     ; -2.212 ; -8.848        ;
+; cont4:counter_bit_3_downto_0|counter[3] ; -1.914 ; -5.742        ;
++-----------------------------------------+--------+---------------+
+
+
++------------------------------------------------------------------+
+; Slow Model Removal Summary                                       ;
++-----------------------------------------+--------+---------------+
+; Clock                                   ; Slack  ; End Point TNS ;
++-----------------------------------------+--------+---------------+
+; clk                                     ; -0.466 ; -1.864        ;
+; cont4:counter_bit_3_downto_0|counter[3] ; -0.420 ; -1.260        ;
++-----------------------------------------+--------+---------------+
+
+
++------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width Summary                           ;
++-----------------------------------------+--------+---------------+
+; Clock                                   ; Slack  ; End Point TNS ;
++-----------------------------------------+--------+---------------+
+; clk                                     ; -1.380 ; -5.380        ;
+; cont4:counter_bit_3_downto_0|counter[3] ; -0.500 ; -3.000        ;
++-----------------------------------------+--------+---------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'clk'                                                                                                                                                                     ;
++--------+-----------------------------------------+-----------------------------------------+-----------------------------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                               ; To Node                                 ; Launch Clock                            ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------------------+-----------------------------------------+-----------------------------------------+-------------+--------------+------------+------------+
+; -0.424 ; cont4:counter_bit_3_downto_0|counter[2] ; cont4:counter_bit_3_downto_0|counter[3] ; clk                                     ; clk         ; 1.000        ; 0.000      ; 1.460      ;
+; -0.314 ; cont4:counter_bit_3_downto_0|counter[0] ; cont4:counter_bit_3_downto_0|counter[3] ; clk                                     ; clk         ; 1.000        ; 0.000      ; 1.350      ;
+; -0.183 ; cont4:counter_bit_3_downto_0|counter[1] ; cont4:counter_bit_3_downto_0|counter[3] ; clk                                     ; clk         ; 1.000        ; 0.000      ; 1.219      ;
+; -0.048 ; cont4:counter_bit_3_downto_0|counter[1] ; cont4:counter_bit_3_downto_0|counter[2] ; clk                                     ; clk         ; 1.000        ; 0.000      ; 1.084      ;
+; 0.032  ; cont4:counter_bit_3_downto_0|counter[0] ; cont4:counter_bit_3_downto_0|counter[1] ; clk                                     ; clk         ; 1.000        ; 0.000      ; 1.004      ;
+; 0.036  ; cont4:counter_bit_3_downto_0|counter[0] ; cont4:counter_bit_3_downto_0|counter[2] ; clk                                     ; clk         ; 1.000        ; 0.000      ; 1.000      ;
+; 0.379  ; cont4:counter_bit_3_downto_0|counter[0] ; cont4:counter_bit_3_downto_0|counter[0] ; clk                                     ; clk         ; 1.000        ; 0.000      ; 0.657      ;
+; 0.379  ; cont4:counter_bit_3_downto_0|counter[2] ; cont4:counter_bit_3_downto_0|counter[2] ; clk                                     ; clk         ; 1.000        ; 0.000      ; 0.657      ;
+; 0.379  ; cont4:counter_bit_3_downto_0|counter[1] ; cont4:counter_bit_3_downto_0|counter[1] ; clk                                     ; clk         ; 1.000        ; 0.000      ; 0.657      ;
+; 2.822  ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; 0.500        ; 2.693      ; 0.657      ;
+; 3.322  ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; 1.000        ; 2.693      ; 0.657      ;
++--------+-----------------------------------------+-----------------------------------------+-----------------------------------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'cont4:counter_bit_3_downto_0|counter[3]'                                                                                                                                                             ;
++--------+-----------------------------------------+-----------------------------------------+-----------------------------------------+-----------------------------------------+--------------+------------+------------+
+; Slack  ; From Node                               ; To Node                                 ; Launch Clock                            ; Latch Clock                             ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------------------+-----------------------------------------+-----------------------------------------+-----------------------------------------+--------------+------------+------------+
+; -0.044 ; cont4:counter_bit_8_downto_4|counter[1] ; cont4:counter_bit_8_downto_4|counter[2] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 1.000        ; 0.000      ; 1.080      ;
+; 0.236  ; cont4:counter_bit_8_downto_4|counter[0] ; cont4:counter_bit_8_downto_4|counter[1] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 1.000        ; 0.000      ; 0.800      ;
+; 0.236  ; cont4:counter_bit_8_downto_4|counter[0] ; cont4:counter_bit_8_downto_4|counter[2] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 1.000        ; 0.000      ; 0.800      ;
+; 0.379  ; cont4:counter_bit_8_downto_4|counter[0] ; cont4:counter_bit_8_downto_4|counter[0] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 1.000        ; 0.000      ; 0.657      ;
+; 0.379  ; cont4:counter_bit_8_downto_4|counter[2] ; cont4:counter_bit_8_downto_4|counter[2] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 1.000        ; 0.000      ; 0.657      ;
+; 0.379  ; cont4:counter_bit_8_downto_4|counter[1] ; cont4:counter_bit_8_downto_4|counter[1] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 1.000        ; 0.000      ; 0.657      ;
++--------+-----------------------------------------+-----------------------------------------+-----------------------------------------+-----------------------------------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'clk'                                                                                                                                                                      ;
++--------+-----------------------------------------+-----------------------------------------+-----------------------------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                               ; To Node                                 ; Launch Clock                            ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------------------+-----------------------------------------+-----------------------------------------+-------------+--------------+------------+------------+
+; -2.552 ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; 0.000        ; 2.693      ; 0.657      ;
+; -2.052 ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; -0.500       ; 2.693      ; 0.657      ;
+; 0.391  ; cont4:counter_bit_3_downto_0|counter[1] ; cont4:counter_bit_3_downto_0|counter[1] ; clk                                     ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391  ; cont4:counter_bit_3_downto_0|counter[2] ; cont4:counter_bit_3_downto_0|counter[2] ; clk                                     ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391  ; cont4:counter_bit_3_downto_0|counter[0] ; cont4:counter_bit_3_downto_0|counter[0] ; clk                                     ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.734  ; cont4:counter_bit_3_downto_0|counter[0] ; cont4:counter_bit_3_downto_0|counter[2] ; clk                                     ; clk         ; 0.000        ; 0.000      ; 1.000      ;
+; 0.738  ; cont4:counter_bit_3_downto_0|counter[0] ; cont4:counter_bit_3_downto_0|counter[1] ; clk                                     ; clk         ; 0.000        ; 0.000      ; 1.004      ;
+; 0.818  ; cont4:counter_bit_3_downto_0|counter[1] ; cont4:counter_bit_3_downto_0|counter[2] ; clk                                     ; clk         ; 0.000        ; 0.000      ; 1.084      ;
+; 0.953  ; cont4:counter_bit_3_downto_0|counter[1] ; cont4:counter_bit_3_downto_0|counter[3] ; clk                                     ; clk         ; 0.000        ; 0.000      ; 1.219      ;
+; 1.084  ; cont4:counter_bit_3_downto_0|counter[0] ; cont4:counter_bit_3_downto_0|counter[3] ; clk                                     ; clk         ; 0.000        ; 0.000      ; 1.350      ;
+; 1.194  ; cont4:counter_bit_3_downto_0|counter[2] ; cont4:counter_bit_3_downto_0|counter[3] ; clk                                     ; clk         ; 0.000        ; 0.000      ; 1.460      ;
++--------+-----------------------------------------+-----------------------------------------+-----------------------------------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'cont4:counter_bit_3_downto_0|counter[3]'                                                                                                                                                             ;
++-------+-----------------------------------------+-----------------------------------------+-----------------------------------------+-----------------------------------------+--------------+------------+------------+
+; Slack ; From Node                               ; To Node                                 ; Launch Clock                            ; Latch Clock                             ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------------------------+-----------------------------------------+-----------------------------------------+-----------------------------------------+--------------+------------+------------+
+; 0.391 ; cont4:counter_bit_8_downto_4|counter[0] ; cont4:counter_bit_8_downto_4|counter[0] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; cont4:counter_bit_8_downto_4|counter[1] ; cont4:counter_bit_8_downto_4|counter[1] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; cont4:counter_bit_8_downto_4|counter[2] ; cont4:counter_bit_8_downto_4|counter[2] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 0.000        ; 0.000      ; 0.657      ;
+; 0.534 ; cont4:counter_bit_8_downto_4|counter[0] ; cont4:counter_bit_8_downto_4|counter[1] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 0.000        ; 0.000      ; 0.800      ;
+; 0.534 ; cont4:counter_bit_8_downto_4|counter[0] ; cont4:counter_bit_8_downto_4|counter[2] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 0.000        ; 0.000      ; 0.800      ;
+; 0.814 ; cont4:counter_bit_8_downto_4|counter[1] ; cont4:counter_bit_8_downto_4|counter[2] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 0.000        ; 0.000      ; 1.080      ;
++-------+-----------------------------------------+-----------------------------------------+-----------------------------------------+-----------------------------------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Recovery: 'clk'                                                                                                                                                                  ;
++--------+-----------------------------------------+-----------------------------------------+-----------------------------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                               ; To Node                                 ; Launch Clock                            ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------------------+-----------------------------------------+-----------------------------------------+-------------+--------------+------------+------------+
+; -2.212 ; cont4:counter_bit_8_downto_4|counter[0] ; cont4:counter_bit_3_downto_0|counter[1] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; 0.500        ; -0.089     ; 2.659      ;
+; -2.212 ; cont4:counter_bit_8_downto_4|counter[0] ; cont4:counter_bit_3_downto_0|counter[2] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; 0.500        ; -0.089     ; 2.659      ;
+; -2.212 ; cont4:counter_bit_8_downto_4|counter[0] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; 0.500        ; -0.089     ; 2.659      ;
+; -2.212 ; cont4:counter_bit_8_downto_4|counter[0] ; cont4:counter_bit_3_downto_0|counter[0] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; 0.500        ; -0.089     ; 2.659      ;
+; -2.085 ; cont4:counter_bit_8_downto_4|counter[2] ; cont4:counter_bit_3_downto_0|counter[1] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; 0.500        ; -0.089     ; 2.532      ;
+; -2.085 ; cont4:counter_bit_8_downto_4|counter[2] ; cont4:counter_bit_3_downto_0|counter[2] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; 0.500        ; -0.089     ; 2.532      ;
+; -2.085 ; cont4:counter_bit_8_downto_4|counter[2] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; 0.500        ; -0.089     ; 2.532      ;
+; -2.085 ; cont4:counter_bit_8_downto_4|counter[2] ; cont4:counter_bit_3_downto_0|counter[0] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; 0.500        ; -0.089     ; 2.532      ;
+; -1.949 ; cont4:counter_bit_8_downto_4|counter[1] ; cont4:counter_bit_3_downto_0|counter[1] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; 0.500        ; -0.089     ; 2.396      ;
+; -1.949 ; cont4:counter_bit_8_downto_4|counter[1] ; cont4:counter_bit_3_downto_0|counter[2] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; 0.500        ; -0.089     ; 2.396      ;
+; -1.949 ; cont4:counter_bit_8_downto_4|counter[1] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; 0.500        ; -0.089     ; 2.396      ;
+; -1.949 ; cont4:counter_bit_8_downto_4|counter[1] ; cont4:counter_bit_3_downto_0|counter[0] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; 0.500        ; -0.089     ; 2.396      ;
+; -1.368 ; cont4:counter_bit_3_downto_0|counter[0] ; cont4:counter_bit_3_downto_0|counter[1] ; clk                                     ; clk         ; 1.000        ; 0.000      ; 2.404      ;
+; -1.368 ; cont4:counter_bit_3_downto_0|counter[0] ; cont4:counter_bit_3_downto_0|counter[2] ; clk                                     ; clk         ; 1.000        ; 0.000      ; 2.404      ;
+; -1.368 ; cont4:counter_bit_3_downto_0|counter[0] ; cont4:counter_bit_3_downto_0|counter[3] ; clk                                     ; clk         ; 1.000        ; 0.000      ; 2.404      ;
+; -1.368 ; cont4:counter_bit_3_downto_0|counter[0] ; cont4:counter_bit_3_downto_0|counter[0] ; clk                                     ; clk         ; 1.000        ; 0.000      ; 2.404      ;
+; -1.214 ; cont4:counter_bit_3_downto_0|counter[2] ; cont4:counter_bit_3_downto_0|counter[1] ; clk                                     ; clk         ; 1.000        ; 0.000      ; 2.250      ;
+; -1.214 ; cont4:counter_bit_3_downto_0|counter[2] ; cont4:counter_bit_3_downto_0|counter[2] ; clk                                     ; clk         ; 1.000        ; 0.000      ; 2.250      ;
+; -1.214 ; cont4:counter_bit_3_downto_0|counter[2] ; cont4:counter_bit_3_downto_0|counter[3] ; clk                                     ; clk         ; 1.000        ; 0.000      ; 2.250      ;
+; -1.214 ; cont4:counter_bit_3_downto_0|counter[2] ; cont4:counter_bit_3_downto_0|counter[0] ; clk                                     ; clk         ; 1.000        ; 0.000      ; 2.250      ;
+; -1.095 ; cont4:counter_bit_3_downto_0|counter[1] ; cont4:counter_bit_3_downto_0|counter[1] ; clk                                     ; clk         ; 1.000        ; 0.000      ; 2.131      ;
+; -1.095 ; cont4:counter_bit_3_downto_0|counter[1] ; cont4:counter_bit_3_downto_0|counter[2] ; clk                                     ; clk         ; 1.000        ; 0.000      ; 2.131      ;
+; -1.095 ; cont4:counter_bit_3_downto_0|counter[1] ; cont4:counter_bit_3_downto_0|counter[3] ; clk                                     ; clk         ; 1.000        ; 0.000      ; 2.131      ;
+; -1.095 ; cont4:counter_bit_3_downto_0|counter[1] ; cont4:counter_bit_3_downto_0|counter[0] ; clk                                     ; clk         ; 1.000        ; 0.000      ; 2.131      ;
+; 0.736  ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[1] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; 0.500        ; 2.693      ; 2.743      ;
+; 0.736  ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[2] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; 0.500        ; 2.693      ; 2.743      ;
+; 0.736  ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; 0.500        ; 2.693      ; 2.743      ;
+; 0.736  ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[0] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; 0.500        ; 2.693      ; 2.743      ;
+; 1.236  ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[1] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; 1.000        ; 2.693      ; 2.743      ;
+; 1.236  ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[2] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; 1.000        ; 2.693      ; 2.743      ;
+; 1.236  ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; 1.000        ; 2.693      ; 2.743      ;
+; 1.236  ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[0] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; 1.000        ; 2.693      ; 2.743      ;
++--------+-----------------------------------------+-----------------------------------------+-----------------------------------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Recovery: 'cont4:counter_bit_3_downto_0|counter[3]'                                                                                                                                                          ;
++--------+-----------------------------------------+-----------------------------------------+-----------------------------------------+-----------------------------------------+--------------+------------+------------+
+; Slack  ; From Node                               ; To Node                                 ; Launch Clock                            ; Latch Clock                             ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------------------+-----------------------------------------+-----------------------------------------+-----------------------------------------+--------------+------------+------------+
+; -1.914 ; cont4:counter_bit_3_downto_0|counter[0] ; cont4:counter_bit_8_downto_4|counter[0] ; clk                                     ; cont4:counter_bit_3_downto_0|counter[3] ; 0.500        ; 0.089      ; 2.539      ;
+; -1.914 ; cont4:counter_bit_3_downto_0|counter[0] ; cont4:counter_bit_8_downto_4|counter[1] ; clk                                     ; cont4:counter_bit_3_downto_0|counter[3] ; 0.500        ; 0.089      ; 2.539      ;
+; -1.914 ; cont4:counter_bit_3_downto_0|counter[0] ; cont4:counter_bit_8_downto_4|counter[2] ; clk                                     ; cont4:counter_bit_3_downto_0|counter[3] ; 0.500        ; 0.089      ; 2.539      ;
+; -1.760 ; cont4:counter_bit_3_downto_0|counter[2] ; cont4:counter_bit_8_downto_4|counter[0] ; clk                                     ; cont4:counter_bit_3_downto_0|counter[3] ; 0.500        ; 0.089      ; 2.385      ;
+; -1.760 ; cont4:counter_bit_3_downto_0|counter[2] ; cont4:counter_bit_8_downto_4|counter[1] ; clk                                     ; cont4:counter_bit_3_downto_0|counter[3] ; 0.500        ; 0.089      ; 2.385      ;
+; -1.760 ; cont4:counter_bit_3_downto_0|counter[2] ; cont4:counter_bit_8_downto_4|counter[2] ; clk                                     ; cont4:counter_bit_3_downto_0|counter[3] ; 0.500        ; 0.089      ; 2.385      ;
+; -1.758 ; cont4:counter_bit_8_downto_4|counter[0] ; cont4:counter_bit_8_downto_4|counter[0] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 1.000        ; 0.000      ; 2.794      ;
+; -1.758 ; cont4:counter_bit_8_downto_4|counter[0] ; cont4:counter_bit_8_downto_4|counter[1] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 1.000        ; 0.000      ; 2.794      ;
+; -1.758 ; cont4:counter_bit_8_downto_4|counter[0] ; cont4:counter_bit_8_downto_4|counter[2] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 1.000        ; 0.000      ; 2.794      ;
+; -1.641 ; cont4:counter_bit_3_downto_0|counter[1] ; cont4:counter_bit_8_downto_4|counter[0] ; clk                                     ; cont4:counter_bit_3_downto_0|counter[3] ; 0.500        ; 0.089      ; 2.266      ;
+; -1.641 ; cont4:counter_bit_3_downto_0|counter[1] ; cont4:counter_bit_8_downto_4|counter[1] ; clk                                     ; cont4:counter_bit_3_downto_0|counter[3] ; 0.500        ; 0.089      ; 2.266      ;
+; -1.641 ; cont4:counter_bit_3_downto_0|counter[1] ; cont4:counter_bit_8_downto_4|counter[2] ; clk                                     ; cont4:counter_bit_3_downto_0|counter[3] ; 0.500        ; 0.089      ; 2.266      ;
+; -1.631 ; cont4:counter_bit_8_downto_4|counter[2] ; cont4:counter_bit_8_downto_4|counter[0] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 1.000        ; 0.000      ; 2.667      ;
+; -1.631 ; cont4:counter_bit_8_downto_4|counter[2] ; cont4:counter_bit_8_downto_4|counter[1] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 1.000        ; 0.000      ; 2.667      ;
+; -1.631 ; cont4:counter_bit_8_downto_4|counter[2] ; cont4:counter_bit_8_downto_4|counter[2] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 1.000        ; 0.000      ; 2.667      ;
+; -1.495 ; cont4:counter_bit_8_downto_4|counter[1] ; cont4:counter_bit_8_downto_4|counter[0] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 1.000        ; 0.000      ; 2.531      ;
+; -1.495 ; cont4:counter_bit_8_downto_4|counter[1] ; cont4:counter_bit_8_downto_4|counter[1] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 1.000        ; 0.000      ; 2.531      ;
+; -1.495 ; cont4:counter_bit_8_downto_4|counter[1] ; cont4:counter_bit_8_downto_4|counter[2] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 1.000        ; 0.000      ; 2.531      ;
+; 0.690  ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_8_downto_4|counter[0] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 0.500        ; 2.782      ; 2.878      ;
+; 0.690  ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_8_downto_4|counter[1] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 0.500        ; 2.782      ; 2.878      ;
+; 0.690  ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_8_downto_4|counter[2] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 0.500        ; 2.782      ; 2.878      ;
+; 1.190  ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_8_downto_4|counter[0] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 1.000        ; 2.782      ; 2.878      ;
+; 1.190  ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_8_downto_4|counter[1] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 1.000        ; 2.782      ; 2.878      ;
+; 1.190  ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_8_downto_4|counter[2] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 1.000        ; 2.782      ; 2.878      ;
++--------+-----------------------------------------+-----------------------------------------+-----------------------------------------+-----------------------------------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Removal: 'clk'                                                                                                                                                                   ;
++--------+-----------------------------------------+-----------------------------------------+-----------------------------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                               ; To Node                                 ; Launch Clock                            ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------------------+-----------------------------------------+-----------------------------------------+-------------+--------------+------------+------------+
+; -0.466 ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[1] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; 0.000        ; 2.693      ; 2.743      ;
+; -0.466 ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[2] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; 0.000        ; 2.693      ; 2.743      ;
+; -0.466 ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; 0.000        ; 2.693      ; 2.743      ;
+; -0.466 ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[0] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; 0.000        ; 2.693      ; 2.743      ;
+; 0.034  ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[1] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; -0.500       ; 2.693      ; 2.743      ;
+; 0.034  ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[2] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; -0.500       ; 2.693      ; 2.743      ;
+; 0.034  ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; -0.500       ; 2.693      ; 2.743      ;
+; 0.034  ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[0] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; -0.500       ; 2.693      ; 2.743      ;
+; 1.865  ; cont4:counter_bit_3_downto_0|counter[1] ; cont4:counter_bit_3_downto_0|counter[1] ; clk                                     ; clk         ; 0.000        ; 0.000      ; 2.131      ;
+; 1.865  ; cont4:counter_bit_3_downto_0|counter[1] ; cont4:counter_bit_3_downto_0|counter[2] ; clk                                     ; clk         ; 0.000        ; 0.000      ; 2.131      ;
+; 1.865  ; cont4:counter_bit_3_downto_0|counter[1] ; cont4:counter_bit_3_downto_0|counter[3] ; clk                                     ; clk         ; 0.000        ; 0.000      ; 2.131      ;
+; 1.865  ; cont4:counter_bit_3_downto_0|counter[1] ; cont4:counter_bit_3_downto_0|counter[0] ; clk                                     ; clk         ; 0.000        ; 0.000      ; 2.131      ;
+; 1.984  ; cont4:counter_bit_3_downto_0|counter[2] ; cont4:counter_bit_3_downto_0|counter[1] ; clk                                     ; clk         ; 0.000        ; 0.000      ; 2.250      ;
+; 1.984  ; cont4:counter_bit_3_downto_0|counter[2] ; cont4:counter_bit_3_downto_0|counter[2] ; clk                                     ; clk         ; 0.000        ; 0.000      ; 2.250      ;
+; 1.984  ; cont4:counter_bit_3_downto_0|counter[2] ; cont4:counter_bit_3_downto_0|counter[3] ; clk                                     ; clk         ; 0.000        ; 0.000      ; 2.250      ;
+; 1.984  ; cont4:counter_bit_3_downto_0|counter[2] ; cont4:counter_bit_3_downto_0|counter[0] ; clk                                     ; clk         ; 0.000        ; 0.000      ; 2.250      ;
+; 2.138  ; cont4:counter_bit_3_downto_0|counter[0] ; cont4:counter_bit_3_downto_0|counter[1] ; clk                                     ; clk         ; 0.000        ; 0.000      ; 2.404      ;
+; 2.138  ; cont4:counter_bit_3_downto_0|counter[0] ; cont4:counter_bit_3_downto_0|counter[2] ; clk                                     ; clk         ; 0.000        ; 0.000      ; 2.404      ;
+; 2.138  ; cont4:counter_bit_3_downto_0|counter[0] ; cont4:counter_bit_3_downto_0|counter[3] ; clk                                     ; clk         ; 0.000        ; 0.000      ; 2.404      ;
+; 2.138  ; cont4:counter_bit_3_downto_0|counter[0] ; cont4:counter_bit_3_downto_0|counter[0] ; clk                                     ; clk         ; 0.000        ; 0.000      ; 2.404      ;
+; 2.719  ; cont4:counter_bit_8_downto_4|counter[1] ; cont4:counter_bit_3_downto_0|counter[1] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; -0.500       ; -0.089     ; 2.396      ;
+; 2.719  ; cont4:counter_bit_8_downto_4|counter[1] ; cont4:counter_bit_3_downto_0|counter[2] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; -0.500       ; -0.089     ; 2.396      ;
+; 2.719  ; cont4:counter_bit_8_downto_4|counter[1] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; -0.500       ; -0.089     ; 2.396      ;
+; 2.719  ; cont4:counter_bit_8_downto_4|counter[1] ; cont4:counter_bit_3_downto_0|counter[0] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; -0.500       ; -0.089     ; 2.396      ;
+; 2.855  ; cont4:counter_bit_8_downto_4|counter[2] ; cont4:counter_bit_3_downto_0|counter[1] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; -0.500       ; -0.089     ; 2.532      ;
+; 2.855  ; cont4:counter_bit_8_downto_4|counter[2] ; cont4:counter_bit_3_downto_0|counter[2] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; -0.500       ; -0.089     ; 2.532      ;
+; 2.855  ; cont4:counter_bit_8_downto_4|counter[2] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; -0.500       ; -0.089     ; 2.532      ;
+; 2.855  ; cont4:counter_bit_8_downto_4|counter[2] ; cont4:counter_bit_3_downto_0|counter[0] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; -0.500       ; -0.089     ; 2.532      ;
+; 2.982  ; cont4:counter_bit_8_downto_4|counter[0] ; cont4:counter_bit_3_downto_0|counter[1] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; -0.500       ; -0.089     ; 2.659      ;
+; 2.982  ; cont4:counter_bit_8_downto_4|counter[0] ; cont4:counter_bit_3_downto_0|counter[2] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; -0.500       ; -0.089     ; 2.659      ;
+; 2.982  ; cont4:counter_bit_8_downto_4|counter[0] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; -0.500       ; -0.089     ; 2.659      ;
+; 2.982  ; cont4:counter_bit_8_downto_4|counter[0] ; cont4:counter_bit_3_downto_0|counter[0] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; -0.500       ; -0.089     ; 2.659      ;
++--------+-----------------------------------------+-----------------------------------------+-----------------------------------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Removal: 'cont4:counter_bit_3_downto_0|counter[3]'                                                                                                                                                           ;
++--------+-----------------------------------------+-----------------------------------------+-----------------------------------------+-----------------------------------------+--------------+------------+------------+
+; Slack  ; From Node                               ; To Node                                 ; Launch Clock                            ; Latch Clock                             ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------------------+-----------------------------------------+-----------------------------------------+-----------------------------------------+--------------+------------+------------+
+; -0.420 ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_8_downto_4|counter[0] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 0.000        ; 2.782      ; 2.878      ;
+; -0.420 ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_8_downto_4|counter[1] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 0.000        ; 2.782      ; 2.878      ;
+; -0.420 ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_8_downto_4|counter[2] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 0.000        ; 2.782      ; 2.878      ;
+; 0.080  ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_8_downto_4|counter[0] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; -0.500       ; 2.782      ; 2.878      ;
+; 0.080  ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_8_downto_4|counter[1] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; -0.500       ; 2.782      ; 2.878      ;
+; 0.080  ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_8_downto_4|counter[2] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; -0.500       ; 2.782      ; 2.878      ;
+; 2.265  ; cont4:counter_bit_8_downto_4|counter[1] ; cont4:counter_bit_8_downto_4|counter[0] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 0.000        ; 0.000      ; 2.531      ;
+; 2.265  ; cont4:counter_bit_8_downto_4|counter[1] ; cont4:counter_bit_8_downto_4|counter[1] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 0.000        ; 0.000      ; 2.531      ;
+; 2.265  ; cont4:counter_bit_8_downto_4|counter[1] ; cont4:counter_bit_8_downto_4|counter[2] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 0.000        ; 0.000      ; 2.531      ;
+; 2.401  ; cont4:counter_bit_8_downto_4|counter[2] ; cont4:counter_bit_8_downto_4|counter[0] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 0.000        ; 0.000      ; 2.667      ;
+; 2.401  ; cont4:counter_bit_8_downto_4|counter[2] ; cont4:counter_bit_8_downto_4|counter[1] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 0.000        ; 0.000      ; 2.667      ;
+; 2.401  ; cont4:counter_bit_8_downto_4|counter[2] ; cont4:counter_bit_8_downto_4|counter[2] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 0.000        ; 0.000      ; 2.667      ;
+; 2.411  ; cont4:counter_bit_3_downto_0|counter[1] ; cont4:counter_bit_8_downto_4|counter[0] ; clk                                     ; cont4:counter_bit_3_downto_0|counter[3] ; -0.500       ; 0.089      ; 2.266      ;
+; 2.411  ; cont4:counter_bit_3_downto_0|counter[1] ; cont4:counter_bit_8_downto_4|counter[1] ; clk                                     ; cont4:counter_bit_3_downto_0|counter[3] ; -0.500       ; 0.089      ; 2.266      ;
+; 2.411  ; cont4:counter_bit_3_downto_0|counter[1] ; cont4:counter_bit_8_downto_4|counter[2] ; clk                                     ; cont4:counter_bit_3_downto_0|counter[3] ; -0.500       ; 0.089      ; 2.266      ;
+; 2.528  ; cont4:counter_bit_8_downto_4|counter[0] ; cont4:counter_bit_8_downto_4|counter[0] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 0.000        ; 0.000      ; 2.794      ;
+; 2.528  ; cont4:counter_bit_8_downto_4|counter[0] ; cont4:counter_bit_8_downto_4|counter[1] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 0.000        ; 0.000      ; 2.794      ;
+; 2.528  ; cont4:counter_bit_8_downto_4|counter[0] ; cont4:counter_bit_8_downto_4|counter[2] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 0.000        ; 0.000      ; 2.794      ;
+; 2.530  ; cont4:counter_bit_3_downto_0|counter[2] ; cont4:counter_bit_8_downto_4|counter[0] ; clk                                     ; cont4:counter_bit_3_downto_0|counter[3] ; -0.500       ; 0.089      ; 2.385      ;
+; 2.530  ; cont4:counter_bit_3_downto_0|counter[2] ; cont4:counter_bit_8_downto_4|counter[1] ; clk                                     ; cont4:counter_bit_3_downto_0|counter[3] ; -0.500       ; 0.089      ; 2.385      ;
+; 2.530  ; cont4:counter_bit_3_downto_0|counter[2] ; cont4:counter_bit_8_downto_4|counter[2] ; clk                                     ; cont4:counter_bit_3_downto_0|counter[3] ; -0.500       ; 0.089      ; 2.385      ;
+; 2.684  ; cont4:counter_bit_3_downto_0|counter[0] ; cont4:counter_bit_8_downto_4|counter[0] ; clk                                     ; cont4:counter_bit_3_downto_0|counter[3] ; -0.500       ; 0.089      ; 2.539      ;
+; 2.684  ; cont4:counter_bit_3_downto_0|counter[0] ; cont4:counter_bit_8_downto_4|counter[1] ; clk                                     ; cont4:counter_bit_3_downto_0|counter[3] ; -0.500       ; 0.089      ; 2.539      ;
+; 2.684  ; cont4:counter_bit_3_downto_0|counter[0] ; cont4:counter_bit_8_downto_4|counter[2] ; clk                                     ; cont4:counter_bit_3_downto_0|counter[3] ; -0.500       ; 0.089      ; 2.539      ;
++--------+-----------------------------------------+-----------------------------------------+-----------------------------------------+-----------------------------------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'clk'                                                                                    ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                  ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; clk   ; Rise       ; clk                                     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; cont4:counter_bit_3_downto_0|counter[0] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; cont4:counter_bit_3_downto_0|counter[0] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; cont4:counter_bit_3_downto_0|counter[1] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; cont4:counter_bit_3_downto_0|counter[1] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; cont4:counter_bit_3_downto_0|counter[2] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; cont4:counter_bit_3_downto_0|counter[2] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; cont4:counter_bit_3_downto_0|counter[3] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; cont4:counter_bit_3_downto_0|counter[3] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk|combout                             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk|combout                             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk~clkctrl|inclk[0]                    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk~clkctrl|inclk[0]                    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk~clkctrl|outclk                      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk~clkctrl|outclk                      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; counter_bit_3_downto_0|counter[0]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; counter_bit_3_downto_0|counter[0]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; counter_bit_3_downto_0|counter[1]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; counter_bit_3_downto_0|counter[1]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; counter_bit_3_downto_0|counter[2]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; counter_bit_3_downto_0|counter[2]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; counter_bit_3_downto_0|counter[3]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; counter_bit_3_downto_0|counter[3]|clk   ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'cont4:counter_bit_3_downto_0|counter[3]'                                                                                             ;
++--------+--------------+----------------+------------------+-----------------------------------------+------------+----------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock                                   ; Clock Edge ; Target                                             ;
++--------+--------------+----------------+------------------+-----------------------------------------+------------+----------------------------------------------------+
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; cont4:counter_bit_3_downto_0|counter[3] ; Fall       ; cont4:counter_bit_8_downto_4|counter[0]            ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; cont4:counter_bit_3_downto_0|counter[3] ; Fall       ; cont4:counter_bit_8_downto_4|counter[0]            ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; cont4:counter_bit_3_downto_0|counter[3] ; Fall       ; cont4:counter_bit_8_downto_4|counter[1]            ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; cont4:counter_bit_3_downto_0|counter[3] ; Fall       ; cont4:counter_bit_8_downto_4|counter[1]            ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; cont4:counter_bit_3_downto_0|counter[3] ; Fall       ; cont4:counter_bit_8_downto_4|counter[2]            ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; cont4:counter_bit_3_downto_0|counter[3] ; Fall       ; cont4:counter_bit_8_downto_4|counter[2]            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; cont4:counter_bit_3_downto_0|counter[3] ; Rise       ; counter_bit_3_downto_0|counter[3]|regout           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; cont4:counter_bit_3_downto_0|counter[3] ; Rise       ; counter_bit_3_downto_0|counter[3]|regout           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; cont4:counter_bit_3_downto_0|counter[3] ; Rise       ; counter_bit_3_downto_0|counter[3]~clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; cont4:counter_bit_3_downto_0|counter[3] ; Rise       ; counter_bit_3_downto_0|counter[3]~clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; cont4:counter_bit_3_downto_0|counter[3] ; Rise       ; counter_bit_3_downto_0|counter[3]~clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; cont4:counter_bit_3_downto_0|counter[3] ; Rise       ; counter_bit_3_downto_0|counter[3]~clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; cont4:counter_bit_3_downto_0|counter[3] ; Rise       ; counter_bit_8_downto_4|counter[0]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; cont4:counter_bit_3_downto_0|counter[3] ; Rise       ; counter_bit_8_downto_4|counter[0]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; cont4:counter_bit_3_downto_0|counter[3] ; Rise       ; counter_bit_8_downto_4|counter[1]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; cont4:counter_bit_3_downto_0|counter[3] ; Rise       ; counter_bit_8_downto_4|counter[1]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; cont4:counter_bit_3_downto_0|counter[3] ; Rise       ; counter_bit_8_downto_4|counter[2]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; cont4:counter_bit_3_downto_0|counter[3] ; Rise       ; counter_bit_8_downto_4|counter[2]|clk              ;
++--------+--------------+----------------+------------------+-----------------------------------------+------------+----------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Setup Times                                                                                                                ;
++-----------+-----------------------------------------+-------+-------+------------+-----------------------------------------+
+; Data Port ; Clock Port                              ; Rise  ; Fall  ; Clock Edge ; Clock Reference                         ;
++-----------+-----------------------------------------+-------+-------+------------+-----------------------------------------+
+; en        ; clk                                     ; 3.865 ; 3.865 ; Rise       ; clk                                     ;
+; en        ; cont4:counter_bit_3_downto_0|counter[3] ; 3.508 ; 3.508 ; Fall       ; cont4:counter_bit_3_downto_0|counter[3] ;
++-----------+-----------------------------------------+-------+-------+------------+-----------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------+
+; Hold Times                                                                                                                   ;
++-----------+-----------------------------------------+--------+--------+------------+-----------------------------------------+
+; Data Port ; Clock Port                              ; Rise   ; Fall   ; Clock Edge ; Clock Reference                         ;
++-----------+-----------------------------------------+--------+--------+------------+-----------------------------------------+
+; en        ; clk                                     ; -3.254 ; -3.254 ; Rise       ; clk                                     ;
+; en        ; cont4:counter_bit_3_downto_0|counter[3] ; -3.137 ; -3.137 ; Fall       ; cont4:counter_bit_3_downto_0|counter[3] ;
++-----------+-----------------------------------------+--------+--------+------------+-----------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                                                       ;
++------------+-----------------------------------------+-------+-------+------------+-----------------------------------------+
+; Data Port  ; Clock Port                              ; Rise  ; Fall  ; Clock Edge ; Clock Reference                         ;
++------------+-----------------------------------------+-------+-------+------------+-----------------------------------------+
+; output[*]  ; clk                                     ; 8.388 ; 8.388 ; Rise       ; clk                                     ;
+;  output[0] ; clk                                     ; 6.360 ; 6.360 ; Rise       ; clk                                     ;
+;  output[1] ; clk                                     ; 7.599 ; 7.599 ; Rise       ; clk                                     ;
+;  output[2] ; clk                                     ; 7.852 ; 7.852 ; Rise       ; clk                                     ;
+;  output[3] ; clk                                     ; 7.935 ; 7.935 ; Rise       ; clk                                     ;
+;  output[4] ; clk                                     ; 8.003 ; 8.003 ; Rise       ; clk                                     ;
+;  output[5] ; clk                                     ; 8.388 ; 8.388 ; Rise       ; clk                                     ;
+;  output[6] ; clk                                     ; 8.234 ; 8.234 ; Rise       ; clk                                     ;
+; output[*]  ; cont4:counter_bit_3_downto_0|counter[3] ; 5.089 ; 5.089 ; Rise       ; cont4:counter_bit_3_downto_0|counter[3] ;
+;  output[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 4.296 ; 4.296 ; Rise       ; cont4:counter_bit_3_downto_0|counter[3] ;
+;  output[4] ; cont4:counter_bit_3_downto_0|counter[3] ; 4.704 ; 4.704 ; Rise       ; cont4:counter_bit_3_downto_0|counter[3] ;
+;  output[5] ; cont4:counter_bit_3_downto_0|counter[3] ; 5.089 ; 5.089 ; Rise       ; cont4:counter_bit_3_downto_0|counter[3] ;
+;  output[6] ; cont4:counter_bit_3_downto_0|counter[3] ; 4.935 ; 4.935 ; Rise       ; cont4:counter_bit_3_downto_0|counter[3] ;
+; output[*]  ; cont4:counter_bit_3_downto_0|counter[3] ; 8.011 ; 8.011 ; Fall       ; cont4:counter_bit_3_downto_0|counter[3] ;
+;  output[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 4.296 ; 4.296 ; Fall       ; cont4:counter_bit_3_downto_0|counter[3] ;
+;  output[4] ; cont4:counter_bit_3_downto_0|counter[3] ; 7.310 ; 7.310 ; Fall       ; cont4:counter_bit_3_downto_0|counter[3] ;
+;  output[5] ; cont4:counter_bit_3_downto_0|counter[3] ; 8.011 ; 8.011 ; Fall       ; cont4:counter_bit_3_downto_0|counter[3] ;
+;  output[6] ; cont4:counter_bit_3_downto_0|counter[3] ; 7.977 ; 7.977 ; Fall       ; cont4:counter_bit_3_downto_0|counter[3] ;
++------------+-----------------------------------------+-------+-------+------------+-----------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                                                               ;
++------------+-----------------------------------------+-------+-------+------------+-----------------------------------------+
+; Data Port  ; Clock Port                              ; Rise  ; Fall  ; Clock Edge ; Clock Reference                         ;
++------------+-----------------------------------------+-------+-------+------------+-----------------------------------------+
+; output[*]  ; clk                                     ; 6.360 ; 6.360 ; Rise       ; clk                                     ;
+;  output[0] ; clk                                     ; 6.360 ; 6.360 ; Rise       ; clk                                     ;
+;  output[1] ; clk                                     ; 7.425 ; 7.425 ; Rise       ; clk                                     ;
+;  output[2] ; clk                                     ; 7.038 ; 7.038 ; Rise       ; clk                                     ;
+;  output[3] ; clk                                     ; 7.433 ; 7.433 ; Rise       ; clk                                     ;
+;  output[4] ; clk                                     ; 7.501 ; 7.501 ; Rise       ; clk                                     ;
+;  output[5] ; clk                                     ; 7.886 ; 7.886 ; Rise       ; clk                                     ;
+;  output[6] ; clk                                     ; 7.732 ; 7.732 ; Rise       ; clk                                     ;
+; output[*]  ; cont4:counter_bit_3_downto_0|counter[3] ; 4.296 ; 4.296 ; Rise       ; cont4:counter_bit_3_downto_0|counter[3] ;
+;  output[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 4.296 ; 4.296 ; Rise       ; cont4:counter_bit_3_downto_0|counter[3] ;
+;  output[4] ; cont4:counter_bit_3_downto_0|counter[3] ; 4.704 ; 4.704 ; Rise       ; cont4:counter_bit_3_downto_0|counter[3] ;
+;  output[5] ; cont4:counter_bit_3_downto_0|counter[3] ; 5.089 ; 5.089 ; Rise       ; cont4:counter_bit_3_downto_0|counter[3] ;
+;  output[6] ; cont4:counter_bit_3_downto_0|counter[3] ; 4.935 ; 4.935 ; Rise       ; cont4:counter_bit_3_downto_0|counter[3] ;
+; output[*]  ; cont4:counter_bit_3_downto_0|counter[3] ; 4.296 ; 4.296 ; Fall       ; cont4:counter_bit_3_downto_0|counter[3] ;
+;  output[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 4.296 ; 4.296 ; Fall       ; cont4:counter_bit_3_downto_0|counter[3] ;
+;  output[4] ; cont4:counter_bit_3_downto_0|counter[3] ; 4.704 ; 4.704 ; Fall       ; cont4:counter_bit_3_downto_0|counter[3] ;
+;  output[5] ; cont4:counter_bit_3_downto_0|counter[3] ; 5.089 ; 5.089 ; Fall       ; cont4:counter_bit_3_downto_0|counter[3] ;
+;  output[6] ; cont4:counter_bit_3_downto_0|counter[3] ; 4.935 ; 4.935 ; Fall       ; cont4:counter_bit_3_downto_0|counter[3] ;
++------------+-----------------------------------------+-------+-------+------------+-----------------------------------------+
+
+
++-----------------------------------------------------------------+
+; Fast Model Setup Summary                                        ;
++-----------------------------------------+-------+---------------+
+; Clock                                   ; Slack ; End Point TNS ;
++-----------------------------------------+-------+---------------+
+; clk                                     ; 0.335 ; 0.000         ;
+; cont4:counter_bit_3_downto_0|counter[3] ; 0.515 ; 0.000         ;
++-----------------------------------------+-------+---------------+
+
+
++------------------------------------------------------------------+
+; Fast Model Hold Summary                                          ;
++-----------------------------------------+--------+---------------+
+; Clock                                   ; Slack  ; End Point TNS ;
++-----------------------------------------+--------+---------------+
+; clk                                     ; -1.591 ; -1.591        ;
+; cont4:counter_bit_3_downto_0|counter[3] ; 0.215  ; 0.000         ;
++-----------------------------------------+--------+---------------+
+
+
++------------------------------------------------------------------+
+; Fast Model Recovery Summary                                      ;
++-----------------------------------------+--------+---------------+
+; Clock                                   ; Slack  ; End Point TNS ;
++-----------------------------------------+--------+---------------+
+; cont4:counter_bit_3_downto_0|counter[3] ; -0.796 ; -2.388        ;
+; clk                                     ; -0.753 ; -3.012        ;
++-----------------------------------------+--------+---------------+
+
+
++------------------------------------------------------------------+
+; Fast Model Removal Summary                                       ;
++-----------------------------------------+--------+---------------+
+; Clock                                   ; Slack  ; End Point TNS ;
++-----------------------------------------+--------+---------------+
+; clk                                     ; -0.608 ; -2.432        ;
+; cont4:counter_bit_3_downto_0|counter[3] ; -0.499 ; -1.497        ;
++-----------------------------------------+--------+---------------+
+
+
++------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width Summary                           ;
++-----------------------------------------+--------+---------------+
+; Clock                                   ; Slack  ; End Point TNS ;
++-----------------------------------------+--------+---------------+
+; clk                                     ; -1.380 ; -5.380        ;
+; cont4:counter_bit_3_downto_0|counter[3] ; -0.500 ; -3.000        ;
++-----------------------------------------+--------+---------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'clk'                                                                                                                                                                    ;
++-------+-----------------------------------------+-----------------------------------------+-----------------------------------------+-------------+--------------+------------+------------+
+; Slack ; From Node                               ; To Node                                 ; Launch Clock                            ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------------------------+-----------------------------------------+-----------------------------------------+-------------+--------------+------------+------------+
+; 0.335 ; cont4:counter_bit_3_downto_0|counter[2] ; cont4:counter_bit_3_downto_0|counter[3] ; clk                                     ; clk         ; 1.000        ; 0.000      ; 0.697      ;
+; 0.382 ; cont4:counter_bit_3_downto_0|counter[0] ; cont4:counter_bit_3_downto_0|counter[3] ; clk                                     ; clk         ; 1.000        ; 0.000      ; 0.650      ;
+; 0.454 ; cont4:counter_bit_3_downto_0|counter[1] ; cont4:counter_bit_3_downto_0|counter[3] ; clk                                     ; clk         ; 1.000        ; 0.000      ; 0.578      ;
+; 0.509 ; cont4:counter_bit_3_downto_0|counter[1] ; cont4:counter_bit_3_downto_0|counter[2] ; clk                                     ; clk         ; 1.000        ; 0.000      ; 0.523      ;
+; 0.542 ; cont4:counter_bit_3_downto_0|counter[0] ; cont4:counter_bit_3_downto_0|counter[1] ; clk                                     ; clk         ; 1.000        ; 0.000      ; 0.490      ;
+; 0.545 ; cont4:counter_bit_3_downto_0|counter[0] ; cont4:counter_bit_3_downto_0|counter[2] ; clk                                     ; clk         ; 1.000        ; 0.000      ; 0.487      ;
+; 0.665 ; cont4:counter_bit_3_downto_0|counter[0] ; cont4:counter_bit_3_downto_0|counter[0] ; clk                                     ; clk         ; 1.000        ; 0.000      ; 0.367      ;
+; 0.665 ; cont4:counter_bit_3_downto_0|counter[2] ; cont4:counter_bit_3_downto_0|counter[2] ; clk                                     ; clk         ; 1.000        ; 0.000      ; 0.367      ;
+; 0.665 ; cont4:counter_bit_3_downto_0|counter[1] ; cont4:counter_bit_3_downto_0|counter[1] ; clk                                     ; clk         ; 1.000        ; 0.000      ; 0.367      ;
+; 1.971 ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; 0.500        ; 1.665      ; 0.367      ;
+; 2.471 ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; 1.000        ; 1.665      ; 0.367      ;
++-------+-----------------------------------------+-----------------------------------------+-----------------------------------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'cont4:counter_bit_3_downto_0|counter[3]'                                                                                                                                                            ;
++-------+-----------------------------------------+-----------------------------------------+-----------------------------------------+-----------------------------------------+--------------+------------+------------+
+; Slack ; From Node                               ; To Node                                 ; Launch Clock                            ; Latch Clock                             ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------------------------+-----------------------------------------+-----------------------------------------+-----------------------------------------+--------------+------------+------------+
+; 0.515 ; cont4:counter_bit_8_downto_4|counter[1] ; cont4:counter_bit_8_downto_4|counter[2] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 1.000        ; 0.000      ; 0.517      ;
+; 0.634 ; cont4:counter_bit_8_downto_4|counter[0] ; cont4:counter_bit_8_downto_4|counter[1] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 1.000        ; 0.000      ; 0.398      ;
+; 0.635 ; cont4:counter_bit_8_downto_4|counter[0] ; cont4:counter_bit_8_downto_4|counter[2] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 1.000        ; 0.000      ; 0.397      ;
+; 0.665 ; cont4:counter_bit_8_downto_4|counter[0] ; cont4:counter_bit_8_downto_4|counter[0] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 1.000        ; 0.000      ; 0.367      ;
+; 0.665 ; cont4:counter_bit_8_downto_4|counter[2] ; cont4:counter_bit_8_downto_4|counter[2] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 1.000        ; 0.000      ; 0.367      ;
+; 0.665 ; cont4:counter_bit_8_downto_4|counter[1] ; cont4:counter_bit_8_downto_4|counter[1] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 1.000        ; 0.000      ; 0.367      ;
++-------+-----------------------------------------+-----------------------------------------+-----------------------------------------+-----------------------------------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'clk'                                                                                                                                                                      ;
++--------+-----------------------------------------+-----------------------------------------+-----------------------------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                               ; To Node                                 ; Launch Clock                            ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------------------+-----------------------------------------+-----------------------------------------+-------------+--------------+------------+------------+
+; -1.591 ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; 0.000        ; 1.665      ; 0.367      ;
+; -1.091 ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; -0.500       ; 1.665      ; 0.367      ;
+; 0.215  ; cont4:counter_bit_3_downto_0|counter[1] ; cont4:counter_bit_3_downto_0|counter[1] ; clk                                     ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215  ; cont4:counter_bit_3_downto_0|counter[2] ; cont4:counter_bit_3_downto_0|counter[2] ; clk                                     ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215  ; cont4:counter_bit_3_downto_0|counter[0] ; cont4:counter_bit_3_downto_0|counter[0] ; clk                                     ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.335  ; cont4:counter_bit_3_downto_0|counter[0] ; cont4:counter_bit_3_downto_0|counter[2] ; clk                                     ; clk         ; 0.000        ; 0.000      ; 0.487      ;
+; 0.338  ; cont4:counter_bit_3_downto_0|counter[0] ; cont4:counter_bit_3_downto_0|counter[1] ; clk                                     ; clk         ; 0.000        ; 0.000      ; 0.490      ;
+; 0.371  ; cont4:counter_bit_3_downto_0|counter[1] ; cont4:counter_bit_3_downto_0|counter[2] ; clk                                     ; clk         ; 0.000        ; 0.000      ; 0.523      ;
+; 0.426  ; cont4:counter_bit_3_downto_0|counter[1] ; cont4:counter_bit_3_downto_0|counter[3] ; clk                                     ; clk         ; 0.000        ; 0.000      ; 0.578      ;
+; 0.498  ; cont4:counter_bit_3_downto_0|counter[0] ; cont4:counter_bit_3_downto_0|counter[3] ; clk                                     ; clk         ; 0.000        ; 0.000      ; 0.650      ;
+; 0.545  ; cont4:counter_bit_3_downto_0|counter[2] ; cont4:counter_bit_3_downto_0|counter[3] ; clk                                     ; clk         ; 0.000        ; 0.000      ; 0.697      ;
++--------+-----------------------------------------+-----------------------------------------+-----------------------------------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'cont4:counter_bit_3_downto_0|counter[3]'                                                                                                                                                             ;
++-------+-----------------------------------------+-----------------------------------------+-----------------------------------------+-----------------------------------------+--------------+------------+------------+
+; Slack ; From Node                               ; To Node                                 ; Launch Clock                            ; Latch Clock                             ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------------------------+-----------------------------------------+-----------------------------------------+-----------------------------------------+--------------+------------+------------+
+; 0.215 ; cont4:counter_bit_8_downto_4|counter[0] ; cont4:counter_bit_8_downto_4|counter[0] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; cont4:counter_bit_8_downto_4|counter[1] ; cont4:counter_bit_8_downto_4|counter[1] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; cont4:counter_bit_8_downto_4|counter[2] ; cont4:counter_bit_8_downto_4|counter[2] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 0.000        ; 0.000      ; 0.367      ;
+; 0.245 ; cont4:counter_bit_8_downto_4|counter[0] ; cont4:counter_bit_8_downto_4|counter[2] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 0.000        ; 0.000      ; 0.397      ;
+; 0.246 ; cont4:counter_bit_8_downto_4|counter[0] ; cont4:counter_bit_8_downto_4|counter[1] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 0.000        ; 0.000      ; 0.398      ;
+; 0.365 ; cont4:counter_bit_8_downto_4|counter[1] ; cont4:counter_bit_8_downto_4|counter[2] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 0.000        ; 0.000      ; 0.517      ;
++-------+-----------------------------------------+-----------------------------------------+-----------------------------------------+-----------------------------------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Recovery: 'cont4:counter_bit_3_downto_0|counter[3]'                                                                                                                                                          ;
++--------+-----------------------------------------+-----------------------------------------+-----------------------------------------+-----------------------------------------+--------------+------------+------------+
+; Slack  ; From Node                               ; To Node                                 ; Launch Clock                            ; Latch Clock                             ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------------------+-----------------------------------------+-----------------------------------------+-----------------------------------------+--------------+------------+------------+
+; -0.796 ; cont4:counter_bit_3_downto_0|counter[0] ; cont4:counter_bit_8_downto_4|counter[0] ; clk                                     ; cont4:counter_bit_3_downto_0|counter[3] ; 0.500        ; -0.044     ; 1.284      ;
+; -0.796 ; cont4:counter_bit_3_downto_0|counter[0] ; cont4:counter_bit_8_downto_4|counter[1] ; clk                                     ; cont4:counter_bit_3_downto_0|counter[3] ; 0.500        ; -0.044     ; 1.284      ;
+; -0.796 ; cont4:counter_bit_3_downto_0|counter[0] ; cont4:counter_bit_8_downto_4|counter[2] ; clk                                     ; cont4:counter_bit_3_downto_0|counter[3] ; 0.500        ; -0.044     ; 1.284      ;
+; -0.708 ; cont4:counter_bit_3_downto_0|counter[2] ; cont4:counter_bit_8_downto_4|counter[0] ; clk                                     ; cont4:counter_bit_3_downto_0|counter[3] ; 0.500        ; -0.044     ; 1.196      ;
+; -0.708 ; cont4:counter_bit_3_downto_0|counter[2] ; cont4:counter_bit_8_downto_4|counter[1] ; clk                                     ; cont4:counter_bit_3_downto_0|counter[3] ; 0.500        ; -0.044     ; 1.196      ;
+; -0.708 ; cont4:counter_bit_3_downto_0|counter[2] ; cont4:counter_bit_8_downto_4|counter[2] ; clk                                     ; cont4:counter_bit_3_downto_0|counter[3] ; 0.500        ; -0.044     ; 1.196      ;
+; -0.664 ; cont4:counter_bit_3_downto_0|counter[1] ; cont4:counter_bit_8_downto_4|counter[0] ; clk                                     ; cont4:counter_bit_3_downto_0|counter[3] ; 0.500        ; -0.044     ; 1.152      ;
+; -0.664 ; cont4:counter_bit_3_downto_0|counter[1] ; cont4:counter_bit_8_downto_4|counter[1] ; clk                                     ; cont4:counter_bit_3_downto_0|counter[3] ; 0.500        ; -0.044     ; 1.152      ;
+; -0.664 ; cont4:counter_bit_3_downto_0|counter[1] ; cont4:counter_bit_8_downto_4|counter[2] ; clk                                     ; cont4:counter_bit_3_downto_0|counter[3] ; 0.500        ; -0.044     ; 1.152      ;
+; -0.362 ; cont4:counter_bit_8_downto_4|counter[0] ; cont4:counter_bit_8_downto_4|counter[0] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 1.000        ; 0.000      ; 1.394      ;
+; -0.362 ; cont4:counter_bit_8_downto_4|counter[0] ; cont4:counter_bit_8_downto_4|counter[1] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 1.000        ; 0.000      ; 1.394      ;
+; -0.362 ; cont4:counter_bit_8_downto_4|counter[0] ; cont4:counter_bit_8_downto_4|counter[2] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 1.000        ; 0.000      ; 1.394      ;
+; -0.309 ; cont4:counter_bit_8_downto_4|counter[2] ; cont4:counter_bit_8_downto_4|counter[0] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 1.000        ; 0.000      ; 1.341      ;
+; -0.309 ; cont4:counter_bit_8_downto_4|counter[2] ; cont4:counter_bit_8_downto_4|counter[1] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 1.000        ; 0.000      ; 1.341      ;
+; -0.309 ; cont4:counter_bit_8_downto_4|counter[2] ; cont4:counter_bit_8_downto_4|counter[2] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 1.000        ; 0.000      ; 1.341      ;
+; -0.232 ; cont4:counter_bit_8_downto_4|counter[1] ; cont4:counter_bit_8_downto_4|counter[0] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 1.000        ; 0.000      ; 1.264      ;
+; -0.232 ; cont4:counter_bit_8_downto_4|counter[1] ; cont4:counter_bit_8_downto_4|counter[1] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 1.000        ; 0.000      ; 1.264      ;
+; -0.232 ; cont4:counter_bit_8_downto_4|counter[1] ; cont4:counter_bit_8_downto_4|counter[2] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 1.000        ; 0.000      ; 1.264      ;
+; 0.879  ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_8_downto_4|counter[0] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 0.500        ; 1.621      ; 1.415      ;
+; 0.879  ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_8_downto_4|counter[1] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 0.500        ; 1.621      ; 1.415      ;
+; 0.879  ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_8_downto_4|counter[2] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 0.500        ; 1.621      ; 1.415      ;
+; 1.379  ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_8_downto_4|counter[0] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 1.000        ; 1.621      ; 1.415      ;
+; 1.379  ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_8_downto_4|counter[1] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 1.000        ; 1.621      ; 1.415      ;
+; 1.379  ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_8_downto_4|counter[2] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 1.000        ; 1.621      ; 1.415      ;
++--------+-----------------------------------------+-----------------------------------------+-----------------------------------------+-----------------------------------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Recovery: 'clk'                                                                                                                                                                  ;
++--------+-----------------------------------------+-----------------------------------------+-----------------------------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                               ; To Node                                 ; Launch Clock                            ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------------------+-----------------------------------------+-----------------------------------------+-------------+--------------+------------+------------+
+; -0.753 ; cont4:counter_bit_8_downto_4|counter[0] ; cont4:counter_bit_3_downto_0|counter[1] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; 0.500        ; 0.044      ; 1.329      ;
+; -0.753 ; cont4:counter_bit_8_downto_4|counter[0] ; cont4:counter_bit_3_downto_0|counter[2] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; 0.500        ; 0.044      ; 1.329      ;
+; -0.753 ; cont4:counter_bit_8_downto_4|counter[0] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; 0.500        ; 0.044      ; 1.329      ;
+; -0.753 ; cont4:counter_bit_8_downto_4|counter[0] ; cont4:counter_bit_3_downto_0|counter[0] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; 0.500        ; 0.044      ; 1.329      ;
+; -0.700 ; cont4:counter_bit_8_downto_4|counter[2] ; cont4:counter_bit_3_downto_0|counter[1] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; 0.500        ; 0.044      ; 1.276      ;
+; -0.700 ; cont4:counter_bit_8_downto_4|counter[2] ; cont4:counter_bit_3_downto_0|counter[2] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; 0.500        ; 0.044      ; 1.276      ;
+; -0.700 ; cont4:counter_bit_8_downto_4|counter[2] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; 0.500        ; 0.044      ; 1.276      ;
+; -0.700 ; cont4:counter_bit_8_downto_4|counter[2] ; cont4:counter_bit_3_downto_0|counter[0] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; 0.500        ; 0.044      ; 1.276      ;
+; -0.623 ; cont4:counter_bit_8_downto_4|counter[1] ; cont4:counter_bit_3_downto_0|counter[1] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; 0.500        ; 0.044      ; 1.199      ;
+; -0.623 ; cont4:counter_bit_8_downto_4|counter[1] ; cont4:counter_bit_3_downto_0|counter[2] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; 0.500        ; 0.044      ; 1.199      ;
+; -0.623 ; cont4:counter_bit_8_downto_4|counter[1] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; 0.500        ; 0.044      ; 1.199      ;
+; -0.623 ; cont4:counter_bit_8_downto_4|counter[1] ; cont4:counter_bit_3_downto_0|counter[0] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; 0.500        ; 0.044      ; 1.199      ;
+; -0.187 ; cont4:counter_bit_3_downto_0|counter[0] ; cont4:counter_bit_3_downto_0|counter[1] ; clk                                     ; clk         ; 1.000        ; 0.000      ; 1.219      ;
+; -0.187 ; cont4:counter_bit_3_downto_0|counter[0] ; cont4:counter_bit_3_downto_0|counter[2] ; clk                                     ; clk         ; 1.000        ; 0.000      ; 1.219      ;
+; -0.187 ; cont4:counter_bit_3_downto_0|counter[0] ; cont4:counter_bit_3_downto_0|counter[3] ; clk                                     ; clk         ; 1.000        ; 0.000      ; 1.219      ;
+; -0.187 ; cont4:counter_bit_3_downto_0|counter[0] ; cont4:counter_bit_3_downto_0|counter[0] ; clk                                     ; clk         ; 1.000        ; 0.000      ; 1.219      ;
+; -0.099 ; cont4:counter_bit_3_downto_0|counter[2] ; cont4:counter_bit_3_downto_0|counter[1] ; clk                                     ; clk         ; 1.000        ; 0.000      ; 1.131      ;
+; -0.099 ; cont4:counter_bit_3_downto_0|counter[2] ; cont4:counter_bit_3_downto_0|counter[2] ; clk                                     ; clk         ; 1.000        ; 0.000      ; 1.131      ;
+; -0.099 ; cont4:counter_bit_3_downto_0|counter[2] ; cont4:counter_bit_3_downto_0|counter[3] ; clk                                     ; clk         ; 1.000        ; 0.000      ; 1.131      ;
+; -0.099 ; cont4:counter_bit_3_downto_0|counter[2] ; cont4:counter_bit_3_downto_0|counter[0] ; clk                                     ; clk         ; 1.000        ; 0.000      ; 1.131      ;
+; -0.055 ; cont4:counter_bit_3_downto_0|counter[1] ; cont4:counter_bit_3_downto_0|counter[1] ; clk                                     ; clk         ; 1.000        ; 0.000      ; 1.087      ;
+; -0.055 ; cont4:counter_bit_3_downto_0|counter[1] ; cont4:counter_bit_3_downto_0|counter[2] ; clk                                     ; clk         ; 1.000        ; 0.000      ; 1.087      ;
+; -0.055 ; cont4:counter_bit_3_downto_0|counter[1] ; cont4:counter_bit_3_downto_0|counter[3] ; clk                                     ; clk         ; 1.000        ; 0.000      ; 1.087      ;
+; -0.055 ; cont4:counter_bit_3_downto_0|counter[1] ; cont4:counter_bit_3_downto_0|counter[0] ; clk                                     ; clk         ; 1.000        ; 0.000      ; 1.087      ;
+; 0.988  ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[1] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; 0.500        ; 1.665      ; 1.350      ;
+; 0.988  ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[2] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; 0.500        ; 1.665      ; 1.350      ;
+; 0.988  ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; 0.500        ; 1.665      ; 1.350      ;
+; 0.988  ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[0] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; 0.500        ; 1.665      ; 1.350      ;
+; 1.488  ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[1] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; 1.000        ; 1.665      ; 1.350      ;
+; 1.488  ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[2] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; 1.000        ; 1.665      ; 1.350      ;
+; 1.488  ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; 1.000        ; 1.665      ; 1.350      ;
+; 1.488  ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[0] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; 1.000        ; 1.665      ; 1.350      ;
++--------+-----------------------------------------+-----------------------------------------+-----------------------------------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Removal: 'clk'                                                                                                                                                                   ;
++--------+-----------------------------------------+-----------------------------------------+-----------------------------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                               ; To Node                                 ; Launch Clock                            ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------------------+-----------------------------------------+-----------------------------------------+-------------+--------------+------------+------------+
+; -0.608 ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[1] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; 0.000        ; 1.665      ; 1.350      ;
+; -0.608 ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[2] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; 0.000        ; 1.665      ; 1.350      ;
+; -0.608 ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; 0.000        ; 1.665      ; 1.350      ;
+; -0.608 ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[0] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; 0.000        ; 1.665      ; 1.350      ;
+; -0.108 ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[1] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; -0.500       ; 1.665      ; 1.350      ;
+; -0.108 ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[2] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; -0.500       ; 1.665      ; 1.350      ;
+; -0.108 ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; -0.500       ; 1.665      ; 1.350      ;
+; -0.108 ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[0] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; -0.500       ; 1.665      ; 1.350      ;
+; 0.935  ; cont4:counter_bit_3_downto_0|counter[1] ; cont4:counter_bit_3_downto_0|counter[1] ; clk                                     ; clk         ; 0.000        ; 0.000      ; 1.087      ;
+; 0.935  ; cont4:counter_bit_3_downto_0|counter[1] ; cont4:counter_bit_3_downto_0|counter[2] ; clk                                     ; clk         ; 0.000        ; 0.000      ; 1.087      ;
+; 0.935  ; cont4:counter_bit_3_downto_0|counter[1] ; cont4:counter_bit_3_downto_0|counter[3] ; clk                                     ; clk         ; 0.000        ; 0.000      ; 1.087      ;
+; 0.935  ; cont4:counter_bit_3_downto_0|counter[1] ; cont4:counter_bit_3_downto_0|counter[0] ; clk                                     ; clk         ; 0.000        ; 0.000      ; 1.087      ;
+; 0.979  ; cont4:counter_bit_3_downto_0|counter[2] ; cont4:counter_bit_3_downto_0|counter[1] ; clk                                     ; clk         ; 0.000        ; 0.000      ; 1.131      ;
+; 0.979  ; cont4:counter_bit_3_downto_0|counter[2] ; cont4:counter_bit_3_downto_0|counter[2] ; clk                                     ; clk         ; 0.000        ; 0.000      ; 1.131      ;
+; 0.979  ; cont4:counter_bit_3_downto_0|counter[2] ; cont4:counter_bit_3_downto_0|counter[3] ; clk                                     ; clk         ; 0.000        ; 0.000      ; 1.131      ;
+; 0.979  ; cont4:counter_bit_3_downto_0|counter[2] ; cont4:counter_bit_3_downto_0|counter[0] ; clk                                     ; clk         ; 0.000        ; 0.000      ; 1.131      ;
+; 1.067  ; cont4:counter_bit_3_downto_0|counter[0] ; cont4:counter_bit_3_downto_0|counter[1] ; clk                                     ; clk         ; 0.000        ; 0.000      ; 1.219      ;
+; 1.067  ; cont4:counter_bit_3_downto_0|counter[0] ; cont4:counter_bit_3_downto_0|counter[2] ; clk                                     ; clk         ; 0.000        ; 0.000      ; 1.219      ;
+; 1.067  ; cont4:counter_bit_3_downto_0|counter[0] ; cont4:counter_bit_3_downto_0|counter[3] ; clk                                     ; clk         ; 0.000        ; 0.000      ; 1.219      ;
+; 1.067  ; cont4:counter_bit_3_downto_0|counter[0] ; cont4:counter_bit_3_downto_0|counter[0] ; clk                                     ; clk         ; 0.000        ; 0.000      ; 1.219      ;
+; 1.503  ; cont4:counter_bit_8_downto_4|counter[1] ; cont4:counter_bit_3_downto_0|counter[1] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; -0.500       ; 0.044      ; 1.199      ;
+; 1.503  ; cont4:counter_bit_8_downto_4|counter[1] ; cont4:counter_bit_3_downto_0|counter[2] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; -0.500       ; 0.044      ; 1.199      ;
+; 1.503  ; cont4:counter_bit_8_downto_4|counter[1] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; -0.500       ; 0.044      ; 1.199      ;
+; 1.503  ; cont4:counter_bit_8_downto_4|counter[1] ; cont4:counter_bit_3_downto_0|counter[0] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; -0.500       ; 0.044      ; 1.199      ;
+; 1.580  ; cont4:counter_bit_8_downto_4|counter[2] ; cont4:counter_bit_3_downto_0|counter[1] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; -0.500       ; 0.044      ; 1.276      ;
+; 1.580  ; cont4:counter_bit_8_downto_4|counter[2] ; cont4:counter_bit_3_downto_0|counter[2] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; -0.500       ; 0.044      ; 1.276      ;
+; 1.580  ; cont4:counter_bit_8_downto_4|counter[2] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; -0.500       ; 0.044      ; 1.276      ;
+; 1.580  ; cont4:counter_bit_8_downto_4|counter[2] ; cont4:counter_bit_3_downto_0|counter[0] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; -0.500       ; 0.044      ; 1.276      ;
+; 1.633  ; cont4:counter_bit_8_downto_4|counter[0] ; cont4:counter_bit_3_downto_0|counter[1] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; -0.500       ; 0.044      ; 1.329      ;
+; 1.633  ; cont4:counter_bit_8_downto_4|counter[0] ; cont4:counter_bit_3_downto_0|counter[2] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; -0.500       ; 0.044      ; 1.329      ;
+; 1.633  ; cont4:counter_bit_8_downto_4|counter[0] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; -0.500       ; 0.044      ; 1.329      ;
+; 1.633  ; cont4:counter_bit_8_downto_4|counter[0] ; cont4:counter_bit_3_downto_0|counter[0] ; cont4:counter_bit_3_downto_0|counter[3] ; clk         ; -0.500       ; 0.044      ; 1.329      ;
++--------+-----------------------------------------+-----------------------------------------+-----------------------------------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Removal: 'cont4:counter_bit_3_downto_0|counter[3]'                                                                                                                                                           ;
++--------+-----------------------------------------+-----------------------------------------+-----------------------------------------+-----------------------------------------+--------------+------------+------------+
+; Slack  ; From Node                               ; To Node                                 ; Launch Clock                            ; Latch Clock                             ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------------------+-----------------------------------------+-----------------------------------------+-----------------------------------------+--------------+------------+------------+
+; -0.499 ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_8_downto_4|counter[0] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 0.000        ; 1.621      ; 1.415      ;
+; -0.499 ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_8_downto_4|counter[1] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 0.000        ; 1.621      ; 1.415      ;
+; -0.499 ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_8_downto_4|counter[2] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 0.000        ; 1.621      ; 1.415      ;
+; 0.001  ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_8_downto_4|counter[0] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; -0.500       ; 1.621      ; 1.415      ;
+; 0.001  ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_8_downto_4|counter[1] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; -0.500       ; 1.621      ; 1.415      ;
+; 0.001  ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_8_downto_4|counter[2] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; -0.500       ; 1.621      ; 1.415      ;
+; 1.112  ; cont4:counter_bit_8_downto_4|counter[1] ; cont4:counter_bit_8_downto_4|counter[0] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 0.000        ; 0.000      ; 1.264      ;
+; 1.112  ; cont4:counter_bit_8_downto_4|counter[1] ; cont4:counter_bit_8_downto_4|counter[1] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 0.000        ; 0.000      ; 1.264      ;
+; 1.112  ; cont4:counter_bit_8_downto_4|counter[1] ; cont4:counter_bit_8_downto_4|counter[2] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 0.000        ; 0.000      ; 1.264      ;
+; 1.189  ; cont4:counter_bit_8_downto_4|counter[2] ; cont4:counter_bit_8_downto_4|counter[0] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 0.000        ; 0.000      ; 1.341      ;
+; 1.189  ; cont4:counter_bit_8_downto_4|counter[2] ; cont4:counter_bit_8_downto_4|counter[1] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 0.000        ; 0.000      ; 1.341      ;
+; 1.189  ; cont4:counter_bit_8_downto_4|counter[2] ; cont4:counter_bit_8_downto_4|counter[2] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 0.000        ; 0.000      ; 1.341      ;
+; 1.242  ; cont4:counter_bit_8_downto_4|counter[0] ; cont4:counter_bit_8_downto_4|counter[0] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 0.000        ; 0.000      ; 1.394      ;
+; 1.242  ; cont4:counter_bit_8_downto_4|counter[0] ; cont4:counter_bit_8_downto_4|counter[1] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 0.000        ; 0.000      ; 1.394      ;
+; 1.242  ; cont4:counter_bit_8_downto_4|counter[0] ; cont4:counter_bit_8_downto_4|counter[2] ; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 0.000        ; 0.000      ; 1.394      ;
+; 1.544  ; cont4:counter_bit_3_downto_0|counter[1] ; cont4:counter_bit_8_downto_4|counter[0] ; clk                                     ; cont4:counter_bit_3_downto_0|counter[3] ; -0.500       ; -0.044     ; 1.152      ;
+; 1.544  ; cont4:counter_bit_3_downto_0|counter[1] ; cont4:counter_bit_8_downto_4|counter[1] ; clk                                     ; cont4:counter_bit_3_downto_0|counter[3] ; -0.500       ; -0.044     ; 1.152      ;
+; 1.544  ; cont4:counter_bit_3_downto_0|counter[1] ; cont4:counter_bit_8_downto_4|counter[2] ; clk                                     ; cont4:counter_bit_3_downto_0|counter[3] ; -0.500       ; -0.044     ; 1.152      ;
+; 1.588  ; cont4:counter_bit_3_downto_0|counter[2] ; cont4:counter_bit_8_downto_4|counter[0] ; clk                                     ; cont4:counter_bit_3_downto_0|counter[3] ; -0.500       ; -0.044     ; 1.196      ;
+; 1.588  ; cont4:counter_bit_3_downto_0|counter[2] ; cont4:counter_bit_8_downto_4|counter[1] ; clk                                     ; cont4:counter_bit_3_downto_0|counter[3] ; -0.500       ; -0.044     ; 1.196      ;
+; 1.588  ; cont4:counter_bit_3_downto_0|counter[2] ; cont4:counter_bit_8_downto_4|counter[2] ; clk                                     ; cont4:counter_bit_3_downto_0|counter[3] ; -0.500       ; -0.044     ; 1.196      ;
+; 1.676  ; cont4:counter_bit_3_downto_0|counter[0] ; cont4:counter_bit_8_downto_4|counter[0] ; clk                                     ; cont4:counter_bit_3_downto_0|counter[3] ; -0.500       ; -0.044     ; 1.284      ;
+; 1.676  ; cont4:counter_bit_3_downto_0|counter[0] ; cont4:counter_bit_8_downto_4|counter[1] ; clk                                     ; cont4:counter_bit_3_downto_0|counter[3] ; -0.500       ; -0.044     ; 1.284      ;
+; 1.676  ; cont4:counter_bit_3_downto_0|counter[0] ; cont4:counter_bit_8_downto_4|counter[2] ; clk                                     ; cont4:counter_bit_3_downto_0|counter[3] ; -0.500       ; -0.044     ; 1.284      ;
++--------+-----------------------------------------+-----------------------------------------+-----------------------------------------+-----------------------------------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'clk'                                                                                    ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                  ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; clk   ; Rise       ; clk                                     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; cont4:counter_bit_3_downto_0|counter[0] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; cont4:counter_bit_3_downto_0|counter[0] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; cont4:counter_bit_3_downto_0|counter[1] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; cont4:counter_bit_3_downto_0|counter[1] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; cont4:counter_bit_3_downto_0|counter[2] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; cont4:counter_bit_3_downto_0|counter[2] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; cont4:counter_bit_3_downto_0|counter[3] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; cont4:counter_bit_3_downto_0|counter[3] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk|combout                             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk|combout                             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk~clkctrl|inclk[0]                    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk~clkctrl|inclk[0]                    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk~clkctrl|outclk                      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk~clkctrl|outclk                      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; counter_bit_3_downto_0|counter[0]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; counter_bit_3_downto_0|counter[0]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; counter_bit_3_downto_0|counter[1]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; counter_bit_3_downto_0|counter[1]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; counter_bit_3_downto_0|counter[2]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; counter_bit_3_downto_0|counter[2]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; counter_bit_3_downto_0|counter[3]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; counter_bit_3_downto_0|counter[3]|clk   ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'cont4:counter_bit_3_downto_0|counter[3]'                                                                                             ;
++--------+--------------+----------------+------------------+-----------------------------------------+------------+----------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock                                   ; Clock Edge ; Target                                             ;
++--------+--------------+----------------+------------------+-----------------------------------------+------------+----------------------------------------------------+
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; cont4:counter_bit_3_downto_0|counter[3] ; Fall       ; cont4:counter_bit_8_downto_4|counter[0]            ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; cont4:counter_bit_3_downto_0|counter[3] ; Fall       ; cont4:counter_bit_8_downto_4|counter[0]            ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; cont4:counter_bit_3_downto_0|counter[3] ; Fall       ; cont4:counter_bit_8_downto_4|counter[1]            ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; cont4:counter_bit_3_downto_0|counter[3] ; Fall       ; cont4:counter_bit_8_downto_4|counter[1]            ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; cont4:counter_bit_3_downto_0|counter[3] ; Fall       ; cont4:counter_bit_8_downto_4|counter[2]            ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; cont4:counter_bit_3_downto_0|counter[3] ; Fall       ; cont4:counter_bit_8_downto_4|counter[2]            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; cont4:counter_bit_3_downto_0|counter[3] ; Rise       ; counter_bit_3_downto_0|counter[3]|regout           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; cont4:counter_bit_3_downto_0|counter[3] ; Rise       ; counter_bit_3_downto_0|counter[3]|regout           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; cont4:counter_bit_3_downto_0|counter[3] ; Rise       ; counter_bit_3_downto_0|counter[3]~clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; cont4:counter_bit_3_downto_0|counter[3] ; Rise       ; counter_bit_3_downto_0|counter[3]~clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; cont4:counter_bit_3_downto_0|counter[3] ; Rise       ; counter_bit_3_downto_0|counter[3]~clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; cont4:counter_bit_3_downto_0|counter[3] ; Rise       ; counter_bit_3_downto_0|counter[3]~clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; cont4:counter_bit_3_downto_0|counter[3] ; Rise       ; counter_bit_8_downto_4|counter[0]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; cont4:counter_bit_3_downto_0|counter[3] ; Rise       ; counter_bit_8_downto_4|counter[0]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; cont4:counter_bit_3_downto_0|counter[3] ; Rise       ; counter_bit_8_downto_4|counter[1]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; cont4:counter_bit_3_downto_0|counter[3] ; Rise       ; counter_bit_8_downto_4|counter[1]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; cont4:counter_bit_3_downto_0|counter[3] ; Rise       ; counter_bit_8_downto_4|counter[2]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; cont4:counter_bit_3_downto_0|counter[3] ; Rise       ; counter_bit_8_downto_4|counter[2]|clk              ;
++--------+--------------+----------------+------------------+-----------------------------------------+------------+----------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Setup Times                                                                                                                ;
++-----------+-----------------------------------------+-------+-------+------------+-----------------------------------------+
+; Data Port ; Clock Port                              ; Rise  ; Fall  ; Clock Edge ; Clock Reference                         ;
++-----------+-----------------------------------------+-------+-------+------------+-----------------------------------------+
+; en        ; clk                                     ; 2.046 ; 2.046 ; Rise       ; clk                                     ;
+; en        ; cont4:counter_bit_3_downto_0|counter[3] ; 2.039 ; 2.039 ; Fall       ; cont4:counter_bit_3_downto_0|counter[3] ;
++-----------+-----------------------------------------+-------+-------+------------+-----------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------+
+; Hold Times                                                                                                                   ;
++-----------+-----------------------------------------+--------+--------+------------+-----------------------------------------+
+; Data Port ; Clock Port                              ; Rise   ; Fall   ; Clock Edge ; Clock Reference                         ;
++-----------+-----------------------------------------+--------+--------+------------+-----------------------------------------+
+; en        ; clk                                     ; -1.745 ; -1.745 ; Rise       ; clk                                     ;
+; en        ; cont4:counter_bit_3_downto_0|counter[3] ; -1.768 ; -1.768 ; Fall       ; cont4:counter_bit_3_downto_0|counter[3] ;
++-----------+-----------------------------------------+--------+--------+------------+-----------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                                                       ;
++------------+-----------------------------------------+-------+-------+------------+-----------------------------------------+
+; Data Port  ; Clock Port                              ; Rise  ; Fall  ; Clock Edge ; Clock Reference                         ;
++------------+-----------------------------------------+-------+-------+------------+-----------------------------------------+
+; output[*]  ; clk                                     ; 4.523 ; 4.523 ; Rise       ; clk                                     ;
+;  output[0] ; clk                                     ; 3.634 ; 3.634 ; Rise       ; clk                                     ;
+;  output[1] ; clk                                     ; 4.130 ; 4.130 ; Rise       ; clk                                     ;
+;  output[2] ; clk                                     ; 4.244 ; 4.244 ; Rise       ; clk                                     ;
+;  output[3] ; clk                                     ; 4.290 ; 4.290 ; Rise       ; clk                                     ;
+;  output[4] ; clk                                     ; 4.320 ; 4.320 ; Rise       ; clk                                     ;
+;  output[5] ; clk                                     ; 4.523 ; 4.523 ; Rise       ; clk                                     ;
+;  output[6] ; clk                                     ; 4.453 ; 4.453 ; Rise       ; clk                                     ;
+; output[*]  ; cont4:counter_bit_3_downto_0|counter[3] ; 2.557 ; 2.557 ; Rise       ; cont4:counter_bit_3_downto_0|counter[3] ;
+;  output[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 2.219 ; 2.219 ; Rise       ; cont4:counter_bit_3_downto_0|counter[3] ;
+;  output[4] ; cont4:counter_bit_3_downto_0|counter[3] ; 2.354 ; 2.354 ; Rise       ; cont4:counter_bit_3_downto_0|counter[3] ;
+;  output[5] ; cont4:counter_bit_3_downto_0|counter[3] ; 2.557 ; 2.557 ; Rise       ; cont4:counter_bit_3_downto_0|counter[3] ;
+;  output[6] ; cont4:counter_bit_3_downto_0|counter[3] ; 2.487 ; 2.487 ; Rise       ; cont4:counter_bit_3_downto_0|counter[3] ;
+; output[*]  ; cont4:counter_bit_3_downto_0|counter[3] ; 4.262 ; 4.262 ; Fall       ; cont4:counter_bit_3_downto_0|counter[3] ;
+;  output[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 2.219 ; 2.219 ; Fall       ; cont4:counter_bit_3_downto_0|counter[3] ;
+;  output[4] ; cont4:counter_bit_3_downto_0|counter[3] ; 3.960 ; 3.960 ; Fall       ; cont4:counter_bit_3_downto_0|counter[3] ;
+;  output[5] ; cont4:counter_bit_3_downto_0|counter[3] ; 4.262 ; 4.262 ; Fall       ; cont4:counter_bit_3_downto_0|counter[3] ;
+;  output[6] ; cont4:counter_bit_3_downto_0|counter[3] ; 4.232 ; 4.232 ; Fall       ; cont4:counter_bit_3_downto_0|counter[3] ;
++------------+-----------------------------------------+-------+-------+------------+-----------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                                                               ;
++------------+-----------------------------------------+-------+-------+------------+-----------------------------------------+
+; Data Port  ; Clock Port                              ; Rise  ; Fall  ; Clock Edge ; Clock Reference                         ;
++------------+-----------------------------------------+-------+-------+------------+-----------------------------------------+
+; output[*]  ; clk                                     ; 3.634 ; 3.634 ; Rise       ; clk                                     ;
+;  output[0] ; clk                                     ; 3.634 ; 3.634 ; Rise       ; clk                                     ;
+;  output[1] ; clk                                     ; 4.086 ; 4.086 ; Rise       ; clk                                     ;
+;  output[2] ; clk                                     ; 3.924 ; 3.924 ; Rise       ; clk                                     ;
+;  output[3] ; clk                                     ; 4.073 ; 4.073 ; Rise       ; clk                                     ;
+;  output[4] ; clk                                     ; 4.103 ; 4.103 ; Rise       ; clk                                     ;
+;  output[5] ; clk                                     ; 4.306 ; 4.306 ; Rise       ; clk                                     ;
+;  output[6] ; clk                                     ; 4.236 ; 4.236 ; Rise       ; clk                                     ;
+; output[*]  ; cont4:counter_bit_3_downto_0|counter[3] ; 2.219 ; 2.219 ; Rise       ; cont4:counter_bit_3_downto_0|counter[3] ;
+;  output[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 2.219 ; 2.219 ; Rise       ; cont4:counter_bit_3_downto_0|counter[3] ;
+;  output[4] ; cont4:counter_bit_3_downto_0|counter[3] ; 2.354 ; 2.354 ; Rise       ; cont4:counter_bit_3_downto_0|counter[3] ;
+;  output[5] ; cont4:counter_bit_3_downto_0|counter[3] ; 2.557 ; 2.557 ; Rise       ; cont4:counter_bit_3_downto_0|counter[3] ;
+;  output[6] ; cont4:counter_bit_3_downto_0|counter[3] ; 2.487 ; 2.487 ; Rise       ; cont4:counter_bit_3_downto_0|counter[3] ;
+; output[*]  ; cont4:counter_bit_3_downto_0|counter[3] ; 2.219 ; 2.219 ; Fall       ; cont4:counter_bit_3_downto_0|counter[3] ;
+;  output[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 2.219 ; 2.219 ; Fall       ; cont4:counter_bit_3_downto_0|counter[3] ;
+;  output[4] ; cont4:counter_bit_3_downto_0|counter[3] ; 2.354 ; 2.354 ; Fall       ; cont4:counter_bit_3_downto_0|counter[3] ;
+;  output[5] ; cont4:counter_bit_3_downto_0|counter[3] ; 2.557 ; 2.557 ; Fall       ; cont4:counter_bit_3_downto_0|counter[3] ;
+;  output[6] ; cont4:counter_bit_3_downto_0|counter[3] ; 2.487 ; 2.487 ; Fall       ; cont4:counter_bit_3_downto_0|counter[3] ;
++------------+-----------------------------------------+-------+-------+------------+-----------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                                                   ;
++------------------------------------------+--------+--------+----------+---------+---------------------+
+; Clock                                    ; Setup  ; Hold   ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------------------------------+--------+--------+----------+---------+---------------------+
+; Worst-case Slack                         ; -0.424 ; -2.552 ; -2.212   ; -0.608  ; -1.380              ;
+;  clk                                     ; -0.424 ; -2.552 ; -2.212   ; -0.608  ; -1.380              ;
+;  cont4:counter_bit_3_downto_0|counter[3] ; -0.044 ; 0.215  ; -1.914   ; -0.499  ; -0.500              ;
+; Design-wide TNS                          ; -0.516 ; -2.552 ; -14.59   ; -3.929  ; -8.38               ;
+;  clk                                     ; -0.472 ; -2.552 ; -8.848   ; -2.432  ; -5.380              ;
+;  cont4:counter_bit_3_downto_0|counter[3] ; -0.044 ; 0.000  ; -5.742   ; -1.497  ; -3.000              ;
++------------------------------------------+--------+--------+----------+---------+---------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Setup Times                                                                                                                ;
++-----------+-----------------------------------------+-------+-------+------------+-----------------------------------------+
+; Data Port ; Clock Port                              ; Rise  ; Fall  ; Clock Edge ; Clock Reference                         ;
++-----------+-----------------------------------------+-------+-------+------------+-----------------------------------------+
+; en        ; clk                                     ; 3.865 ; 3.865 ; Rise       ; clk                                     ;
+; en        ; cont4:counter_bit_3_downto_0|counter[3] ; 3.508 ; 3.508 ; Fall       ; cont4:counter_bit_3_downto_0|counter[3] ;
++-----------+-----------------------------------------+-------+-------+------------+-----------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------+
+; Hold Times                                                                                                                   ;
++-----------+-----------------------------------------+--------+--------+------------+-----------------------------------------+
+; Data Port ; Clock Port                              ; Rise   ; Fall   ; Clock Edge ; Clock Reference                         ;
++-----------+-----------------------------------------+--------+--------+------------+-----------------------------------------+
+; en        ; clk                                     ; -1.745 ; -1.745 ; Rise       ; clk                                     ;
+; en        ; cont4:counter_bit_3_downto_0|counter[3] ; -1.768 ; -1.768 ; Fall       ; cont4:counter_bit_3_downto_0|counter[3] ;
++-----------+-----------------------------------------+--------+--------+------------+-----------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                                                       ;
++------------+-----------------------------------------+-------+-------+------------+-----------------------------------------+
+; Data Port  ; Clock Port                              ; Rise  ; Fall  ; Clock Edge ; Clock Reference                         ;
++------------+-----------------------------------------+-------+-------+------------+-----------------------------------------+
+; output[*]  ; clk                                     ; 8.388 ; 8.388 ; Rise       ; clk                                     ;
+;  output[0] ; clk                                     ; 6.360 ; 6.360 ; Rise       ; clk                                     ;
+;  output[1] ; clk                                     ; 7.599 ; 7.599 ; Rise       ; clk                                     ;
+;  output[2] ; clk                                     ; 7.852 ; 7.852 ; Rise       ; clk                                     ;
+;  output[3] ; clk                                     ; 7.935 ; 7.935 ; Rise       ; clk                                     ;
+;  output[4] ; clk                                     ; 8.003 ; 8.003 ; Rise       ; clk                                     ;
+;  output[5] ; clk                                     ; 8.388 ; 8.388 ; Rise       ; clk                                     ;
+;  output[6] ; clk                                     ; 8.234 ; 8.234 ; Rise       ; clk                                     ;
+; output[*]  ; cont4:counter_bit_3_downto_0|counter[3] ; 5.089 ; 5.089 ; Rise       ; cont4:counter_bit_3_downto_0|counter[3] ;
+;  output[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 4.296 ; 4.296 ; Rise       ; cont4:counter_bit_3_downto_0|counter[3] ;
+;  output[4] ; cont4:counter_bit_3_downto_0|counter[3] ; 4.704 ; 4.704 ; Rise       ; cont4:counter_bit_3_downto_0|counter[3] ;
+;  output[5] ; cont4:counter_bit_3_downto_0|counter[3] ; 5.089 ; 5.089 ; Rise       ; cont4:counter_bit_3_downto_0|counter[3] ;
+;  output[6] ; cont4:counter_bit_3_downto_0|counter[3] ; 4.935 ; 4.935 ; Rise       ; cont4:counter_bit_3_downto_0|counter[3] ;
+; output[*]  ; cont4:counter_bit_3_downto_0|counter[3] ; 8.011 ; 8.011 ; Fall       ; cont4:counter_bit_3_downto_0|counter[3] ;
+;  output[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 4.296 ; 4.296 ; Fall       ; cont4:counter_bit_3_downto_0|counter[3] ;
+;  output[4] ; cont4:counter_bit_3_downto_0|counter[3] ; 7.310 ; 7.310 ; Fall       ; cont4:counter_bit_3_downto_0|counter[3] ;
+;  output[5] ; cont4:counter_bit_3_downto_0|counter[3] ; 8.011 ; 8.011 ; Fall       ; cont4:counter_bit_3_downto_0|counter[3] ;
+;  output[6] ; cont4:counter_bit_3_downto_0|counter[3] ; 7.977 ; 7.977 ; Fall       ; cont4:counter_bit_3_downto_0|counter[3] ;
++------------+-----------------------------------------+-------+-------+------------+-----------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                                                               ;
++------------+-----------------------------------------+-------+-------+------------+-----------------------------------------+
+; Data Port  ; Clock Port                              ; Rise  ; Fall  ; Clock Edge ; Clock Reference                         ;
++------------+-----------------------------------------+-------+-------+------------+-----------------------------------------+
+; output[*]  ; clk                                     ; 3.634 ; 3.634 ; Rise       ; clk                                     ;
+;  output[0] ; clk                                     ; 3.634 ; 3.634 ; Rise       ; clk                                     ;
+;  output[1] ; clk                                     ; 4.086 ; 4.086 ; Rise       ; clk                                     ;
+;  output[2] ; clk                                     ; 3.924 ; 3.924 ; Rise       ; clk                                     ;
+;  output[3] ; clk                                     ; 4.073 ; 4.073 ; Rise       ; clk                                     ;
+;  output[4] ; clk                                     ; 4.103 ; 4.103 ; Rise       ; clk                                     ;
+;  output[5] ; clk                                     ; 4.306 ; 4.306 ; Rise       ; clk                                     ;
+;  output[6] ; clk                                     ; 4.236 ; 4.236 ; Rise       ; clk                                     ;
+; output[*]  ; cont4:counter_bit_3_downto_0|counter[3] ; 2.219 ; 2.219 ; Rise       ; cont4:counter_bit_3_downto_0|counter[3] ;
+;  output[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 2.219 ; 2.219 ; Rise       ; cont4:counter_bit_3_downto_0|counter[3] ;
+;  output[4] ; cont4:counter_bit_3_downto_0|counter[3] ; 2.354 ; 2.354 ; Rise       ; cont4:counter_bit_3_downto_0|counter[3] ;
+;  output[5] ; cont4:counter_bit_3_downto_0|counter[3] ; 2.557 ; 2.557 ; Rise       ; cont4:counter_bit_3_downto_0|counter[3] ;
+;  output[6] ; cont4:counter_bit_3_downto_0|counter[3] ; 2.487 ; 2.487 ; Rise       ; cont4:counter_bit_3_downto_0|counter[3] ;
+; output[*]  ; cont4:counter_bit_3_downto_0|counter[3] ; 2.219 ; 2.219 ; Fall       ; cont4:counter_bit_3_downto_0|counter[3] ;
+;  output[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 2.219 ; 2.219 ; Fall       ; cont4:counter_bit_3_downto_0|counter[3] ;
+;  output[4] ; cont4:counter_bit_3_downto_0|counter[3] ; 2.354 ; 2.354 ; Fall       ; cont4:counter_bit_3_downto_0|counter[3] ;
+;  output[5] ; cont4:counter_bit_3_downto_0|counter[3] ; 2.557 ; 2.557 ; Fall       ; cont4:counter_bit_3_downto_0|counter[3] ;
+;  output[6] ; cont4:counter_bit_3_downto_0|counter[3] ; 2.487 ; 2.487 ; Fall       ; cont4:counter_bit_3_downto_0|counter[3] ;
++------------+-----------------------------------------+-------+-------+------------+-----------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Setup Transfers                                                                                                               ;
++-----------------------------------------+-----------------------------------------+----------+----------+----------+----------+
+; From Clock                              ; To Clock                                ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++-----------------------------------------+-----------------------------------------+----------+----------+----------+----------+
+; clk                                     ; clk                                     ; 9        ; 0        ; 0        ; 0        ;
+; cont4:counter_bit_3_downto_0|counter[3] ; clk                                     ; 1        ; 1        ; 0        ; 0        ;
+; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 0        ; 0        ; 0        ; 6        ;
++-----------------------------------------+-----------------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Hold Transfers                                                                                                                ;
++-----------------------------------------+-----------------------------------------+----------+----------+----------+----------+
+; From Clock                              ; To Clock                                ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++-----------------------------------------+-----------------------------------------+----------+----------+----------+----------+
+; clk                                     ; clk                                     ; 9        ; 0        ; 0        ; 0        ;
+; cont4:counter_bit_3_downto_0|counter[3] ; clk                                     ; 1        ; 1        ; 0        ; 0        ;
+; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 0        ; 0        ; 0        ; 6        ;
++-----------------------------------------+-----------------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Recovery Transfers                                                                                                            ;
++-----------------------------------------+-----------------------------------------+----------+----------+----------+----------+
+; From Clock                              ; To Clock                                ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++-----------------------------------------+-----------------------------------------+----------+----------+----------+----------+
+; clk                                     ; clk                                     ; 12       ; 0        ; 0        ; 0        ;
+; cont4:counter_bit_3_downto_0|counter[3] ; clk                                     ; 4        ; 16       ; 0        ; 0        ;
+; clk                                     ; cont4:counter_bit_3_downto_0|counter[3] ; 0        ; 0        ; 9        ; 0        ;
+; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 0        ; 0        ; 3        ; 12       ;
++-----------------------------------------+-----------------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Removal Transfers                                                                                                             ;
++-----------------------------------------+-----------------------------------------+----------+----------+----------+----------+
+; From Clock                              ; To Clock                                ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++-----------------------------------------+-----------------------------------------+----------+----------+----------+----------+
+; clk                                     ; clk                                     ; 12       ; 0        ; 0        ; 0        ;
+; cont4:counter_bit_3_downto_0|counter[3] ; clk                                     ; 4        ; 16       ; 0        ; 0        ;
+; clk                                     ; cont4:counter_bit_3_downto_0|counter[3] ; 0        ; 0        ; 9        ; 0        ;
+; cont4:counter_bit_3_downto_0|counter[3] ; cont4:counter_bit_3_downto_0|counter[3] ; 0        ; 0        ; 3        ; 12       ;
++-----------------------------------------+-----------------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 3     ; 3    ;
+; Unconstrained Input Port Paths  ; 21    ; 21   ;
+; Unconstrained Output Ports      ; 7     ; 7    ;
+; Unconstrained Output Port Paths ; 28    ; 28   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+    Info: Processing started: Sun Apr  5 22:29:39 2026
+Info: Command: quartus_sta cont_75 -c cont_75
+Info: qsta_default_script.tcl version: #1
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'cont_75.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name clk clk
+    Info (332105): create_clock -period 1.000 -name cont4:counter_bit_3_downto_0|counter[3] cont4:counter_bit_3_downto_0|counter[3]
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -0.424
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -0.424        -0.472 clk 
+    Info (332119):    -0.044        -0.044 cont4:counter_bit_3_downto_0|counter[3] 
+Info (332146): Worst-case hold slack is -2.552
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -2.552        -2.552 clk 
+    Info (332119):     0.391         0.000 cont4:counter_bit_3_downto_0|counter[3] 
+Info (332146): Worst-case recovery slack is -2.212
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -2.212        -8.848 clk 
+    Info (332119):    -1.914        -5.742 cont4:counter_bit_3_downto_0|counter[3] 
+Info (332146): Worst-case removal slack is -0.466
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -0.466        -1.864 clk 
+    Info (332119):    -0.420        -1.260 cont4:counter_bit_3_downto_0|counter[3] 
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380        -5.380 clk 
+    Info (332119):    -0.500        -3.000 cont4:counter_bit_3_downto_0|counter[3] 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Info (332146): Worst-case setup slack is 0.335
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.335         0.000 clk 
+    Info (332119):     0.515         0.000 cont4:counter_bit_3_downto_0|counter[3] 
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case hold slack is -1.591
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.591        -1.591 clk 
+    Info (332119):     0.215         0.000 cont4:counter_bit_3_downto_0|counter[3] 
+Info (332146): Worst-case recovery slack is -0.796
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -0.796        -2.388 cont4:counter_bit_3_downto_0|counter[3] 
+    Info (332119):    -0.753        -3.012 clk 
+Info (332146): Worst-case removal slack is -0.608
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -0.608        -2.432 clk 
+    Info (332119):    -0.499        -1.497 cont4:counter_bit_3_downto_0|counter[3] 
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380        -5.380 clk 
+    Info (332119):    -0.500        -3.000 cont4:counter_bit_3_downto_0|counter[3] 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 496 megabytes
+    Info: Processing ended: Sun Apr  5 22:29:40 2026
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

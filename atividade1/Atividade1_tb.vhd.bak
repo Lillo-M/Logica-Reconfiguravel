@@ -1,0 +1,17 @@
+library IEEE;
+
+use IEEE.std_logic_1164.all;
+use IEEE.numeric_std.all;
+
+
+entity cont4_tb is
+end cont4_tb;
+
+
+architecture cont4_tb_arch of cont4_tb is
+	signal counter: unsigned (3 downto 0) := x"0";
+begin
+	process
+		
+	end
+end architecture;

@@ -1,0 +1,111 @@
+# do cont_75_run_msim_gate_vhdl.do 
+# if {[file exists gate_work]} {
+# 	vdel -lib gate_work -all
+# }
+# vlib gate_work
+# vmap work gate_work
+# Copying /opt/altera130/modelsim_ase/linux/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied /opt/altera130/modelsim_ase/linux/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vcom -93 -work work {cont_75.vho}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package VITAL_Timing
+# -- Loading package VITAL_Primitives
+# -- Loading package cycloneii_atom_pack
+# -- Loading package cycloneii_components
+# -- Compiling entity cont_75
+# -- Compiling architecture structure of cont_75
+# 
+# vcom -93 -work work {/home/lillo/Documents/Quartus/cont_75/cont_75_tb.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package VITAL_Timing
+# -- Loading package VITAL_Primitives
+# -- Loading package cycloneii_atom_pack
+# -- Loading package cycloneii_components
+# -- Loading entity cont_75
+# -- Compiling entity cont_75_tb
+# -- Compiling architecture cont_75_tb_arch of cont_75_tb
+# 
+# vsim -t 1ps +transport_int_delays +transport_path_delays -sdftyp /NA=cont_75_vhd.sdo -L cycloneii -L gate_work -L work -voptargs="+acc"  cont_75_tb
+# vsim +transport_int_delays +transport_path_delays -L cycloneii -L gate_work -L work -voptargs=\"+acc\" -sdftyp /NA=cont_75_vhd.sdo -t 1ps cont_75_tb 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.vital_timing(body)
+# Loading ieee.vital_primitives(body)
+# Loading cycloneii.cycloneii_atom_pack(body)
+# Loading cycloneii.cycloneii_components
+# Loading work.cont_75_tb(cont_75_tb_arch)
+# SDF 10.1d Compiler 2012.11 Nov  2 2012
+# Loading work.cont_75(structure)
+# Loading ieee.std_logic_arith(body)
+# Loading cycloneii.cycloneii_io(structure)
+# Loading cycloneii.cycloneii_mux21(altvital)
+# Loading cycloneii.cycloneii_dffe(behave)
+# Loading cycloneii.cycloneii_asynch_io(behave)
+# Loading cycloneii.cycloneii_clkctrl(vital_clkctrl)
+# Loading cycloneii.cycloneii_ena_reg(behave)
+# Loading cycloneii.cycloneii_lcell_comb(vital_lcell_comb)
+# Loading cycloneii.cycloneii_lcell_ff(vital_lcell_ff)
+# Loading cycloneii.cycloneii_and1(altvital)
+# Loading instances from cont_75_vhd.sdo
+# ** Error: (vsim-SDF-3250) cont_75_vhd.sdo(0): Failed to find INSTANCE '/NA'.
+# ** Error: (vsim-SDF-3894) : Errors occured in reading and resolving instances from compiled SDF file(s).
+# ** Error: (vsim-SDF-3250) cont_75_vhd.sdo(0): Failed to find INSTANCE '/NA'.
+# Error loading design
+# Error: Error loading design 
+#        Pausing macro execution 
+# MACRO ./cont_75_run_msim_gate_vhdl.do PAUSED at line 12
+vcom -reportprogress 300 -work work /home/lillo/Documents/Quartus/cont_75/cont4.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity cont4
+# -- Compiling architecture cont4_arch of cont4
+vcom -reportprogress 300 -work work /home/lillo/Documents/Quartus/cont_75/cont_75.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity cont_75
+# -- Compiling architecture cont_75_arch of cont_75
+vcom -reportprogress 300 -work work /home/lillo/Documents/Quartus/cont_75/cont_75_tb.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading entity cont_75
+# -- Compiling entity cont_75_tb
+# -- Compiling architecture cont_75_tb_arch of cont_75_tb
+vsim -voptargs=+acc work.cont_75_tb
+# vsim -voptargs=+acc work.cont_75_tb 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.cont_75_tb(cont_75_tb_arch)
+# Loading work.cont_75(cont_75_arch)
+# Loading work.cont4(cont4_arch)
+add wave -position insertpoint  \
+sim:/cont_75_tb/counter/clk \
+sim:/cont_75_tb/counter/rst \
+sim:/cont_75_tb/counter/output \
+sim:/cont_75_tb/counter/counter \
+sim:/cont_75_tb/counter/clear_counters
+run 1 ms
+# ** Warning: (vish-3116) Problem reading symbols from linux-gate.so.1.
+# No such file or directory. (errno = ENOENT)

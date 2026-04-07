@@ -1,0 +1,50 @@
+|cont_75
+clk => cont4:counter_bit_3_downto_0.clk
+en => cont4:counter_bit_8_downto_4.en
+en => cont4:counter_bit_3_downto_0.en
+rst => cont4:counter_bit_8_downto_4.rst
+rst => cont4:counter_bit_3_downto_0.rst
+clr => clear_counters.IN1
+output[0] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+output[1] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+output[2] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+output[3] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+output[4] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+output[5] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+output[6] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|cont_75|cont4:counter_bit_8_downto_4
+clk => counter[0].CLK
+clk => counter[1].CLK
+clk => counter[2].CLK
+clk => counter[3].CLK
+en => counter[3].ENA
+en => counter[2].ENA
+en => counter[1].ENA
+en => counter[0].ENA
+rst => count.IN0
+clr => count.IN1
+output[0] <= counter[0].DB_MAX_OUTPUT_PORT_TYPE
+output[1] <= counter[1].DB_MAX_OUTPUT_PORT_TYPE
+output[2] <= counter[2].DB_MAX_OUTPUT_PORT_TYPE
+output[3] <= counter[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|cont_75|cont4:counter_bit_3_downto_0
+clk => counter[0].CLK
+clk => counter[1].CLK
+clk => counter[2].CLK
+clk => counter[3].CLK
+en => counter[3].ENA
+en => counter[2].ENA
+en => counter[1].ENA
+en => counter[0].ENA
+rst => count.IN0
+clr => count.IN1
+output[0] <= counter[0].DB_MAX_OUTPUT_PORT_TYPE
+output[1] <= counter[1].DB_MAX_OUTPUT_PORT_TYPE
+output[2] <= counter[2].DB_MAX_OUTPUT_PORT_TYPE
+output[3] <= counter[3].DB_MAX_OUTPUT_PORT_TYPE
+
+

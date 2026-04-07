@@ -1,0 +1,85 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow Model Setup 'clk'
+Slack : -0.424
+TNS   : -0.472
+
+Type  : Slow Model Setup 'cont4:counter_bit_3_downto_0|counter[3]'
+Slack : -0.044
+TNS   : -0.044
+
+Type  : Slow Model Hold 'clk'
+Slack : -2.552
+TNS   : -2.552
+
+Type  : Slow Model Hold 'cont4:counter_bit_3_downto_0|counter[3]'
+Slack : 0.391
+TNS   : 0.000
+
+Type  : Slow Model Recovery 'clk'
+Slack : -2.212
+TNS   : -8.848
+
+Type  : Slow Model Recovery 'cont4:counter_bit_3_downto_0|counter[3]'
+Slack : -1.914
+TNS   : -5.742
+
+Type  : Slow Model Removal 'clk'
+Slack : -0.466
+TNS   : -1.864
+
+Type  : Slow Model Removal 'cont4:counter_bit_3_downto_0|counter[3]'
+Slack : -0.420
+TNS   : -1.260
+
+Type  : Slow Model Minimum Pulse Width 'clk'
+Slack : -1.380
+TNS   : -5.380
+
+Type  : Slow Model Minimum Pulse Width 'cont4:counter_bit_3_downto_0|counter[3]'
+Slack : -0.500
+TNS   : -3.000
+
+Type  : Fast Model Setup 'clk'
+Slack : 0.335
+TNS   : 0.000
+
+Type  : Fast Model Setup 'cont4:counter_bit_3_downto_0|counter[3]'
+Slack : 0.515
+TNS   : 0.000
+
+Type  : Fast Model Hold 'clk'
+Slack : -1.591
+TNS   : -1.591
+
+Type  : Fast Model Hold 'cont4:counter_bit_3_downto_0|counter[3]'
+Slack : 0.215
+TNS   : 0.000
+
+Type  : Fast Model Recovery 'cont4:counter_bit_3_downto_0|counter[3]'
+Slack : -0.796
+TNS   : -2.388
+
+Type  : Fast Model Recovery 'clk'
+Slack : -0.753
+TNS   : -3.012
+
+Type  : Fast Model Removal 'clk'
+Slack : -0.608
+TNS   : -2.432
+
+Type  : Fast Model Removal 'cont4:counter_bit_3_downto_0|counter[3]'
+Slack : -0.499
+TNS   : -1.497
+
+Type  : Fast Model Minimum Pulse Width 'clk'
+Slack : -1.380
+TNS   : -5.380
+
+Type  : Fast Model Minimum Pulse Width 'cont4:counter_bit_3_downto_0|counter[3]'
+Slack : -0.500
+TNS   : -3.000
+
+------------------------------------------------------------
