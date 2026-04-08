@@ -1,5 +1,9 @@
 |cont_75
 clk => cont4:counter_bit_3_downto_0.clk
+clk => counter_prev[0].CLK
+clk => counter_prev[1].CLK
+clk => counter_prev[2].CLK
+clk => counter_prev[3].CLK
 en => cont4:counter_bit_8_downto_4.en
 en => cont4:counter_bit_3_downto_0.en
 rst => cont4:counter_bit_8_downto_4.rst

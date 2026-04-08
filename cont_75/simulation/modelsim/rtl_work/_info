@@ -2,23 +2,23 @@ m255
 K3
 13
 cModel Technology
-Z0 d/home/lillo/Documents/Quartus/cont_75/simulation/modelsim
+Z0 dC:\Users\Lillo\Desktop\Logica-Reconfiguravel\cont_75\simulation\modelsim
 Econt4
-Z1 w1775421633
+Z1 w1775594819
 Z2 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
 Z3 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
 Z4 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
-Z5 d/home/lillo/Documents/Quartus/cont_75/simulation/modelsim
-Z6 8/home/lillo/Documents/Quartus/cont_75/cont4.vhd
-Z7 F/home/lillo/Documents/Quartus/cont_75/cont4.vhd
+Z5 dC:\Users\Lillo\Desktop\Logica-Reconfiguravel\cont_75\simulation\modelsim
+Z6 8C:/Users/Lillo/Desktop/Logica-Reconfiguravel/cont_75/cont4.vhd
+Z7 FC:/Users/Lillo/Desktop/Logica-Reconfiguravel/cont_75/cont4.vhd
 l0
 L5
 V8ozlQL]9XR14Ez?eVL3:T1
 Z8 OV;C;10.1d;51
 31
-Z9 !s108 1775437633.261360
-Z10 !s90 -reportprogress|300|-93|-work|work|/home/lillo/Documents/Quartus/cont_75/cont4.vhd|
-Z11 !s107 /home/lillo/Documents/Quartus/cont_75/cont4.vhd|
+Z9 !s108 1775605054.312000
+Z10 !s90 -reportprogress|300|-93|-work|work|C:/Users/Lillo/Desktop/Logica-Reconfiguravel/cont_75/cont4.vhd|
+Z11 !s107 C:/Users/Lillo/Desktop/Logica-Reconfiguravel/cont_75/cont4.vhd|
 Z12 o-93 -work work -O0
 Z13 tExplicit 1
 !s100 ?8P4n4Tf0_WUL;c79=Y]71
@@ -41,21 +41,21 @@ R13
 !s100 ARWUk`S`_ERYRVUdIJ@Gf3
 !i10b 1
 Econt_75
-Z14 w1775427290
+Z14 w1775604870
 R2
 R3
 R4
 R5
-Z15 8/home/lillo/Documents/Quartus/cont_75/cont_75.vhd
-Z16 F/home/lillo/Documents/Quartus/cont_75/cont_75.vhd
+Z15 8C:/Users/Lillo/Desktop/Logica-Reconfiguravel/cont_75/cont_75.vhd
+Z16 FC:/Users/Lillo/Desktop/Logica-Reconfiguravel/cont_75/cont_75.vhd
 l0
 L5
 V_K:e^4k_Wa97[TT3@EiSU2
 R8
 31
-Z17 !s108 1775437633.215415
-Z18 !s90 -reportprogress|300|-93|-work|work|/home/lillo/Documents/Quartus/cont_75/cont_75.vhd|
-Z19 !s107 /home/lillo/Documents/Quartus/cont_75/cont_75.vhd|
+Z17 !s108 1775605054.252000
+Z18 !s90 -reportprogress|300|-93|-work|work|C:/Users/Lillo/Desktop/Logica-Reconfiguravel/cont_75/cont_75.vhd|
+Z19 !s107 C:/Users/Lillo/Desktop/Logica-Reconfiguravel/cont_75/cont_75.vhd|
 R12
 R13
 !s100 ]F[6O=hKhDz:7F4>E]94D3
@@ -65,9 +65,9 @@ R2
 R3
 R4
 Z20 DEx4 work 7 cont_75 0 22 _K:e^4k_Wa97[TT3@EiSU2
-l41
+l45
 L15
-Vmn8I6TC70LIUAeJb[K?eY1
+V34>5Uoz`O]aAYabEU:X7;2
 R8
 31
 R17
@@ -75,17 +75,17 @@ R18
 R19
 R12
 R13
-!s100 o[Jk]YEi]VkGKbY:YaVHV2
+!s100 6OGH?Ubl8[e6^51L=35K_3
 !i10b 1
 Econt_75_tb
-Z21 w1775427096
+Z21 w1775599392
 R20
 R2
 R3
 R4
 R5
-Z22 8/home/lillo/Documents/Quartus/cont_75/cont_75_tb.vhd
-Z23 F/home/lillo/Documents/Quartus/cont_75/cont_75_tb.vhd
+Z22 8C:/Users/Lillo/Desktop/Logica-Reconfiguravel/cont_75/cont_75_tb.vhd
+Z23 FC:/Users/Lillo/Desktop/Logica-Reconfiguravel/cont_75/cont_75_tb.vhd
 l0
 L6
 Vj7YV>h_fEKW8;alzQj]gM1
@@ -93,9 +93,9 @@ Vj7YV>h_fEKW8;alzQj]gM1
 R8
 31
 !i10b 1
-Z24 !s108 1775437633.307058
-Z25 !s90 -reportprogress|300|-93|-work|work|/home/lillo/Documents/Quartus/cont_75/cont_75_tb.vhd|
-Z26 !s107 /home/lillo/Documents/Quartus/cont_75/cont_75_tb.vhd|
+Z24 !s108 1775605054.369000
+Z25 !s90 -reportprogress|300|-93|-work|work|C:/Users/Lillo/Desktop/Logica-Reconfiguravel/cont_75/cont_75_tb.vhd|
+Z26 !s107 C:/Users/Lillo/Desktop/Logica-Reconfiguravel/cont_75/cont_75_tb.vhd|
 R12
 R13
 Acont_75_tb_arch

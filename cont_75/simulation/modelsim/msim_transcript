@@ -1,12 +1,13 @@
+# Reading C:/altera/13.0sp1/modelsim_ase/tcl/vsim/pref.tcl 
 # do cont_75_run_msim_gate_vhdl.do 
 # if {[file exists gate_work]} {
 # 	vdel -lib gate_work -all
 # }
 # vlib gate_work
 # vmap work gate_work
-# Copying /opt/altera130/modelsim_ase/linux/../modelsim.ini to modelsim.ini
+# Copying C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
-# ** Warning: Copied /opt/altera130/modelsim_ase/linux/../modelsim.ini to modelsim.ini.
+# ** Warning: Copied C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
 #          Updated modelsim.ini.
 # 
 # vcom -93 -work work {cont_75.vho}
@@ -21,7 +22,7 @@
 # -- Compiling entity cont_75
 # -- Compiling architecture structure of cont_75
 # 
-# vcom -93 -work work {/home/lillo/Documents/Quartus/cont_75/cont_75_tb.vhd}
+# vcom -93 -work work {C:/Users/Lillo/Desktop/Logica-Reconfiguravel/cont_75/cont_75_tb.vhd}
 # Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -46,8 +47,10 @@
 # Loading cycloneii.cycloneii_atom_pack(body)
 # Loading cycloneii.cycloneii_components
 # Loading work.cont_75_tb(cont_75_tb_arch)
-# SDF 10.1d Compiler 2012.11 Nov  2 2012
 # Loading work.cont_75(structure)
+# Loading cycloneii.cycloneii_lcell_ff(vital_lcell_ff)
+# Loading cycloneii.cycloneii_and1(altvital)
+# Loading cycloneii.cycloneii_lcell_comb(vital_lcell_comb)
 # Loading ieee.std_logic_arith(body)
 # Loading cycloneii.cycloneii_io(structure)
 # Loading cycloneii.cycloneii_mux21(altvital)
@@ -55,26 +58,463 @@
 # Loading cycloneii.cycloneii_asynch_io(behave)
 # Loading cycloneii.cycloneii_clkctrl(vital_clkctrl)
 # Loading cycloneii.cycloneii_ena_reg(behave)
-# Loading cycloneii.cycloneii_lcell_comb(vital_lcell_comb)
-# Loading cycloneii.cycloneii_lcell_ff(vital_lcell_ff)
-# Loading cycloneii.cycloneii_and1(altvital)
 # Loading instances from cont_75_vhd.sdo
 # ** Error: (vsim-SDF-3250) cont_75_vhd.sdo(0): Failed to find INSTANCE '/NA'.
+# 
 # ** Error: (vsim-SDF-3894) : Errors occured in reading and resolving instances from compiled SDF file(s).
+# 
 # ** Error: (vsim-SDF-3250) cont_75_vhd.sdo(0): Failed to find INSTANCE '/NA'.
+# 
 # Error loading design
 # Error: Error loading design 
 #        Pausing macro execution 
 # MACRO ./cont_75_run_msim_gate_vhdl.do PAUSED at line 12
-vcom -reportprogress 300 -work work /home/lillo/Documents/Quartus/cont_75/cont4.vhd
+cd ..
+# reading C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini
+cd ..
+# reading modelsim.ini
+ls
+# cont4.vhd
+# cont_75.do
+# cont_75.qpf
+# cont_75.qsf
+# cont_75.vhd
+# cont_75.vhd.bak
+# cont_75_nativelink_simulation.rpt
+# cont_75_tb.vhd
+# cont_75_tb.vhd.bak
+# db
+# gate_work
+# incremental_db
+# modelsim.ini
+# output_files
+# simulation
+# vsim.wlf
+do cont_75.do
+# transcript on
+# if {[file exists simulation\modelsim\gate_work]} {
+# 	vdel -lib simulation\modelsim\gate_work -all
+# }
+# vlib gate_work
+# ** Warning: (vlib-34) Library already exists at "gate_work".
+# 
+# vmap work gate_work
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {simulation\modelsim\cont_75.vho}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package VITAL_Timing
+# -- Loading package VITAL_Primitives
+# -- Loading package cycloneii_atom_pack
+# -- Loading package cycloneii_components
+# -- Compiling entity cont_75
+# -- Compiling architecture structure of cont_75
+# 
+# vcom -93 -work work {C:/Users/Lillo/Desktop/Logica-Reconfiguravel/cont_75/cont_75_tb.vhd}
 # Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Loading package NUMERIC_STD
-# -- Compiling entity cont4
-# -- Compiling architecture cont4_arch of cont4
-vcom -reportprogress 300 -work work /home/lillo/Documents/Quartus/cont_75/cont_75.vhd
+# -- Loading package VITAL_Timing
+# -- Loading package VITAL_Primitives
+# -- Loading package cycloneii_atom_pack
+# -- Loading package cycloneii_components
+# -- Loading entity cont_75
+# -- Compiling entity cont_75_tb
+# -- Compiling architecture cont_75_tb_arch of cont_75_tb
+# 
+# vsim -t 1ps +transport_int_delays +transport_path_delays -sdftyp counter=simulation/modelsim/cont_75_vhd.sdo -L cycloneii -L gate_work -L work -voptargs="+acc"  cont_75_tb
+# vsim +transport_int_delays +transport_path_delays -L cycloneii -L gate_work -L work -voptargs=\"+acc\" -sdftyp counter=simulation/modelsim/cont_75_vhd.sdo -t 1ps cont_75_tb 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.vital_timing(body)
+# Loading ieee.vital_primitives(body)
+# Loading cycloneii.cycloneii_atom_pack(body)
+# Loading cycloneii.cycloneii_components
+# Loading work.cont_75_tb(cont_75_tb_arch)
+# Loading work.cont_75(structure)
+# Loading cycloneii.cycloneii_lcell_ff(vital_lcell_ff)
+# Loading cycloneii.cycloneii_and1(altvital)
+# Loading cycloneii.cycloneii_lcell_comb(vital_lcell_comb)
+# Loading ieee.std_logic_arith(body)
+# Loading cycloneii.cycloneii_io(structure)
+# Loading cycloneii.cycloneii_mux21(altvital)
+# Loading cycloneii.cycloneii_dffe(behave)
+# Loading cycloneii.cycloneii_asynch_io(behave)
+# Loading cycloneii.cycloneii_clkctrl(vital_clkctrl)
+# Loading cycloneii.cycloneii_ena_reg(behave)
+# Loading instances from simulation/modelsim/cont_75_vhd.sdo
+# Loading timing data from simulation/modelsim/cont_75_vhd.sdo
+# ** Note: (vsim-3587) SDF Backannotation Successfully Completed.
+#    Time: 0 ps  Iteration: 0  Instance: /cont_75_tb File: C:/Users/Lillo/Desktop/Logica-Reconfiguravel/cont_75/cont_75_tb.vhd
+# 
+# add wave *
+# add wave -position insertpoint  \
+# sim:/cont_75_tb/counter/\\counter_bit_8_downto_4|counter\\ \
+# sim:/cont_75_tb/counter/\\counter_bit_3_downto_0|counter\\
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# wave zoom range 0 1us
+# 0 ps
+# 1 us
+# configure wave -timelineunits ns
+# run 20 us
+radix signal sim:/cont_75_tb/output
+# default
+radix signal sim:/cont_75_tb/output hex
+# hexadecimal
+radix signal sim:/cont_75_tb/output unsigned
+# unsigned
+radix signal sim:/cont_75_tb/output unsigned
+# unsigned
+do cont_75.do
+# transcript on
+# if {[file exists simulation\modelsim\gate_work]} {
+# 	vdel -lib simulation\modelsim\gate_work -all
+# }
+# vlib gate_work
+# ** Warning: (vlib-34) Library already exists at "gate_work".
+# 
+# vmap work gate_work
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {simulation\modelsim\cont_75.vho}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package VITAL_Timing
+# -- Loading package VITAL_Primitives
+# -- Loading package cycloneii_atom_pack
+# -- Loading package cycloneii_components
+# -- Compiling entity cont_75
+# -- Compiling architecture structure of cont_75
+# 
+# vcom -93 -work work {C:/Users/Lillo/Desktop/Logica-Reconfiguravel/cont_75/cont_75_tb.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package VITAL_Timing
+# -- Loading package VITAL_Primitives
+# -- Loading package cycloneii_atom_pack
+# -- Loading package cycloneii_components
+# -- Loading entity cont_75
+# -- Compiling entity cont_75_tb
+# -- Compiling architecture cont_75_tb_arch of cont_75_tb
+# 
+# vsim -t 1ps +transport_int_delays +transport_path_delays -sdftyp counter=simulation/modelsim/cont_75_vhd.sdo -L cycloneii -L gate_work -L work -voptargs="+acc"  cont_75_tb
+# vsim +transport_int_delays +transport_path_delays -L cycloneii -L gate_work -L work -voptargs=\"+acc\" -sdftyp counter=simulation/modelsim/cont_75_vhd.sdo -t 1ps cont_75_tb 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.vital_timing(body)
+# Loading ieee.vital_primitives(body)
+# Loading cycloneii.cycloneii_atom_pack(body)
+# Loading cycloneii.cycloneii_components
+# Loading work.cont_75_tb(cont_75_tb_arch)
+# Loading work.cont_75(structure)
+# Loading cycloneii.cycloneii_lcell_ff(vital_lcell_ff)
+# Loading cycloneii.cycloneii_and1(altvital)
+# Loading cycloneii.cycloneii_lcell_comb(vital_lcell_comb)
+# Loading ieee.std_logic_arith(body)
+# Loading cycloneii.cycloneii_io(structure)
+# Loading cycloneii.cycloneii_mux21(altvital)
+# Loading cycloneii.cycloneii_dffe(behave)
+# Loading cycloneii.cycloneii_asynch_io(behave)
+# Loading cycloneii.cycloneii_clkctrl(vital_clkctrl)
+# Loading cycloneii.cycloneii_ena_reg(behave)
+# Loading instances from simulation/modelsim/cont_75_vhd.sdo
+# Loading timing data from simulation/modelsim/cont_75_vhd.sdo
+# ** Note: (vsim-3587) SDF Backannotation Successfully Completed.
+#    Time: 0 ps  Iteration: 0  Instance: /cont_75_tb File: C:/Users/Lillo/Desktop/Logica-Reconfiguravel/cont_75/cont_75_tb.vhd
+# 
+# add wave *
+# 
+# add wave -position insertpoint  \
+# sim:/cont_75_tb/counter/\\counter_bit_8_downto_4|counter\\ \
+# sim:/cont_75_tb/counter/\\counter_bit_3_downto_0|counter\\
+# radix signal sim:/cont_75_tb/output unsigned
+# unsigned
+# 
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# wave zoom range 0 1us
+# 0 ps
+# 1 us
+# configure wave -timelineunits ns
+# run 20 us
+do cont_75.do
+# transcript on
+# if {[file exists simulation\modelsim\gate_work]} {
+# 	vdel -lib simulation\modelsim\gate_work -all
+# }
+# vlib gate_work
+# ** Warning: (vlib-34) Library already exists at "gate_work".
+# 
+# vmap work gate_work
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {simulation\modelsim\cont_75.vho}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package VITAL_Timing
+# -- Loading package VITAL_Primitives
+# -- Loading package cycloneii_atom_pack
+# -- Loading package cycloneii_components
+# -- Compiling entity cont_75
+# -- Compiling architecture structure of cont_75
+# 
+# vcom -93 -work work {C:/Users/Lillo/Desktop/Logica-Reconfiguravel/cont_75/cont_75_tb.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package VITAL_Timing
+# -- Loading package VITAL_Primitives
+# -- Loading package cycloneii_atom_pack
+# -- Loading package cycloneii_components
+# -- Loading entity cont_75
+# -- Compiling entity cont_75_tb
+# -- Compiling architecture cont_75_tb_arch of cont_75_tb
+# 
+# vsim -t 1ps +transport_int_delays +transport_path_delays -sdftyp counter=simulation/modelsim/cont_75_vhd.sdo -L cycloneii -L gate_work -L work -voptargs="+acc"  cont_75_tb
+# vsim +transport_int_delays +transport_path_delays -L cycloneii -L gate_work -L work -voptargs=\"+acc\" -sdftyp counter=simulation/modelsim/cont_75_vhd.sdo -t 1ps cont_75_tb 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.vital_timing(body)
+# Loading ieee.vital_primitives(body)
+# Loading cycloneii.cycloneii_atom_pack(body)
+# Loading cycloneii.cycloneii_components
+# Loading work.cont_75_tb(cont_75_tb_arch)
+# Loading work.cont_75(structure)
+# Loading cycloneii.cycloneii_lcell_ff(vital_lcell_ff)
+# Loading cycloneii.cycloneii_and1(altvital)
+# Loading cycloneii.cycloneii_lcell_comb(vital_lcell_comb)
+# Loading ieee.std_logic_arith(body)
+# Loading cycloneii.cycloneii_io(structure)
+# Loading cycloneii.cycloneii_mux21(altvital)
+# Loading cycloneii.cycloneii_dffe(behave)
+# Loading cycloneii.cycloneii_asynch_io(behave)
+# Loading cycloneii.cycloneii_clkctrl(vital_clkctrl)
+# Loading cycloneii.cycloneii_ena_reg(behave)
+# Loading instances from simulation/modelsim/cont_75_vhd.sdo
+# Loading timing data from simulation/modelsim/cont_75_vhd.sdo
+# ** Note: (vsim-3587) SDF Backannotation Successfully Completed.
+#    Time: 0 ps  Iteration: 0  Instance: /cont_75_tb File: C:/Users/Lillo/Desktop/Logica-Reconfiguravel/cont_75/cont_75_tb.vhd
+# 
+# add wave *
+# 
+# add wave -position insertpoint  -radix hex \
+# sim:/cont_75_tb/counter/\\counter_bit_8_downto_4|counter\\ \
+# sim:/cont_75_tb/counter/\\counter_bit_3_downto_0|counter\\
+# radix signal sim:/cont_75_tb/output unsigned
+# unsigned
+# 
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# wave zoom range 0 1us
+# 0 ps
+# 1 us
+# configure wave -timelineunits ns
+# run 20 us
+do cont_75.do
+# transcript on
+# if {[file exists simulation\modelsim\gate_work]} {
+# 	vdel -lib simulation\modelsim\gate_work -all
+# }
+# vlib gate_work
+# ** Warning: (vlib-34) Library already exists at "gate_work".
+# 
+# vmap work gate_work
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {simulation\modelsim\cont_75.vho}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package VITAL_Timing
+# -- Loading package VITAL_Primitives
+# -- Loading package cycloneii_atom_pack
+# -- Loading package cycloneii_components
+# -- Compiling entity cont_75
+# -- Compiling architecture structure of cont_75
+# 
+# vcom -93 -work work {C:/Users/Lillo/Desktop/Logica-Reconfiguravel/cont_75/cont_75_tb.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package VITAL_Timing
+# -- Loading package VITAL_Primitives
+# -- Loading package cycloneii_atom_pack
+# -- Loading package cycloneii_components
+# -- Loading entity cont_75
+# -- Compiling entity cont_75_tb
+# -- Compiling architecture cont_75_tb_arch of cont_75_tb
+# 
+# vsim -t 1ps +transport_int_delays +transport_path_delays -sdftyp counter=simulation/modelsim/cont_75_vhd.sdo -L cycloneii -L gate_work -L work -voptargs="+acc"  cont_75_tb
+# vsim +transport_int_delays +transport_path_delays -L cycloneii -L gate_work -L work -voptargs=\"+acc\" -sdftyp counter=simulation/modelsim/cont_75_vhd.sdo -t 1ps cont_75_tb 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.vital_timing(body)
+# Loading ieee.vital_primitives(body)
+# Loading cycloneii.cycloneii_atom_pack(body)
+# Loading cycloneii.cycloneii_components
+# Loading work.cont_75_tb(cont_75_tb_arch)
+# Loading work.cont_75(structure)
+# Loading cycloneii.cycloneii_lcell_ff(vital_lcell_ff)
+# Loading cycloneii.cycloneii_and1(altvital)
+# Loading cycloneii.cycloneii_lcell_comb(vital_lcell_comb)
+# Loading ieee.std_logic_arith(body)
+# Loading cycloneii.cycloneii_io(structure)
+# Loading cycloneii.cycloneii_mux21(altvital)
+# Loading cycloneii.cycloneii_dffe(behave)
+# Loading cycloneii.cycloneii_asynch_io(behave)
+# Loading cycloneii.cycloneii_clkctrl(vital_clkctrl)
+# Loading cycloneii.cycloneii_ena_reg(behave)
+# Loading instances from simulation/modelsim/cont_75_vhd.sdo
+# Loading timing data from simulation/modelsim/cont_75_vhd.sdo
+# ** Note: (vsim-3587) SDF Backannotation Successfully Completed.
+#    Time: 0 ps  Iteration: 0  Instance: /cont_75_tb File: C:/Users/Lillo/Desktop/Logica-Reconfiguravel/cont_75/cont_75_tb.vhd
+# 
+# add wave *
+# 
+# add wave -position insertpoint -radix hex \
+# sim:/cont_75_tb/counter/\\counter_bit_3_downto_0|counter\\
+# 
+# add wave -position insertpoint \
+# sim:/cont_75_tb/counter/\\counter_bit_8_downto_4|counter\\ \
+# 
+# radix signal sim:/cont_75_tb/output unsigned
+# unsigned
+# 
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# wave zoom range 0 1us
+# 0 ps
+# 1 us
+# configure wave -timelineunits ns
+# run 20 us
+do cont_75.do
+# transcript on
+# if {[file exists simulation\modelsim\gate_work]} {
+# 	vdel -lib simulation\modelsim\gate_work -all
+# }
+# vlib gate_work
+# ** Warning: (vlib-34) Library already exists at "gate_work".
+# 
+# vmap work gate_work
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {simulation\modelsim\cont_75.vho}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package VITAL_Timing
+# -- Loading package VITAL_Primitives
+# -- Loading package cycloneii_atom_pack
+# -- Loading package cycloneii_components
+# -- Compiling entity cont_75
+# -- Compiling architecture structure of cont_75
+# 
+# vcom -93 -work work {C:/Users/Lillo/Desktop/Logica-Reconfiguravel/cont_75/cont_75_tb.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package VITAL_Timing
+# -- Loading package VITAL_Primitives
+# -- Loading package cycloneii_atom_pack
+# -- Loading package cycloneii_components
+# -- Loading entity cont_75
+# -- Compiling entity cont_75_tb
+# -- Compiling architecture cont_75_tb_arch of cont_75_tb
+# 
+# vsim -t 1ps +transport_int_delays +transport_path_delays -sdftyp counter=simulation/modelsim/cont_75_vhd.sdo -L cycloneii -L gate_work -L work -voptargs="+acc"  cont_75_tb
+# vsim +transport_int_delays +transport_path_delays -L cycloneii -L gate_work -L work -voptargs=\"+acc\" -sdftyp counter=simulation/modelsim/cont_75_vhd.sdo -t 1ps cont_75_tb 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.vital_timing(body)
+# Loading ieee.vital_primitives(body)
+# Loading cycloneii.cycloneii_atom_pack(body)
+# Loading cycloneii.cycloneii_components
+# Loading work.cont_75_tb(cont_75_tb_arch)
+# Loading work.cont_75(structure)
+# Loading cycloneii.cycloneii_lcell_ff(vital_lcell_ff)
+# Loading cycloneii.cycloneii_and1(altvital)
+# Loading cycloneii.cycloneii_lcell_comb(vital_lcell_comb)
+# Loading ieee.std_logic_arith(body)
+# Loading cycloneii.cycloneii_io(structure)
+# Loading cycloneii.cycloneii_mux21(altvital)
+# Loading cycloneii.cycloneii_dffe(behave)
+# Loading cycloneii.cycloneii_asynch_io(behave)
+# Loading cycloneii.cycloneii_clkctrl(vital_clkctrl)
+# Loading cycloneii.cycloneii_ena_reg(behave)
+# Loading instances from simulation/modelsim/cont_75_vhd.sdo
+# Loading timing data from simulation/modelsim/cont_75_vhd.sdo
+# ** Note: (vsim-3587) SDF Backannotation Successfully Completed.
+#    Time: 0 ps  Iteration: 0  Instance: /cont_75_tb File: C:/Users/Lillo/Desktop/Logica-Reconfiguravel/cont_75/cont_75_tb.vhd
+# 
+# add wave *
+# 
+# add wave -position insertpoint \
+# sim:/cont_75_tb/counter/\\counter_bit_8_downto_4|counter\\ \
+# 
+# add wave -position insertpoint -radix hex \
+# sim:/cont_75_tb/counter/\\counter_bit_3_downto_0|counter\\
+# 
+# radix signal sim:/cont_75_tb/output unsigned
+# unsigned
+# 
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# wave zoom range 0 1us
+# 0 ps
+# 1 us
+# configure wave -timelineunits ns
+# run 20 us
+do rtl.do
+# transcript on
+# if {[file exists simulation\modelsim\rtl_work]} {
+# 	vdel -lib simulation\modelsim\rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {C:/Users/Lillo/Desktop/Logica-Reconfiguravel/cont_75/cont_75.vhd}
 # Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -82,7 +522,16 @@ vcom -reportprogress 300 -work work /home/lillo/Documents/Quartus/cont_75/cont_7
 # -- Loading package NUMERIC_STD
 # -- Compiling entity cont_75
 # -- Compiling architecture cont_75_arch of cont_75
-vcom -reportprogress 300 -work work /home/lillo/Documents/Quartus/cont_75/cont_75_tb.vhd
+# vcom -93 -work work {C:/Users/Lillo/Desktop/Logica-Reconfiguravel/cont_75/cont4.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity cont4
+# -- Compiling architecture cont4_arch of cont4
+# 
+# vcom -93 -work work {C:/Users/Lillo/Desktop/Logica-Reconfiguravel/cont_75/cont_75_tb.vhd}
 # Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -91,8 +540,9 @@ vcom -reportprogress 300 -work work /home/lillo/Documents/Quartus/cont_75/cont_7
 # -- Loading entity cont_75
 # -- Compiling entity cont_75_tb
 # -- Compiling architecture cont_75_tb_arch of cont_75_tb
-vsim -voptargs=+acc work.cont_75_tb
-# vsim -voptargs=+acc work.cont_75_tb 
+# 
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cycloneii -L rtl_work -L work -voptargs="+acc"  cont_75_tb
+# vsim -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cycloneii -L rtl_work -L work -voptargs=\"+acc\" -t 1ps cont_75_tb 
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -100,12 +550,315 @@ vsim -voptargs=+acc work.cont_75_tb
 # Loading work.cont_75_tb(cont_75_tb_arch)
 # Loading work.cont_75(cont_75_arch)
 # Loading work.cont4(cont4_arch)
-add wave -position insertpoint  \
-sim:/cont_75_tb/counter/clk \
-sim:/cont_75_tb/counter/rst \
-sim:/cont_75_tb/counter/output \
-sim:/cont_75_tb/counter/counter \
-sim:/cont_75_tb/counter/clear_counters
-run 1 ms
-# ** Warning: (vish-3116) Problem reading symbols from linux-gate.so.1.
-# No such file or directory. (errno = ENOENT)
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# wave zoom range 0 1us
+# 0 ps
+# 1 us
+# configure wave -timelineunits ns
+# run 20 us
+do rtl.do
+# transcript on
+# if {[file exists simulation\modelsim\rtl_work]} {
+# 	vdel -lib simulation\modelsim\rtl_work -all
+# }
+# vlib rtl_work
+# ** Warning: (vlib-34) Library already exists at "rtl_work".
+# 
+# vmap work rtl_work
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {C:/Users/Lillo/Desktop/Logica-Reconfiguravel/cont_75/cont_75.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity cont_75
+# -- Compiling architecture cont_75_arch of cont_75
+# vcom -93 -work work {C:/Users/Lillo/Desktop/Logica-Reconfiguravel/cont_75/cont4.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity cont4
+# -- Compiling architecture cont4_arch of cont4
+# 
+# vcom -93 -work work {C:/Users/Lillo/Desktop/Logica-Reconfiguravel/cont_75/cont_75_tb.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading entity cont_75
+# -- Compiling entity cont_75_tb
+# -- Compiling architecture cont_75_tb_arch of cont_75_tb
+# 
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cycloneii -L rtl_work -L work -voptargs="+acc"  cont_75_tb
+# vsim -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cycloneii -L rtl_work -L work -voptargs=\"+acc\" -t 1ps cont_75_tb 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.cont_75_tb(cont_75_tb_arch)
+# Loading work.cont_75(cont_75_arch)
+# Loading work.cont4(cont4_arch)
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# wave zoom range 0 1us
+# 0 ps
+# 1 us
+# configure wave -timelineunits ns
+# run 20 us
+restart
+run 10 ms
+run 100 ms
+do gate_level.do
+# transcript on
+# if {[file exists simulation\modelsim\gate_work]} {
+# 	vdel -lib simulation\modelsim\gate_work -all
+# }
+# vlib gate_work
+# ** Warning: (vlib-34) Library already exists at "gate_work".
+# 
+# vmap work gate_work
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {simulation\modelsim\cont_75.vho}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package VITAL_Timing
+# -- Loading package VITAL_Primitives
+# -- Loading package cycloneii_atom_pack
+# -- Loading package cycloneii_components
+# -- Compiling entity cont_75
+# -- Compiling architecture structure of cont_75
+# 
+# vcom -93 -work work {C:/Users/Lillo/Desktop/Logica-Reconfiguravel/cont_75/cont_75_tb.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package VITAL_Timing
+# -- Loading package VITAL_Primitives
+# -- Loading package cycloneii_atom_pack
+# -- Loading package cycloneii_components
+# -- Loading entity cont_75
+# -- Compiling entity cont_75_tb
+# -- Compiling architecture cont_75_tb_arch of cont_75_tb
+# 
+# vsim -t 1ps +transport_int_delays +transport_path_delays -sdftyp counter=simulation/modelsim/cont_75_vhd.sdo -L cycloneii -L gate_work -L work -voptargs="+acc"  cont_75_tb
+# vsim +transport_int_delays +transport_path_delays -L cycloneii -L gate_work -L work -voptargs=\"+acc\" -sdftyp counter=simulation/modelsim/cont_75_vhd.sdo -t 1ps cont_75_tb 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.vital_timing(body)
+# Loading ieee.vital_primitives(body)
+# Loading cycloneii.cycloneii_atom_pack(body)
+# Loading cycloneii.cycloneii_components
+# Loading work.cont_75_tb(cont_75_tb_arch)
+# Loading work.cont_75(structure)
+# Loading cycloneii.cycloneii_lcell_ff(vital_lcell_ff)
+# Loading cycloneii.cycloneii_and1(altvital)
+# Loading cycloneii.cycloneii_lcell_comb(vital_lcell_comb)
+# Loading ieee.std_logic_arith(body)
+# Loading cycloneii.cycloneii_io(structure)
+# Loading cycloneii.cycloneii_mux21(altvital)
+# Loading cycloneii.cycloneii_dffe(behave)
+# Loading cycloneii.cycloneii_asynch_io(behave)
+# Loading cycloneii.cycloneii_clkctrl(vital_clkctrl)
+# Loading cycloneii.cycloneii_ena_reg(behave)
+# Loading instances from simulation/modelsim/cont_75_vhd.sdo
+# Loading timing data from simulation/modelsim/cont_75_vhd.sdo
+# ** Note: (vsim-3587) SDF Backannotation Successfully Completed.
+#    Time: 0 ps  Iteration: 0  Instance: /cont_75_tb File: C:/Users/Lillo/Desktop/Logica-Reconfiguravel/cont_75/cont_75_tb.vhd
+# 
+# add wave *
+# 
+# add wave -position insertpoint \
+# sim:/cont_75_tb/counter/\\counter_bit_8_downto_4|counter\\ \
+# 
+# add wave -position insertpoint -radix hex \
+# sim:/cont_75_tb/counter/\\counter_bit_3_downto_0|counter\\
+# 
+# radix signal sim:/cont_75_tb/output unsigned
+# unsigned
+# 
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# wave zoom range 0 1us
+# 0 ps
+# 1 us
+# configure wave -timelineunits ns
+# run 20 us
+restart
+# Loading instances from simulation/modelsim/cont_75_vhd.sdo
+# Loading timing data from simulation/modelsim/cont_75_vhd.sdo
+# ** Note: (vsim-3587) SDF Backannotation Successfully Completed.
+#    Time: 0 ps  Iteration: 0  Instance: /cont_75_tb File: C:/Users/Lillo/Desktop/Logica-Reconfiguravel/cont_75/cont_75_tb.vhd
+run 10 ms
+run 10 ms
+restart
+# Loading instances from simulation/modelsim/cont_75_vhd.sdo
+# Loading timing data from simulation/modelsim/cont_75_vhd.sdo
+# ** Note: (vsim-3587) SDF Backannotation Successfully Completed.
+#    Time: 0 ps  Iteration: 0  Instance: /cont_75_tb File: C:/Users/Lillo/Desktop/Logica-Reconfiguravel/cont_75/cont_75_tb.vhd
+run 10 ms
+do rtl.do
+# transcript on
+# if {[file exists simulation\modelsim\rtl_work]} {
+# 	vdel -lib simulation\modelsim\rtl_work -all
+# }
+# vlib rtl_work
+# ** Warning: (vlib-34) Library already exists at "rtl_work".
+# 
+# vmap work rtl_work
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {C:/Users/Lillo/Desktop/Logica-Reconfiguravel/cont_75/cont_75.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity cont_75
+# -- Compiling architecture cont_75_arch of cont_75
+# vcom -93 -work work {C:/Users/Lillo/Desktop/Logica-Reconfiguravel/cont_75/cont4.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity cont4
+# -- Compiling architecture cont4_arch of cont4
+# 
+# vcom -93 -work work {C:/Users/Lillo/Desktop/Logica-Reconfiguravel/cont_75/cont_75_tb.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading entity cont_75
+# -- Compiling entity cont_75_tb
+# -- Compiling architecture cont_75_tb_arch of cont_75_tb
+# 
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cycloneii -L rtl_work -L work -voptargs="+acc"  cont_75_tb
+# vsim -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cycloneii -L rtl_work -L work -voptargs=\"+acc\" -t 1ps cont_75_tb 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.cont_75_tb(cont_75_tb_arch)
+# Loading work.cont_75(cont_75_arch)
+# Loading work.cont4(cont4_arch)
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# wave zoom range 0 1us
+# 0 ps
+# 1 us
+# configure wave -timelineunits ns
+# run 20 us
+run 10 ms
+do gate_level.do
+# transcript on
+# if {[file exists simulation\modelsim\gate_work]} {
+# 	vdel -lib simulation\modelsim\gate_work -all
+# }
+# vlib gate_work
+# ** Warning: (vlib-34) Library already exists at "gate_work".
+# 
+# vmap work gate_work
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {simulation\modelsim\cont_75.vho}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package VITAL_Timing
+# -- Loading package VITAL_Primitives
+# -- Loading package cycloneii_atom_pack
+# -- Loading package cycloneii_components
+# -- Compiling entity cont_75
+# -- Compiling architecture structure of cont_75
+# 
+# vcom -93 -work work {C:/Users/Lillo/Desktop/Logica-Reconfiguravel/cont_75/cont_75_tb.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package VITAL_Timing
+# -- Loading package VITAL_Primitives
+# -- Loading package cycloneii_atom_pack
+# -- Loading package cycloneii_components
+# -- Loading entity cont_75
+# -- Compiling entity cont_75_tb
+# -- Compiling architecture cont_75_tb_arch of cont_75_tb
+# 
+# vsim -t 1ps +transport_int_delays +transport_path_delays -sdftyp counter=simulation/modelsim/cont_75_vhd.sdo -L cycloneii -L gate_work -L work -voptargs="+acc"  cont_75_tb
+# vsim +transport_int_delays +transport_path_delays -L cycloneii -L gate_work -L work -voptargs=\"+acc\" -sdftyp counter=simulation/modelsim/cont_75_vhd.sdo -t 1ps cont_75_tb 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.vital_timing(body)
+# Loading ieee.vital_primitives(body)
+# Loading cycloneii.cycloneii_atom_pack(body)
+# Loading cycloneii.cycloneii_components
+# Loading work.cont_75_tb(cont_75_tb_arch)
+# Loading work.cont_75(structure)
+# Loading cycloneii.cycloneii_lcell_ff(vital_lcell_ff)
+# Loading cycloneii.cycloneii_and1(altvital)
+# Loading cycloneii.cycloneii_lcell_comb(vital_lcell_comb)
+# Loading ieee.std_logic_arith(body)
+# Loading cycloneii.cycloneii_io(structure)
+# Loading cycloneii.cycloneii_mux21(altvital)
+# Loading cycloneii.cycloneii_dffe(behave)
+# Loading cycloneii.cycloneii_asynch_io(behave)
+# Loading cycloneii.cycloneii_clkctrl(vital_clkctrl)
+# Loading cycloneii.cycloneii_ena_reg(behave)
+# Loading instances from simulation/modelsim/cont_75_vhd.sdo
+# Loading timing data from simulation/modelsim/cont_75_vhd.sdo
+# ** Note: (vsim-3587) SDF Backannotation Successfully Completed.
+#    Time: 0 ps  Iteration: 0  Instance: /cont_75_tb File: C:/Users/Lillo/Desktop/Logica-Reconfiguravel/cont_75/cont_75_tb.vhd
+# 
+# add wave *
+# 
+# add wave -position insertpoint \
+# sim:/cont_75_tb/counter/\\counter_bit_8_downto_4|counter\\ \
+# 
+# add wave -position insertpoint -radix hex \
+# sim:/cont_75_tb/counter/\\counter_bit_3_downto_0|counter\\
+# 
+# radix signal sim:/cont_75_tb/output unsigned
+# unsigned
+# 
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# wave zoom range 0 1us
+# 0 ps
+# 1 us
+# configure wave -timelineunits ns
+# run 20 us

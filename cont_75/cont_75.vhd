@@ -29,6 +29,8 @@ architecture cont_75_arch of cont_75 is
   signal cont_not_bit_3 : std_logic;
 
   signal counter_sum : unsigned(6 downto 0);
+  
+  signal counter_prev : std_logic_vector(3 downto 0);
 
   component cont4 is
     port (
@@ -42,7 +44,14 @@ architecture cont_75_arch of cont_75 is
 
 begin
 
-  cont_not_bit_3 <= not cont_3_downto_0 (3);
+  cont_not_bit_3 <=  '1' when cont_3_downto_0 = x"0" and counter_prev = x"F" else '0';
+  
+  previous_lsc : process (cont_3_downto_0, clk)
+	begin
+		 if (clk'EVENT and clk = '1') then
+			  counter_prev <= cont_3_downto_0;
+		 end if;
+	end process previous_lsc;
 
   counter_bit_8_downto_4 : component cont4
     port map (
@@ -66,7 +75,7 @@ begin
 
   counter (6 downto 0) <= cont_5_downto_4 & cont_3_downto_0;
 
-  counter_hit_limit <= '1' when x"4B" = ('0' & counter (6 downto 0)) else
+  counter_hit_limit <= '1' when counter (6 downto 0) = "1001011" and counter_prev = "1010" else
                        '0';
 
   clear_counters <= clr or counter_hit_limit;
