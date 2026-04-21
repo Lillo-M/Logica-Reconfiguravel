@@ -1,0 +1,54 @@
+# Reading C:/altera/13.0sp1/modelsim_ase/tcl/vsim/pref.tcl 
+# do totalizadores_run_msim_rtl_vhdl.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vcom -93 -work work {C:/Users/Lillo/Desktop/logica_reconfiguravel/entrega_4/totalizadores_B.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity totalizadores_B
+# -- Compiling architecture totalizadores_B_arch of totalizadores_B
+# 
+vcom -reportprogress 300 -work work C:/Users/Lillo/Desktop/logica_reconfiguravel/entrega_4/totalizadores_tb.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity totalizadores_tb
+# -- Compiling architecture totalizadores_tb_arch of totalizadores_tb
+vsim -voptargs=+acc work.totalizadores_tb
+# vsim -voptargs=+acc work.totalizadores_tb 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.totalizadores_tb(totalizadores_tb_arch)
+# ** Warning: (vsim-3473) Component instance "tot_A : totalizadores_A" is not bound.
+#    Time: 0 ps  Iteration: 0  Instance: /totalizadores_tb File: C:/Users/Lillo/Desktop/logica_reconfiguravel/entrega_4/totalizadores_tb.vhd
+# Loading work.totalizadores_b(totalizadores_b_arch)
+# ** Warning: (vsim-8683) Uninitialized out port /totalizadores_tb/tots_B/tot7(2 downto 0) has no driver.
+# 
+# This port will contribute value (UUU) to the signal network.
+# 
+add wave -position insertpoint  \
+sim:/totalizadores_tb/tots_B/tot4 \
+sim:/totalizadores_tb/tots_B/tot3 \
+sim:/totalizadores_tb/tots_B/tot2 \
+sim:/totalizadores_tb/tots_B/tot1 \
+sim:/totalizadores_tb/tots_B/rst \
+sim:/totalizadores_tb/tots_B/input \
+sim:/totalizadores_tb/tots_B/en \
+sim:/totalizadores_tb/tots_B/clr \
+sim:/totalizadores_tb/tots_B/clk
+run 200 ns

@@ -1,0 +1,79 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\Lillo\Desktop\logica_reconfiguravel\entrega_4\simulation\modelsim
+Etotalizadores_b
+Z1 w1776811753
+Z2 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
+Z3 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z4 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z5 dC:\Users\Lillo\Desktop\logica_reconfiguravel\entrega_4\simulation\modelsim
+Z6 8C:/Users/Lillo/Desktop/logica_reconfiguravel/entrega_4/totalizadores_B.vhd
+Z7 FC:/Users/Lillo/Desktop/logica_reconfiguravel/entrega_4/totalizadores_B.vhd
+l0
+L5
+V?NGhiOA:<QM8z1bSRYDOM2
+Z8 OV;C;10.1d;51
+31
+Z9 !s108 1776811785.642000
+Z10 !s90 -reportprogress|300|-93|-work|work|C:/Users/Lillo/Desktop/logica_reconfiguravel/entrega_4/totalizadores_B.vhd|
+Z11 !s107 C:/Users/Lillo/Desktop/logica_reconfiguravel/entrega_4/totalizadores_B.vhd|
+Z12 o-93 -work work -O0
+Z13 tExplicit 1
+!s100 hEVn`A6m<hNB6IdlgR9550
+!i10b 1
+Atotalizadores_b_arch
+R2
+R3
+R4
+DEx4 work 15 totalizadores_b 0 22 ?NGhiOA:<QM8z1bSRYDOM2
+l36
+L23
+V[Dh^ckfVSL66R7kJNnWV`2
+R8
+31
+R9
+R10
+R11
+R12
+R13
+!s100 gNSYAi<cZ;RaOB0b1[Y::0
+!i10b 1
+Etotalizadores_tb
+Z14 w1776811321
+R2
+R3
+R4
+R5
+Z15 8C:/Users/Lillo/Desktop/logica_reconfiguravel/entrega_4/totalizadores_tb.vhd
+Z16 FC:/Users/Lillo/Desktop/logica_reconfiguravel/entrega_4/totalizadores_tb.vhd
+l0
+L5
+V@?JaliKb^1ceN<?Yf?>9C2
+!s100 ehNNMg;dT=4kEih1FMY[T1
+R8
+32
+!i10b 1
+Z17 !s108 1776811794.494000
+Z18 !s90 -reportprogress|300|-work|work|C:/Users/Lillo/Desktop/logica_reconfiguravel/entrega_4/totalizadores_tb.vhd|
+Z19 !s107 C:/Users/Lillo/Desktop/logica_reconfiguravel/entrega_4/totalizadores_tb.vhd|
+Z20 o-work work -O0
+R13
+Atotalizadores_tb_arch
+R2
+R3
+R4
+DEx4 work 16 totalizadores_tb 0 22 @?JaliKb^1ceN<?Yf?>9C2
+l63
+L8
+V7zXn]K^RngMPTCIS;HdI>2
+!s100 BO4b@:RcPkCSm2CG4NDSe0
+R8
+32
+!i10b 1
+R17
+R18
+R19
+R20
+R13

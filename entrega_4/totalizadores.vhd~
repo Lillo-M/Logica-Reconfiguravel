@@ -1,0 +1,45 @@
+library ieee;
+  use ieee.std_logic_1164.all;
+  use ieee.numeric_std.all;
+
+entity totalizadores is
+  port (
+    clk    : in    std_logic;
+    en     : in    std_logic;
+    rst    : in    std_logic;
+    clr    : in    std_logic;
+    input  : in   std_logic_vector(4 downto 0);
+    output : out   std_logic_vector(2 downto 0)
+    );
+end entity totalizadores;
+
+
+architecture totalizadores_arch of totalizadores is
+  signal output_intern : unsigned (2 downto 0); -- 2^3 = 8 > 5
+
+  signal output_count : unsigned (4 downto 0) := "00001";
+
+  signal output_and : unsigned (4 downto 0) := "00000";
+begin
+  output_and <= output_count and unsigned(input);
+  
+  totalizador_1 : process (clk, rst, clr) is
+  begin
+    if (rst = '1') then
+      output_intern <= (others => '0');
+      output_count <= "00001";
+    elsif (clk'event and clk = '1') then
+      if (clr = '1') then
+        output_intern <= (others => '0');
+        output_count <= "00001";
+      else
+        if (output_and /= "00000") then
+          output_intern <= output_intern + 1;
+        end if;
+        output_count <= shift_left(output_count, 1);
+      end if;
+    end if;
+  end process totalizador_1;
+
+  output <= std_logic_vector(output_intern);
+end architecture totalizadores_arch;

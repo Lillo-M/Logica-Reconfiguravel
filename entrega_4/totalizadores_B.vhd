@@ -1,0 +1,156 @@
+library ieee;
+  use ieee.std_logic_1164.all;
+  use ieee.numeric_std.all;
+
+entity totalizadores_B is
+  port (
+    clk    : in    std_logic;
+    en     : in    std_logic;
+    rst    : in    std_logic;
+    clr    : in    std_logic;
+    input  : in   std_logic_vector(4 downto 0);
+    tot1   : out   std_logic_vector(2 downto 0);
+    tot2   : out   std_logic_vector(2 downto 0);
+    tot3   : out   std_logic_vector(2 downto 0);
+    tot4   : out   std_logic_vector(2 downto 0);
+    tot5   : out   std_logic_vector(2 downto 0);
+    tot6   : out   std_logic_vector(2 downto 0);
+    tot7   : out   std_logic_vector(2 downto 0)
+    );
+end entity totalizadores_B;
+
+
+architecture totalizadores_B_arch of totalizadores_B is
+  signal tot_1 : unsigned (2 downto 0); -- 2^3 = 8 > 5
+
+  signal tot_2 : unsigned (2 downto 0);
+
+  signal tot_3 : unsigned (2 downto 0);
+
+  signal tot_4 : unsigned (2 downto 0);
+
+  signal tot_5 : unsigned (2 downto 0);
+
+  signal tot_6 : unsigned (2 downto 0);
+
+begin
+
+  tot1 <= std_logic_vector(tot_1);
+  tot2 <= std_logic_vector(tot_2);
+  tot3 <= std_logic_vector(tot_3);
+  tot4 <= std_logic_vector(tot_4);
+  tot5 <= std_logic_vector(tot_5);
+  tot6 <= std_logic_vector(tot_6);
+  
+  totalizador_1 : process (clk, rst, clr) is
+    variable tot1_sum : integer range 0 to 5;
+  begin
+    if (rst = '1') then
+      tot_1 <= (others => '0');
+      tot1_sum := 0;
+    elsif (clk'event and clk = '1') then
+      if (clr = '1') then
+        tot_1 <= (others => '0');
+        tot1_sum := 0;
+      else
+        if (tot1_sum = 0 ) then
+          for i in input'range loop
+            if (input(i) = '1') then
+              tot1_sum := tot1_sum + 1;
+            end if;
+          end loop;
+        end if;
+        tot_1 <= to_unsigned(tot1_sum, tot_1'LENGTH);
+      end if;
+    end if;
+  end process totalizador_1;
+
+  totalizador_2 : process (clk, rst, clr) is
+    variable tot2_sum : integer range 0 to 5;
+    variable i : integer range 0 to input'LENGTH;
+  begin
+    if (rst = '1') then
+      tot_2 <= (others => '0');
+      tot2_sum := 0;
+    elsif (clk'event and clk = '1') then
+      if (clr = '1') then
+        tot_2 <= (others => '0');
+        tot2_sum := 0;
+      else
+        if (tot2_sum = 0 ) then
+          i := 0;
+          while (i < input'LENGTH) loop
+            if (input(i) = '1') then
+              tot2_sum := tot2_sum + 1;
+            end if;
+            i := i + 1;
+          end loop;
+        end if;
+        tot_2 <= to_unsigned(tot2_sum, tot_2'LENGTH);
+      end if;
+    end if;
+  end process totalizador_2;
+
+  
+  totalizador_3 : process (clk, rst, clr) is
+    variable tot3_int : integer range 0 to 5;
+  begin
+    if (rst = '1') then
+      tot_3 <= (others => '0');
+    elsif (clk'event and clk = '1') then
+      tot3_int := 0;
+      if (clr = '1') then
+        tot_3 <= (others => '0');
+      else
+        if(input(0) = '1') then
+          tot3_int := tot3_int + 1;
+        end if;
+        if(input(1) = '1') then
+          tot3_int := tot3_int + 1;
+        end if;
+        if(input(2) = '1') then
+          tot3_int := tot3_int + 1;
+        end if;
+        if(input(3) = '1') then
+          tot3_int := tot3_int + 1;
+        end if;
+        if(input(4) = '1') then
+          tot3_int := tot3_int + 1;
+        end if;
+      end if;
+    end if;
+    tot_3 <= to_unsigned(tot3_int, tot_3'LENGTH);
+  end process totalizador_3;
+
+  
+  totalizador_4 : process (clk, rst, clr) is
+  begin
+    if (rst = '1') then
+      tot_4 <= (others => '0');
+    elsif (clk'event and clk = '1') then
+      if (clr = '1') then
+        tot_4 <= (others => '0');
+      else
+        case input is
+          when "00000" =>
+            tot_4 <= "000";
+          when "00001" | "00010" | "00100" | "01000" | "10000" =>
+            tot_4 <= "001";
+          when "00011" | "00101" | "00110" | "01001" | "01010" |
+            "01100" | "10001" | "10010" | "10100" | "11000" =>
+            tot_4 <= "010";
+          when "00111" | "01011" | "01101" | "01110" | "10011" |
+            "10101" | "10110" | "11001" | "11010" | "11100" =>
+            tot_4 <= "011";
+          when "01111" | "10111" | "11011" | "11101" | "11110" =>
+            tot_4 <= "100";
+          when "11111" =>
+            tot_4 <= "101";
+          when others =>
+            tot_4 <= "000";
+        end case;
+      end if;
+    end if;
+  end process totalizador_4;
+  
+end architecture totalizadores_B_arch;
