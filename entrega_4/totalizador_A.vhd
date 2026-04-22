@@ -23,7 +23,7 @@ architecture totalizador_A_arch of totalizador_A is
 begin
   output_and <= output_count and unsigned(input);
   
-  totalizador_1 : process (clk, rst, clr) is
+  totalizador_1 : process (clk, rst) is
   begin
     if (rst = '1') then
       output_intern <= (others => '0');

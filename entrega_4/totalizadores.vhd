@@ -21,10 +21,39 @@ end entity totalizadores;
 
 
 architecture totalizadores_arch of totalizadores is
+
+  component totalizador_A is
+    port (
+      clk    : in    std_logic;
+      en     : in    std_logic;
+      rst    : in    std_logic;
+      clr    : in    std_logic;
+      input  : in    std_logic_vector(4 downto 0);
+      output : out   std_logic_vector(2 downto 0)
+      );
+  end component totalizador_A;
+
+  component totalizadores_B is
+    port (
+      clk    : in    std_logic;
+      en     : in    std_logic;
+      rst    : in    std_logic;
+      clr    : in    std_logic;
+      input  : in    std_logic_vector(4 downto 0);
+      tot1   : out   std_logic_vector(2 downto 0);
+      tot2   : out   std_logic_vector(2 downto 0);
+      tot3   : out   std_logic_vector(2 downto 0);
+      tot4   : out   std_logic_vector(2 downto 0);
+      tot5   : out   std_logic_vector(2 downto 0);
+      tot6   : out   std_logic_vector(2 downto 0);
+      tot7   : out   std_logic_vector(2 downto 0)
+      );
+  end component totalizadores_B;
+
 begin
 
 
-  tot_A : component totalizadores_A
+  tots_A : component totalizador_A
     port map (
       clk    => clk,
       en     => en,

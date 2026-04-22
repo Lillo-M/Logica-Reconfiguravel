@@ -33,6 +33,17 @@ architecture totalizadores_B_arch of totalizadores_B is
 
   signal tot_6 : unsigned (2 downto 0);
 
+  signal demux_bit_0 : unsigned(2 downto 0);
+
+  signal demux_bit_1 : unsigned(2 downto 0);
+
+  signal demux_bit_2 : unsigned(2 downto 0);
+
+  signal demux_bit_3 : unsigned(2 downto 0);
+
+  signal demux_bit_4 : unsigned(2 downto 0);
+
+
 begin
 
   tot1 <= std_logic_vector(tot_1);
@@ -42,7 +53,7 @@ begin
   tot5 <= std_logic_vector(tot_5);
   tot6 <= std_logic_vector(tot_6);
   
-  totalizador_1 : process (clk, rst, clr) is
+  totalizador_1 : process (clk, rst) is
     variable tot1_sum : integer range 0 to 5;
   begin
     if (rst = '1') then
@@ -65,7 +76,7 @@ begin
     end if;
   end process totalizador_1;
 
-  totalizador_2 : process (clk, rst, clr) is
+  totalizador_2 : process (clk, rst) is
     variable tot2_sum : integer range 0 to 5;
     variable i : integer range 0 to input'LENGTH;
   begin
@@ -92,7 +103,7 @@ begin
   end process totalizador_2;
 
   
-  totalizador_3 : process (clk, rst, clr) is
+  totalizador_3 : process (clk, rst) is
     variable tot3_int : integer range 0 to 5;
   begin
     if (rst = '1') then
@@ -123,7 +134,7 @@ begin
   end process totalizador_3;
 
   
-  totalizador_4 : process (clk, rst, clr) is
+  totalizador_4 : process (clk, rst) is
   begin
     if (rst = '1') then
       tot_4 <= (others => '0');
@@ -152,5 +163,43 @@ begin
       end if;
     end if;
   end process totalizador_4;
+
+  totalizador_5 : process (clk, rst) is
+  begin
+    if (rst = '1') then
+      tot_5 <= (others => '0');
+    elsif (clk'event and clk = '1') then
+      if (clr = '1') then
+        tot_5 <= (others => '0');
+      else
+        tot_5 <= unsigned'("00" & input(0)) +
+                 unsigned'("00" & input(1)) +
+                 unsigned'("00" & input(2)) +
+                 unsigned'("00" & input(3)) +
+                 unsigned'("00" & input(4));
+      end if;
+    end if;
+  end process totalizador_5;
+
+
+  demux_bit_0 <= "001" when input(0) = '1' else "000";
+  demux_bit_1 <= "001" when input(1) = '1' else "000";
+  demux_bit_2 <= "001" when input(2) = '1' else "000";
+  demux_bit_3 <= "001" when input(3) = '1' else "000";
+  demux_bit_4 <= "001" when input(4) = '1' else "000";
+
+  totalizador_6 : process (clk, rst) is
+  begin
+    if (rst = '1') then
+      tot_6 <= (others => '0');
+    elsif (clk'event and clk = '1') then
+      if (clr = '1') then
+        tot_6 <= (others => '0');
+      else
+        tot_6 <=  demux_bit_0 + demux_bit_1 + demux_bit_2 + demux_bit_3 + demux_bit_4;
+      end if;
+    end if;
+  end process totalizador_6;
+
   
 end architecture totalizadores_B_arch;

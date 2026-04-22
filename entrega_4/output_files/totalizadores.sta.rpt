@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for totalizadores
-Tue Apr 21 19:49:25 2026
+Wed Apr 22 15:12:02 2026
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -101,13 +101,13 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
 
 
-+-----------------------------------------------------------------------------------------------------------+
-; Slow Model Fmax Summary                                                                                   ;
-+------------+-----------------+------------+---------------------------------------------------------------+
-; Fmax       ; Restricted Fmax ; Clock Name ; Note                                                          ;
-+------------+-----------------+------------+---------------------------------------------------------------+
-; 508.39 MHz ; 420.17 MHz      ; clk        ; limit due to minimum period restriction (max I/O toggle rate) ;
-+------------+-----------------+------------+---------------------------------------------------------------+
++--------------------------------------------------+
+; Slow Model Fmax Summary                          ;
++------------+-----------------+------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
++------------+-----------------+------------+------+
+; 412.03 MHz ; 412.03 MHz      ; clk        ;      ;
++------------+-----------------+------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
@@ -116,7 +116,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------+--------+---------------+
 ; Clock ; Slack  ; End Point TNS ;
 +-------+--------+---------------+
-; clk   ; -0.967 ; -6.416        ;
+; clk   ; -1.427 ; -11.218       ;
 +-------+--------+---------------+
 
 
@@ -125,7 +125,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------+-------+---------------+
 ; Clock ; Slack ; End Point TNS ;
 +-------+-------+---------------+
-; clk   ; 0.660 ; 0.000         ;
+; clk   ; 0.391 ; 0.000         ;
 +-------+-------+---------------+
 
 
@@ -146,183 +146,254 @@ No paths to report.
 +-------+--------+-----------------------+
 ; Clock ; Slack  ; End Point TNS         ;
 +-------+--------+-----------------------+
-; clk   ; -1.380 ; -19.380               ;
+; clk   ; -1.380 ; -33.380               ;
 +-------+--------+-----------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------+
-; Slow Model Setup: 'clk'                                                                                                                ;
-+--------+----------------------------+----------------------------+--------------+-------------+--------------+------------+------------+
-; Slack  ; From Node                  ; To Node                    ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+--------+----------------------------+----------------------------+--------------+-------------+--------------+------------+------------+
-; -0.967 ; \totalizador_2:tot2_sum[0] ; \totalizador_2:tot2_sum[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.003      ;
-; -0.942 ; \totalizador_1:tot1_sum[0] ; \totalizador_1:tot1_sum[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.978      ;
-; -0.938 ; \totalizador_2:tot2_sum[1] ; \totalizador_2:tot2_sum[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.974      ;
-; -0.825 ; \totalizador_1:tot1_sum[2] ; \totalizador_1:tot1_sum[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.861      ;
-; -0.754 ; \totalizador_2:tot2_sum[0] ; \totalizador_2:tot2_sum[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.790      ;
-; -0.749 ; \totalizador_1:tot1_sum[1] ; \totalizador_1:tot1_sum[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.785      ;
-; -0.745 ; \totalizador_1:tot1_sum[1] ; \totalizador_1:tot1_sum[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.781      ;
-; -0.738 ; \totalizador_1:tot1_sum[2] ; \totalizador_1:tot1_sum[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.774      ;
-; -0.699 ; \totalizador_2:tot2_sum[1] ; \totalizador_2:tot2_sum[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.735      ;
-; -0.691 ; \totalizador_1:tot1_sum[0] ; \totalizador_1:tot1_sum[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.727      ;
-; -0.688 ; \totalizador_1:tot1_sum[0] ; \totalizador_1:tot1_sum[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.724      ;
-; -0.650 ; \totalizador_2:tot2_sum[1] ; \totalizador_2:tot2_sum[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.686      ;
-; -0.597 ; \totalizador_2:tot2_sum[2] ; \totalizador_2:tot2_sum[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.633      ;
-; -0.573 ; \totalizador_1:tot1_sum[2] ; \totalizador_1:tot1_sum[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.609      ;
-; -0.554 ; \totalizador_1:tot1_sum[1] ; \totalizador_1:tot1_sum[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.590      ;
-; -0.486 ; \totalizador_2:tot2_sum[0] ; \totalizador_2:tot2_sum[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.522      ;
-; -0.431 ; \totalizador_2:tot2_sum[0] ; tot_2[0]                   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.467      ;
-; -0.426 ; \totalizador_2:tot2_sum[2] ; \totalizador_2:tot2_sum[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.462      ;
-; -0.423 ; \totalizador_2:tot2_sum[2] ; \totalizador_2:tot2_sum[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.459      ;
-; -0.405 ; \totalizador_1:tot1_sum[0] ; tot_1[0]                   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.441      ;
-; -0.402 ; \totalizador_2:tot2_sum[1] ; tot_2[0]                   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.438      ;
-; -0.288 ; \totalizador_1:tot1_sum[2] ; tot_1[0]                   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.324      ;
-; -0.247 ; \totalizador_2:tot2_sum[1] ; tot_2[1]                   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.283      ;
-; -0.223 ; \totalizador_2:tot2_sum[0] ; tot_2[2]                   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.259      ;
-; -0.208 ; \totalizador_1:tot1_sum[1] ; tot_1[0]                   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.244      ;
-; -0.207 ; \totalizador_1:tot1_sum[1] ; tot_1[1]                   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.243      ;
-; -0.196 ; \totalizador_1:tot1_sum[2] ; tot_1[1]                   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.232      ;
-; -0.194 ; \totalizador_2:tot2_sum[2] ; tot_2[1]                   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.230      ;
-; -0.168 ; \totalizador_2:tot2_sum[1] ; tot_2[2]                   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.204      ;
-; -0.150 ; \totalizador_1:tot1_sum[0] ; tot_1[2]                   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.186      ;
-; -0.146 ; \totalizador_1:tot1_sum[0] ; tot_1[1]                   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.182      ;
-; -0.083 ; \totalizador_2:tot2_sum[0] ; tot_2[1]                   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.119      ;
-; -0.032 ; \totalizador_1:tot1_sum[2] ; tot_1[2]                   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.068      ;
-; -0.013 ; \totalizador_1:tot1_sum[1] ; tot_1[2]                   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.049      ;
-; 0.108  ; \totalizador_2:tot2_sum[2] ; tot_2[2]                   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.928      ;
-; 0.110  ; \totalizador_2:tot2_sum[2] ; tot_2[0]                   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.926      ;
-+--------+----------------------------+----------------------------+--------------+-------------+--------------+------------+------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'clk'                                                                                                                                                              ;
++--------+---------------------------------------------------+---------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                         ; To Node                                           ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------------------------------+---------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -1.427 ; totalizador_A:tots_A|output_count[0]              ; totalizador_A:tots_A|output_intern[1]             ; clk          ; clk         ; 1.000        ; 0.002      ; 2.465      ;
+; -1.427 ; totalizador_A:tots_A|output_count[0]              ; totalizador_A:tots_A|output_intern[2]             ; clk          ; clk         ; 1.000        ; 0.002      ; 2.465      ;
+; -1.423 ; totalizador_A:tots_A|output_count[3]              ; totalizador_A:tots_A|output_intern[1]             ; clk          ; clk         ; 1.000        ; 0.002      ; 2.461      ;
+; -1.423 ; totalizador_A:tots_A|output_count[3]              ; totalizador_A:tots_A|output_intern[2]             ; clk          ; clk         ; 1.000        ; 0.002      ; 2.461      ;
+; -1.286 ; totalizador_A:tots_A|output_count[2]              ; totalizador_A:tots_A|output_intern[1]             ; clk          ; clk         ; 1.000        ; 0.002      ; 2.324      ;
+; -1.286 ; totalizador_A:tots_A|output_count[2]              ; totalizador_A:tots_A|output_intern[2]             ; clk          ; clk         ; 1.000        ; 0.002      ; 2.324      ;
+; -1.274 ; totalizador_A:tots_A|output_count[4]              ; totalizador_A:tots_A|output_intern[1]             ; clk          ; clk         ; 1.000        ; 0.002      ; 2.312      ;
+; -1.274 ; totalizador_A:tots_A|output_count[4]              ; totalizador_A:tots_A|output_intern[2]             ; clk          ; clk         ; 1.000        ; 0.002      ; 2.312      ;
+; -1.151 ; totalizador_A:tots_A|output_count[1]              ; totalizador_A:tots_A|output_intern[1]             ; clk          ; clk         ; 1.000        ; 0.002      ; 2.189      ;
+; -1.151 ; totalizador_A:tots_A|output_count[1]              ; totalizador_A:tots_A|output_intern[2]             ; clk          ; clk         ; 1.000        ; 0.002      ; 2.189      ;
+; -0.974 ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[0] ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.010      ;
+; -0.961 ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[0] ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.997      ;
+; -0.947 ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[0] ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.983      ;
+; -0.874 ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[2] ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.910      ;
+; -0.844 ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[1] ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.880      ;
+; -0.842 ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[1] ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.878      ;
+; -0.830 ; totalizador_A:tots_A|output_count[0]              ; totalizador_A:tots_A|output_intern[0]             ; clk          ; clk         ; 1.000        ; 0.000      ; 1.866      ;
+; -0.826 ; totalizador_A:tots_A|output_count[3]              ; totalizador_A:tots_A|output_intern[0]             ; clk          ; clk         ; 1.000        ; 0.000      ; 1.862      ;
+; -0.817 ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[2] ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.853      ;
+; -0.797 ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[0] ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.833      ;
+; -0.795 ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[2] ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.831      ;
+; -0.704 ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[2] ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.740      ;
+; -0.689 ; totalizador_A:tots_A|output_count[2]              ; totalizador_A:tots_A|output_intern[0]             ; clk          ; clk         ; 1.000        ; 0.000      ; 1.725      ;
+; -0.677 ; totalizador_A:tots_A|output_count[4]              ; totalizador_A:tots_A|output_intern[0]             ; clk          ; clk         ; 1.000        ; 0.000      ; 1.713      ;
+; -0.668 ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[1] ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.704      ;
+; -0.640 ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[0] ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.676      ;
+; -0.589 ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[1] ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.625      ;
+; -0.564 ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[0] ; totalizadores_B:tots_B|tot_1[0]                   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.600      ;
+; -0.554 ; totalizador_A:tots_A|output_count[1]              ; totalizador_A:tots_A|output_intern[0]             ; clk          ; clk         ; 1.000        ; 0.000      ; 1.590      ;
+; -0.549 ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[1] ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.585      ;
+; -0.537 ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[0] ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.573      ;
+; -0.447 ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[1] ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.483      ;
+; -0.428 ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[2] ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.464      ;
+; -0.411 ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[0] ; totalizadores_B:tots_B|tot_2[0]                   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.447      ;
+; -0.398 ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[2] ; totalizadores_B:tots_B|tot_1[0]                   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.434      ;
+; -0.309 ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[1] ; totalizadores_B:tots_B|tot_1[2]                   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.345      ;
+; -0.300 ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[2] ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.336      ;
+; -0.281 ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[2] ; totalizadores_B:tots_B|tot_2[0]                   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.317      ;
+; -0.262 ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[0] ; totalizadores_B:tots_B|tot_2[1]                   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.298      ;
+; -0.259 ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[0] ; totalizadores_B:tots_B|tot_2[2]                   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.295      ;
+; -0.212 ; totalizador_A:tots_A|output_count[1]              ; totalizador_A:tots_A|output_count[2]              ; clk          ; clk         ; 1.000        ; 0.000      ; 1.248      ;
+; -0.166 ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[2] ; totalizadores_B:tots_B|tot_1[1]                   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.202      ;
+; -0.162 ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[2] ; totalizadores_B:tots_B|tot_2[1]                   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.198      ;
+; -0.132 ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[1] ; totalizadores_B:tots_B|tot_2[0]                   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.168      ;
+; -0.132 ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[1] ; totalizadores_B:tots_B|tot_2[1]                   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.168      ;
+; -0.126 ; totalizador_A:tots_A|output_count[3]              ; totalizador_A:tots_A|output_count[4]              ; clk          ; clk         ; 1.000        ; 0.000      ; 1.162      ;
+; -0.102 ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[0] ; totalizadores_B:tots_B|tot_1[1]                   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.138      ;
+; -0.051 ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[1] ; totalizadores_B:tots_B|tot_1[1]                   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.087      ;
+; -0.050 ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[1] ; totalizadores_B:tots_B|tot_1[0]                   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.086      ;
+; -0.027 ; totalizador_A:tots_A|output_intern[1]             ; totalizador_A:tots_A|output_intern[2]             ; clk          ; clk         ; 1.000        ; 0.000      ; 1.063      ;
+; -0.011 ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[1] ; totalizadores_B:tots_B|tot_2[2]                   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.047      ;
+; -0.004 ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[0] ; totalizadores_B:tots_B|tot_1[2]                   ; clk          ; clk         ; 1.000        ; 0.000      ; 1.040      ;
+; 0.040  ; totalizador_A:tots_A|output_intern[0]             ; totalizador_A:tots_A|output_intern[1]             ; clk          ; clk         ; 1.000        ; 0.002      ; 0.998      ;
+; 0.040  ; totalizador_A:tots_A|output_intern[0]             ; totalizador_A:tots_A|output_intern[2]             ; clk          ; clk         ; 1.000        ; 0.002      ; 0.998      ;
+; 0.062  ; totalizador_A:tots_A|output_count[2]              ; totalizador_A:tots_A|output_count[3]              ; clk          ; clk         ; 1.000        ; 0.000      ; 0.974      ;
+; 0.110  ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[2] ; totalizadores_B:tots_B|tot_2[2]                   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.926      ;
+; 0.233  ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[2] ; totalizadores_B:tots_B|tot_1[2]                   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.803      ;
+; 0.242  ; totalizador_A:tots_A|output_count[0]              ; totalizador_A:tots_A|output_count[1]              ; clk          ; clk         ; 1.000        ; 0.000      ; 0.794      ;
+; 0.379  ; totalizador_A:tots_A|output_intern[0]             ; totalizador_A:tots_A|output_intern[0]             ; clk          ; clk         ; 1.000        ; 0.000      ; 0.657      ;
+; 0.379  ; totalizador_A:tots_A|output_intern[2]             ; totalizador_A:tots_A|output_intern[2]             ; clk          ; clk         ; 1.000        ; 0.000      ; 0.657      ;
+; 0.379  ; totalizador_A:tots_A|output_intern[1]             ; totalizador_A:tots_A|output_intern[1]             ; clk          ; clk         ; 1.000        ; 0.000      ; 0.657      ;
++--------+---------------------------------------------------+---------------------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------+
-; Slow Model Hold: 'clk'                                                                                                                ;
-+-------+----------------------------+----------------------------+--------------+-------------+--------------+------------+------------+
-; Slack ; From Node                  ; To Node                    ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+-------+----------------------------+----------------------------+--------------+-------------+--------------+------------+------------+
-; 0.660 ; \totalizador_2:tot2_sum[2] ; tot_2[0]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.926      ;
-; 0.662 ; \totalizador_2:tot2_sum[2] ; tot_2[2]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.928      ;
-; 0.783 ; \totalizador_1:tot1_sum[1] ; tot_1[2]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.049      ;
-; 0.802 ; \totalizador_1:tot1_sum[2] ; tot_1[2]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.068      ;
-; 0.853 ; \totalizador_2:tot2_sum[0] ; tot_2[1]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.119      ;
-; 0.913 ; \totalizador_1:tot1_sum[0] ; tot_1[0]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.179      ;
-; 0.916 ; \totalizador_1:tot1_sum[0] ; tot_1[1]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.182      ;
-; 0.920 ; \totalizador_1:tot1_sum[0] ; tot_1[2]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.186      ;
-; 0.938 ; \totalizador_2:tot2_sum[1] ; tot_2[2]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.204      ;
-; 0.964 ; \totalizador_2:tot2_sum[2] ; tot_2[1]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.230      ;
-; 0.966 ; \totalizador_1:tot1_sum[2] ; tot_1[1]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.232      ;
-; 0.977 ; \totalizador_1:tot1_sum[1] ; tot_1[1]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.243      ;
-; 0.978 ; \totalizador_1:tot1_sum[1] ; tot_1[0]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.244      ;
-; 0.991 ; \totalizador_2:tot2_sum[0] ; tot_2[0]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.257      ;
-; 0.993 ; \totalizador_2:tot2_sum[0] ; tot_2[2]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.259      ;
-; 1.017 ; \totalizador_2:tot2_sum[1] ; tot_2[1]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.283      ;
-; 1.058 ; \totalizador_1:tot1_sum[2] ; tot_1[0]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.324      ;
-; 1.172 ; \totalizador_2:tot2_sum[1] ; tot_2[0]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.438      ;
-; 1.193 ; \totalizador_2:tot2_sum[2] ; \totalizador_2:tot2_sum[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.459      ;
-; 1.196 ; \totalizador_2:tot2_sum[2] ; \totalizador_2:tot2_sum[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.462      ;
-; 1.256 ; \totalizador_2:tot2_sum[0] ; \totalizador_2:tot2_sum[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.522      ;
-; 1.324 ; \totalizador_1:tot1_sum[1] ; \totalizador_1:tot1_sum[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.590      ;
-; 1.343 ; \totalizador_1:tot1_sum[2] ; \totalizador_1:tot1_sum[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.609      ;
-; 1.367 ; \totalizador_2:tot2_sum[2] ; \totalizador_2:tot2_sum[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.633      ;
-; 1.420 ; \totalizador_2:tot2_sum[1] ; \totalizador_2:tot2_sum[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.686      ;
-; 1.450 ; \totalizador_1:tot1_sum[0] ; \totalizador_1:tot1_sum[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.716      ;
-; 1.458 ; \totalizador_1:tot1_sum[0] ; \totalizador_1:tot1_sum[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.724      ;
-; 1.461 ; \totalizador_1:tot1_sum[0] ; \totalizador_1:tot1_sum[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.727      ;
-; 1.469 ; \totalizador_2:tot2_sum[1] ; \totalizador_2:tot2_sum[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.735      ;
-; 1.508 ; \totalizador_1:tot1_sum[2] ; \totalizador_1:tot1_sum[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.774      ;
-; 1.515 ; \totalizador_1:tot1_sum[1] ; \totalizador_1:tot1_sum[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.781      ;
-; 1.519 ; \totalizador_1:tot1_sum[1] ; \totalizador_1:tot1_sum[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.785      ;
-; 1.524 ; \totalizador_2:tot2_sum[0] ; \totalizador_2:tot2_sum[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.790      ;
-; 1.527 ; \totalizador_2:tot2_sum[0] ; \totalizador_2:tot2_sum[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.793      ;
-; 1.595 ; \totalizador_1:tot1_sum[2] ; \totalizador_1:tot1_sum[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.861      ;
-; 1.708 ; \totalizador_2:tot2_sum[1] ; \totalizador_2:tot2_sum[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.974      ;
-+-------+----------------------------+----------------------------+--------------+-------------+--------------+------------+------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'clk'                                                                                                                                                              ;
++-------+---------------------------------------------------+---------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                         ; To Node                                           ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------------------------------------------+---------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.391 ; totalizador_A:tots_A|output_intern[0]             ; totalizador_A:tots_A|output_intern[0]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; totalizador_A:tots_A|output_intern[1]             ; totalizador_A:tots_A|output_intern[1]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; totalizador_A:tots_A|output_intern[2]             ; totalizador_A:tots_A|output_intern[2]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.528 ; totalizador_A:tots_A|output_count[0]              ; totalizador_A:tots_A|output_count[1]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.794      ;
+; 0.537 ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[2] ; totalizadores_B:tots_B|tot_1[2]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.803      ;
+; 0.660 ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[2] ; totalizadores_B:tots_B|tot_2[2]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.926      ;
+; 0.708 ; totalizador_A:tots_A|output_count[2]              ; totalizador_A:tots_A|output_count[3]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.974      ;
+; 0.730 ; totalizador_A:tots_A|output_intern[0]             ; totalizador_A:tots_A|output_intern[1]             ; clk          ; clk         ; 0.000        ; 0.002      ; 0.998      ;
+; 0.730 ; totalizador_A:tots_A|output_intern[0]             ; totalizador_A:tots_A|output_intern[2]             ; clk          ; clk         ; 0.000        ; 0.002      ; 0.998      ;
+; 0.774 ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[0] ; totalizadores_B:tots_B|tot_1[2]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.040      ;
+; 0.781 ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[1] ; totalizadores_B:tots_B|tot_2[2]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.047      ;
+; 0.797 ; totalizador_A:tots_A|output_intern[1]             ; totalizador_A:tots_A|output_intern[2]             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.063      ;
+; 0.820 ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[1] ; totalizadores_B:tots_B|tot_1[0]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.086      ;
+; 0.821 ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[1] ; totalizadores_B:tots_B|tot_1[1]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.087      ;
+; 0.872 ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[0] ; totalizadores_B:tots_B|tot_1[1]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.138      ;
+; 0.873 ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[0] ; totalizadores_B:tots_B|tot_1[0]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.139      ;
+; 0.896 ; totalizador_A:tots_A|output_count[3]              ; totalizador_A:tots_A|output_count[4]              ; clk          ; clk         ; 0.000        ; 0.000      ; 1.162      ;
+; 0.902 ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[1] ; totalizadores_B:tots_B|tot_2[0]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.168      ;
+; 0.902 ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[1] ; totalizadores_B:tots_B|tot_2[1]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.168      ;
+; 0.932 ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[2] ; totalizadores_B:tots_B|tot_2[1]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.198      ;
+; 0.936 ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[2] ; totalizadores_B:tots_B|tot_1[1]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.202      ;
+; 0.982 ; totalizador_A:tots_A|output_count[1]              ; totalizador_A:tots_A|output_count[2]              ; clk          ; clk         ; 0.000        ; 0.000      ; 1.248      ;
+; 1.029 ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[0] ; totalizadores_B:tots_B|tot_2[2]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.295      ;
+; 1.032 ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[0] ; totalizadores_B:tots_B|tot_2[1]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.298      ;
+; 1.033 ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[0] ; totalizadores_B:tots_B|tot_2[0]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.299      ;
+; 1.051 ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[2] ; totalizadores_B:tots_B|tot_2[0]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.317      ;
+; 1.070 ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[2] ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.336      ;
+; 1.079 ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[1] ; totalizadores_B:tots_B|tot_1[2]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.345      ;
+; 1.168 ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[2] ; totalizadores_B:tots_B|tot_1[0]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.434      ;
+; 1.198 ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[2] ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.464      ;
+; 1.217 ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[1] ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.483      ;
+; 1.270 ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[0] ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.536      ;
+; 1.307 ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[0] ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.573      ;
+; 1.319 ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[1] ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.585      ;
+; 1.324 ; totalizador_A:tots_A|output_count[1]              ; totalizador_A:tots_A|output_intern[0]             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.590      ;
+; 1.359 ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[1] ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.625      ;
+; 1.410 ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[0] ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.676      ;
+; 1.438 ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[1] ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.704      ;
+; 1.447 ; totalizador_A:tots_A|output_count[4]              ; totalizador_A:tots_A|output_intern[0]             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.713      ;
+; 1.459 ; totalizador_A:tots_A|output_count[2]              ; totalizador_A:tots_A|output_intern[0]             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.725      ;
+; 1.474 ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[2] ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.740      ;
+; 1.565 ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[2] ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.831      ;
+; 1.567 ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[0] ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.833      ;
+; 1.569 ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[0] ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.835      ;
+; 1.587 ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[2] ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.853      ;
+; 1.596 ; totalizador_A:tots_A|output_count[3]              ; totalizador_A:tots_A|output_intern[0]             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.862      ;
+; 1.600 ; totalizador_A:tots_A|output_count[0]              ; totalizador_A:tots_A|output_intern[0]             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.866      ;
+; 1.612 ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[1] ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.878      ;
+; 1.614 ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[1] ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.880      ;
+; 1.644 ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[2] ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.910      ;
+; 1.744 ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[0] ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.010      ;
+; 1.921 ; totalizador_A:tots_A|output_count[1]              ; totalizador_A:tots_A|output_intern[1]             ; clk          ; clk         ; 0.000        ; 0.002      ; 2.189      ;
+; 1.921 ; totalizador_A:tots_A|output_count[1]              ; totalizador_A:tots_A|output_intern[2]             ; clk          ; clk         ; 0.000        ; 0.002      ; 2.189      ;
+; 2.044 ; totalizador_A:tots_A|output_count[4]              ; totalizador_A:tots_A|output_intern[1]             ; clk          ; clk         ; 0.000        ; 0.002      ; 2.312      ;
+; 2.044 ; totalizador_A:tots_A|output_count[4]              ; totalizador_A:tots_A|output_intern[2]             ; clk          ; clk         ; 0.000        ; 0.002      ; 2.312      ;
+; 2.056 ; totalizador_A:tots_A|output_count[2]              ; totalizador_A:tots_A|output_intern[1]             ; clk          ; clk         ; 0.000        ; 0.002      ; 2.324      ;
+; 2.056 ; totalizador_A:tots_A|output_count[2]              ; totalizador_A:tots_A|output_intern[2]             ; clk          ; clk         ; 0.000        ; 0.002      ; 2.324      ;
+; 2.193 ; totalizador_A:tots_A|output_count[3]              ; totalizador_A:tots_A|output_intern[1]             ; clk          ; clk         ; 0.000        ; 0.002      ; 2.461      ;
+; 2.193 ; totalizador_A:tots_A|output_count[3]              ; totalizador_A:tots_A|output_intern[2]             ; clk          ; clk         ; 0.000        ; 0.002      ; 2.461      ;
+; 2.197 ; totalizador_A:tots_A|output_count[0]              ; totalizador_A:tots_A|output_intern[1]             ; clk          ; clk         ; 0.000        ; 0.002      ; 2.465      ;
+; 2.197 ; totalizador_A:tots_A|output_count[0]              ; totalizador_A:tots_A|output_intern[2]             ; clk          ; clk         ; 0.000        ; 0.002      ; 2.465      ;
++-------+---------------------------------------------------+---------------------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------+
-; Slow Model Minimum Pulse Width: 'clk'                                                                           ;
-+--------+--------------+----------------+------------------+-------+------------+--------------------------------+
-; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                         ;
-+--------+--------------+----------------+------------------+-------+------------+--------------------------------+
-; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; clk   ; Rise       ; clk                            ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \totalizador_1:tot1_sum[0]     ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \totalizador_1:tot1_sum[0]     ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \totalizador_1:tot1_sum[1]     ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \totalizador_1:tot1_sum[1]     ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \totalizador_1:tot1_sum[2]     ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \totalizador_1:tot1_sum[2]     ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \totalizador_2:tot2_sum[0]     ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \totalizador_2:tot2_sum[0]     ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \totalizador_2:tot2_sum[1]     ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \totalizador_2:tot2_sum[1]     ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \totalizador_2:tot2_sum[2]     ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \totalizador_2:tot2_sum[2]     ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \totalizador_3:tot3_int[0]     ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \totalizador_3:tot3_int[0]     ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \totalizador_3:tot3_int[1]     ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \totalizador_3:tot3_int[1]     ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \totalizador_3:tot3_int[2]     ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \totalizador_3:tot3_int[2]     ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; tot_1[0]                       ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; tot_1[0]                       ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; tot_1[1]                       ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; tot_1[1]                       ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; tot_1[2]                       ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; tot_1[2]                       ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; tot_2[0]                       ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; tot_2[0]                       ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; tot_2[1]                       ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; tot_2[1]                       ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; tot_2[2]                       ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; tot_2[2]                       ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; tot_4[0]                       ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; tot_4[0]                       ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; tot_4[1]                       ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; tot_4[1]                       ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; tot_4[2]                       ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; tot_4[2]                       ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \totalizador_1:tot1_sum[0]|clk ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \totalizador_1:tot1_sum[0]|clk ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \totalizador_1:tot1_sum[1]|clk ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \totalizador_1:tot1_sum[1]|clk ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \totalizador_1:tot1_sum[2]|clk ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \totalizador_1:tot1_sum[2]|clk ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \totalizador_2:tot2_sum[0]|clk ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \totalizador_2:tot2_sum[0]|clk ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \totalizador_2:tot2_sum[1]|clk ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \totalizador_2:tot2_sum[1]|clk ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \totalizador_2:tot2_sum[2]|clk ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \totalizador_2:tot2_sum[2]|clk ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \totalizador_3:tot3_int[0]|clk ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \totalizador_3:tot3_int[0]|clk ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \totalizador_3:tot3_int[1]|clk ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \totalizador_3:tot3_int[1]|clk ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \totalizador_3:tot3_int[2]|clk ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \totalizador_3:tot3_int[2]|clk ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk|combout                    ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk|combout                    ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk~clkctrl|inclk[0]           ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk~clkctrl|inclk[0]           ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk~clkctrl|outclk             ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk~clkctrl|outclk             ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; tot_1[0]|clk                   ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; tot_1[0]|clk                   ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; tot_1[1]|clk                   ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; tot_1[1]|clk                   ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; tot_1[2]|clk                   ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; tot_1[2]|clk                   ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; tot_2[0]|clk                   ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; tot_2[0]|clk                   ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; tot_2[1]|clk                   ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; tot_2[1]|clk                   ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; tot_2[2]|clk                   ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; tot_2[2]|clk                   ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; tot_4[0]|clk                   ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; tot_4[0]|clk                   ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; tot_4[1]|clk                   ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; tot_4[1]|clk                   ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; tot_4[2]|clk                   ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; tot_4[2]|clk                   ;
-+--------+--------------+----------------+------------------+-------+------------+--------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'clk'                                                                                              ;
++--------+--------------+----------------+------------------+-------+------------+---------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                            ;
++--------+--------------+----------------+------------------+-------+------------+---------------------------------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; clk   ; Rise       ; clk                                               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; totalizador_A:tots_A|output_count[0]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; totalizador_A:tots_A|output_count[0]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; totalizador_A:tots_A|output_count[1]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; totalizador_A:tots_A|output_count[1]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; totalizador_A:tots_A|output_count[2]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; totalizador_A:tots_A|output_count[2]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; totalizador_A:tots_A|output_count[3]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; totalizador_A:tots_A|output_count[3]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; totalizador_A:tots_A|output_count[4]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; totalizador_A:tots_A|output_count[4]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; totalizador_A:tots_A|output_intern[0]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; totalizador_A:tots_A|output_intern[0]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; totalizador_A:tots_A|output_intern[1]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; totalizador_A:tots_A|output_intern[1]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; totalizador_A:tots_A|output_intern[2]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; totalizador_A:tots_A|output_intern[2]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[0] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[0] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[1] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[1] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[2] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[2] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[0] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[0] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[1] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[1] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[2] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[2] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; totalizadores_B:tots_B|\totalizador_3:tot3_int[0] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; totalizadores_B:tots_B|\totalizador_3:tot3_int[0] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; totalizadores_B:tots_B|\totalizador_3:tot3_int[1] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; totalizadores_B:tots_B|\totalizador_3:tot3_int[1] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; totalizadores_B:tots_B|\totalizador_3:tot3_int[2] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; totalizadores_B:tots_B|\totalizador_3:tot3_int[2] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; totalizadores_B:tots_B|tot_1[0]                   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; totalizadores_B:tots_B|tot_1[0]                   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; totalizadores_B:tots_B|tot_1[1]                   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; totalizadores_B:tots_B|tot_1[1]                   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; totalizadores_B:tots_B|tot_1[2]                   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; totalizadores_B:tots_B|tot_1[2]                   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; totalizadores_B:tots_B|tot_2[0]                   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; totalizadores_B:tots_B|tot_2[0]                   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; totalizadores_B:tots_B|tot_2[1]                   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; totalizadores_B:tots_B|tot_2[1]                   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; totalizadores_B:tots_B|tot_2[2]                   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; totalizadores_B:tots_B|tot_2[2]                   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; totalizadores_B:tots_B|tot_4[0]                   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; totalizadores_B:tots_B|tot_4[0]                   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; totalizadores_B:tots_B|tot_4[1]                   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; totalizadores_B:tots_B|tot_4[1]                   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; totalizadores_B:tots_B|tot_4[2]                   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; totalizadores_B:tots_B|tot_4[2]                   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; totalizadores_B:tots_B|tot_5[0]                   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; totalizadores_B:tots_B|tot_5[0]                   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; totalizadores_B:tots_B|tot_5[1]                   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; totalizadores_B:tots_B|tot_5[1]                   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; totalizadores_B:tots_B|tot_5[2]                   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; totalizadores_B:tots_B|tot_5[2]                   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; totalizadores_B:tots_B|tot_6[0]                   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; totalizadores_B:tots_B|tot_6[0]                   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; totalizadores_B:tots_B|tot_6[1]                   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; totalizadores_B:tots_B|tot_6[1]                   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; totalizadores_B:tots_B|tot_6[2]                   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; totalizadores_B:tots_B|tot_6[2]                   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk|combout                                       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk|combout                                       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk~clkctrl|inclk[0]                              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk~clkctrl|inclk[0]                              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk~clkctrl|outclk                                ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk~clkctrl|outclk                                ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; tots_A|output_count[0]|clk                        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; tots_A|output_count[0]|clk                        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; tots_A|output_count[1]|clk                        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; tots_A|output_count[1]|clk                        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; tots_A|output_count[2]|clk                        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; tots_A|output_count[2]|clk                        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; tots_A|output_count[3]|clk                        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; tots_A|output_count[3]|clk                        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; tots_A|output_count[4]|clk                        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; tots_A|output_count[4]|clk                        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; tots_A|output_intern[0]|clk                       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; tots_A|output_intern[0]|clk                       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; tots_A|output_intern[1]|clk                       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; tots_A|output_intern[1]|clk                       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; tots_A|output_intern[2]|clk                       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; tots_A|output_intern[2]|clk                       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; tots_B|\totalizador_1:tot1_sum[0]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; tots_B|\totalizador_1:tot1_sum[0]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; tots_B|\totalizador_1:tot1_sum[1]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; tots_B|\totalizador_1:tot1_sum[1]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; tots_B|\totalizador_1:tot1_sum[2]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; tots_B|\totalizador_1:tot1_sum[2]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; tots_B|\totalizador_2:tot2_sum[0]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; tots_B|\totalizador_2:tot2_sum[0]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; tots_B|\totalizador_2:tot2_sum[1]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; tots_B|\totalizador_2:tot2_sum[1]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; tots_B|\totalizador_2:tot2_sum[2]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; tots_B|\totalizador_2:tot2_sum[2]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; tots_B|\totalizador_3:tot3_int[0]|clk             ;
++--------+--------------+----------------+------------------+-------+------------+---------------------------------------------------+
 
 
 +-----------------------------------------------------------------------+
@@ -330,14 +401,14 @@ No paths to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; clr       ; clk        ; 1.622 ; 1.622 ; Rise       ; clk             ;
-; input[*]  ; clk        ; 5.675 ; 5.675 ; Rise       ; clk             ;
-;  input[0] ; clk        ; 5.657 ; 5.657 ; Rise       ; clk             ;
-;  input[1] ; clk        ; 5.594 ; 5.594 ; Rise       ; clk             ;
-;  input[2] ; clk        ; 5.326 ; 5.326 ; Rise       ; clk             ;
-;  input[3] ; clk        ; 5.630 ; 5.630 ; Rise       ; clk             ;
-;  input[4] ; clk        ; 5.675 ; 5.675 ; Rise       ; clk             ;
-; rst       ; clk        ; 1.284 ; 1.284 ; Rise       ; clk             ;
+; clr       ; clk        ; 5.326 ; 5.326 ; Rise       ; clk             ;
+; input[*]  ; clk        ; 6.479 ; 6.479 ; Rise       ; clk             ;
+;  input[0] ; clk        ; 6.479 ; 6.479 ; Rise       ; clk             ;
+;  input[1] ; clk        ; 3.184 ; 3.184 ; Rise       ; clk             ;
+;  input[2] ; clk        ; 6.404 ; 6.404 ; Rise       ; clk             ;
+;  input[3] ; clk        ; 5.676 ; 5.676 ; Rise       ; clk             ;
+;  input[4] ; clk        ; 5.570 ; 5.570 ; Rise       ; clk             ;
+; rst       ; clk        ; 0.279 ; 0.279 ; Rise       ; clk             ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -346,72 +417,96 @@ No paths to report.
 +-----------+------------+--------+--------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +-----------+------------+--------+--------+------------+-----------------+
-; clr       ; clk        ; -0.562 ; -0.562 ; Rise       ; clk             ;
-; input[*]  ; clk        ; -3.130 ; -3.130 ; Rise       ; clk             ;
-;  input[0] ; clk        ; -3.582 ; -3.582 ; Rise       ; clk             ;
-;  input[1] ; clk        ; -3.464 ; -3.464 ; Rise       ; clk             ;
-;  input[2] ; clk        ; -3.352 ; -3.352 ; Rise       ; clk             ;
-;  input[3] ; clk        ; -3.507 ; -3.507 ; Rise       ; clk             ;
-;  input[4] ; clk        ; -3.130 ; -3.130 ; Rise       ; clk             ;
-; rst       ; clk        ; -1.054 ; -1.054 ; Rise       ; clk             ;
+; clr       ; clk        ; -3.187 ; -3.187 ; Rise       ; clk             ;
+; input[*]  ; clk        ; -0.808 ; -0.808 ; Rise       ; clk             ;
+;  input[0] ; clk        ; -3.482 ; -3.482 ; Rise       ; clk             ;
+;  input[1] ; clk        ; -0.808 ; -0.808 ; Rise       ; clk             ;
+;  input[2] ; clk        ; -3.889 ; -3.889 ; Rise       ; clk             ;
+;  input[3] ; clk        ; -3.444 ; -3.444 ; Rise       ; clk             ;
+;  input[4] ; clk        ; -3.011 ; -3.011 ; Rise       ; clk             ;
+; rst       ; clk        ; -0.039 ; -0.039 ; Rise       ; clk             ;
 +-----------+------------+--------+--------+------------+-----------------+
 
 
-+-----------------------------------------------------------------------+
-; Clock to Output Times                                                 ;
-+-----------+------------+-------+-------+------------+-----------------+
-; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
-+-----------+------------+-------+-------+------------+-----------------+
-; tot1[*]   ; clk        ; 6.062 ; 6.062 ; Rise       ; clk             ;
-;  tot1[0]  ; clk        ; 6.062 ; 6.062 ; Rise       ; clk             ;
-;  tot1[1]  ; clk        ; 6.009 ; 6.009 ; Rise       ; clk             ;
-;  tot1[2]  ; clk        ; 6.052 ; 6.052 ; Rise       ; clk             ;
-; tot2[*]   ; clk        ; 6.122 ; 6.122 ; Rise       ; clk             ;
-;  tot2[0]  ; clk        ; 6.122 ; 6.122 ; Rise       ; clk             ;
-;  tot2[1]  ; clk        ; 6.071 ; 6.071 ; Rise       ; clk             ;
-;  tot2[2]  ; clk        ; 6.072 ; 6.072 ; Rise       ; clk             ;
-; tot3[*]   ; clk        ; 6.369 ; 6.369 ; Rise       ; clk             ;
-;  tot3[0]  ; clk        ; 6.019 ; 6.019 ; Rise       ; clk             ;
-;  tot3[1]  ; clk        ; 6.059 ; 6.059 ; Rise       ; clk             ;
-;  tot3[2]  ; clk        ; 6.369 ; 6.369 ; Rise       ; clk             ;
-; tot4[*]   ; clk        ; 6.236 ; 6.236 ; Rise       ; clk             ;
-;  tot4[0]  ; clk        ; 6.236 ; 6.236 ; Rise       ; clk             ;
-;  tot4[1]  ; clk        ; 6.175 ; 6.175 ; Rise       ; clk             ;
-;  tot4[2]  ; clk        ; 6.019 ; 6.019 ; Rise       ; clk             ;
-+-----------+------------+-------+-------+------------+-----------------+
++------------------------------------------------------------------------+
+; Clock to Output Times                                                  ;
++------------+------------+-------+-------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------+------------+-------+-------+------------+-----------------+
+; tot_a[*]   ; clk        ; 6.535 ; 6.535 ; Rise       ; clk             ;
+;  tot_a[0]  ; clk        ; 6.290 ; 6.290 ; Rise       ; clk             ;
+;  tot_a[1]  ; clk        ; 6.528 ; 6.528 ; Rise       ; clk             ;
+;  tot_a[2]  ; clk        ; 6.535 ; 6.535 ; Rise       ; clk             ;
+; tot_b1[*]  ; clk        ; 6.090 ; 6.090 ; Rise       ; clk             ;
+;  tot_b1[0] ; clk        ; 6.059 ; 6.059 ; Rise       ; clk             ;
+;  tot_b1[1] ; clk        ; 6.090 ; 6.090 ; Rise       ; clk             ;
+;  tot_b1[2] ; clk        ; 6.070 ; 6.070 ; Rise       ; clk             ;
+; tot_b2[*]  ; clk        ; 7.033 ; 7.033 ; Rise       ; clk             ;
+;  tot_b2[0] ; clk        ; 7.033 ; 7.033 ; Rise       ; clk             ;
+;  tot_b2[1] ; clk        ; 6.582 ; 6.582 ; Rise       ; clk             ;
+;  tot_b2[2] ; clk        ; 6.563 ; 6.563 ; Rise       ; clk             ;
+; tot_b3[*]  ; clk        ; 6.582 ; 6.582 ; Rise       ; clk             ;
+;  tot_b3[0] ; clk        ; 6.279 ; 6.279 ; Rise       ; clk             ;
+;  tot_b3[1] ; clk        ; 6.582 ; 6.582 ; Rise       ; clk             ;
+;  tot_b3[2] ; clk        ; 6.045 ; 6.045 ; Rise       ; clk             ;
+; tot_b4[*]  ; clk        ; 6.087 ; 6.087 ; Rise       ; clk             ;
+;  tot_b4[0] ; clk        ; 6.087 ; 6.087 ; Rise       ; clk             ;
+;  tot_b4[1] ; clk        ; 6.045 ; 6.045 ; Rise       ; clk             ;
+;  tot_b4[2] ; clk        ; 6.057 ; 6.057 ; Rise       ; clk             ;
+; tot_b5[*]  ; clk        ; 6.584 ; 6.584 ; Rise       ; clk             ;
+;  tot_b5[0] ; clk        ; 6.584 ; 6.584 ; Rise       ; clk             ;
+;  tot_b5[1] ; clk        ; 6.046 ; 6.046 ; Rise       ; clk             ;
+;  tot_b5[2] ; clk        ; 6.584 ; 6.584 ; Rise       ; clk             ;
+; tot_b6[*]  ; clk        ; 6.806 ; 6.806 ; Rise       ; clk             ;
+;  tot_b6[0] ; clk        ; 6.609 ; 6.609 ; Rise       ; clk             ;
+;  tot_b6[1] ; clk        ; 6.059 ; 6.059 ; Rise       ; clk             ;
+;  tot_b6[2] ; clk        ; 6.806 ; 6.806 ; Rise       ; clk             ;
++------------+------------+-------+-------+------------+-----------------+
 
 
-+-----------------------------------------------------------------------+
-; Minimum Clock to Output Times                                         ;
-+-----------+------------+-------+-------+------------+-----------------+
-; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
-+-----------+------------+-------+-------+------------+-----------------+
-; tot1[*]   ; clk        ; 6.009 ; 6.009 ; Rise       ; clk             ;
-;  tot1[0]  ; clk        ; 6.062 ; 6.062 ; Rise       ; clk             ;
-;  tot1[1]  ; clk        ; 6.009 ; 6.009 ; Rise       ; clk             ;
-;  tot1[2]  ; clk        ; 6.052 ; 6.052 ; Rise       ; clk             ;
-; tot2[*]   ; clk        ; 6.071 ; 6.071 ; Rise       ; clk             ;
-;  tot2[0]  ; clk        ; 6.122 ; 6.122 ; Rise       ; clk             ;
-;  tot2[1]  ; clk        ; 6.071 ; 6.071 ; Rise       ; clk             ;
-;  tot2[2]  ; clk        ; 6.072 ; 6.072 ; Rise       ; clk             ;
-; tot3[*]   ; clk        ; 6.019 ; 6.019 ; Rise       ; clk             ;
-;  tot3[0]  ; clk        ; 6.019 ; 6.019 ; Rise       ; clk             ;
-;  tot3[1]  ; clk        ; 6.059 ; 6.059 ; Rise       ; clk             ;
-;  tot3[2]  ; clk        ; 6.369 ; 6.369 ; Rise       ; clk             ;
-; tot4[*]   ; clk        ; 6.019 ; 6.019 ; Rise       ; clk             ;
-;  tot4[0]  ; clk        ; 6.236 ; 6.236 ; Rise       ; clk             ;
-;  tot4[1]  ; clk        ; 6.175 ; 6.175 ; Rise       ; clk             ;
-;  tot4[2]  ; clk        ; 6.019 ; 6.019 ; Rise       ; clk             ;
-+-----------+------------+-------+-------+------------+-----------------+
++------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                          ;
++------------+------------+-------+-------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------+------------+-------+-------+------------+-----------------+
+; tot_a[*]   ; clk        ; 6.290 ; 6.290 ; Rise       ; clk             ;
+;  tot_a[0]  ; clk        ; 6.290 ; 6.290 ; Rise       ; clk             ;
+;  tot_a[1]  ; clk        ; 6.528 ; 6.528 ; Rise       ; clk             ;
+;  tot_a[2]  ; clk        ; 6.535 ; 6.535 ; Rise       ; clk             ;
+; tot_b1[*]  ; clk        ; 6.059 ; 6.059 ; Rise       ; clk             ;
+;  tot_b1[0] ; clk        ; 6.059 ; 6.059 ; Rise       ; clk             ;
+;  tot_b1[1] ; clk        ; 6.090 ; 6.090 ; Rise       ; clk             ;
+;  tot_b1[2] ; clk        ; 6.070 ; 6.070 ; Rise       ; clk             ;
+; tot_b2[*]  ; clk        ; 6.563 ; 6.563 ; Rise       ; clk             ;
+;  tot_b2[0] ; clk        ; 7.033 ; 7.033 ; Rise       ; clk             ;
+;  tot_b2[1] ; clk        ; 6.582 ; 6.582 ; Rise       ; clk             ;
+;  tot_b2[2] ; clk        ; 6.563 ; 6.563 ; Rise       ; clk             ;
+; tot_b3[*]  ; clk        ; 6.045 ; 6.045 ; Rise       ; clk             ;
+;  tot_b3[0] ; clk        ; 6.279 ; 6.279 ; Rise       ; clk             ;
+;  tot_b3[1] ; clk        ; 6.582 ; 6.582 ; Rise       ; clk             ;
+;  tot_b3[2] ; clk        ; 6.045 ; 6.045 ; Rise       ; clk             ;
+; tot_b4[*]  ; clk        ; 6.045 ; 6.045 ; Rise       ; clk             ;
+;  tot_b4[0] ; clk        ; 6.087 ; 6.087 ; Rise       ; clk             ;
+;  tot_b4[1] ; clk        ; 6.045 ; 6.045 ; Rise       ; clk             ;
+;  tot_b4[2] ; clk        ; 6.057 ; 6.057 ; Rise       ; clk             ;
+; tot_b5[*]  ; clk        ; 6.046 ; 6.046 ; Rise       ; clk             ;
+;  tot_b5[0] ; clk        ; 6.584 ; 6.584 ; Rise       ; clk             ;
+;  tot_b5[1] ; clk        ; 6.046 ; 6.046 ; Rise       ; clk             ;
+;  tot_b5[2] ; clk        ; 6.584 ; 6.584 ; Rise       ; clk             ;
+; tot_b6[*]  ; clk        ; 6.059 ; 6.059 ; Rise       ; clk             ;
+;  tot_b6[0] ; clk        ; 6.609 ; 6.609 ; Rise       ; clk             ;
+;  tot_b6[1] ; clk        ; 6.059 ; 6.059 ; Rise       ; clk             ;
+;  tot_b6[2] ; clk        ; 6.806 ; 6.806 ; Rise       ; clk             ;
++------------+------------+-------+-------+------------+-----------------+
 
 
-+-------------------------------+
-; Fast Model Setup Summary      ;
-+-------+-------+---------------+
-; Clock ; Slack ; End Point TNS ;
-+-------+-------+---------------+
-; clk   ; 0.072 ; 0.000         ;
-+-------+-------+---------------+
++--------------------------------+
+; Fast Model Setup Summary       ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clk   ; -0.161 ; -0.322        ;
++-------+--------+---------------+
 
 
 +-------------------------------+
@@ -419,7 +514,7 @@ No paths to report.
 +-------+-------+---------------+
 ; Clock ; Slack ; End Point TNS ;
 +-------+-------+---------------+
-; clk   ; 0.293 ; 0.000         ;
+; clk   ; 0.215 ; 0.000         ;
 +-------+-------+---------------+
 
 
@@ -440,183 +535,370 @@ No paths to report.
 +-------+--------+-----------------------+
 ; Clock ; Slack  ; End Point TNS         ;
 +-------+--------+-----------------------+
-; clk   ; -1.380 ; -19.380               ;
+; clk   ; -1.380 ; -33.380               ;
 +-------+--------+-----------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------+
-; Fast Model Setup: 'clk'                                                                                                               ;
-+-------+----------------------------+----------------------------+--------------+-------------+--------------+------------+------------+
-; Slack ; From Node                  ; To Node                    ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+-------+----------------------------+----------------------------+--------------+-------------+--------------+------------+------------+
-; 0.072 ; \totalizador_2:tot2_sum[0] ; \totalizador_2:tot2_sum[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.960      ;
-; 0.089 ; \totalizador_1:tot1_sum[0] ; \totalizador_1:tot1_sum[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.943      ;
-; 0.094 ; \totalizador_2:tot2_sum[1] ; \totalizador_2:tot2_sum[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.938      ;
-; 0.168 ; \totalizador_1:tot1_sum[2] ; \totalizador_1:tot1_sum[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.864      ;
-; 0.170 ; \totalizador_1:tot1_sum[2] ; \totalizador_1:tot1_sum[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.862      ;
-; 0.179 ; \totalizador_2:tot2_sum[0] ; \totalizador_2:tot2_sum[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.853      ;
-; 0.184 ; \totalizador_1:tot1_sum[1] ; \totalizador_1:tot1_sum[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.848      ;
-; 0.186 ; \totalizador_1:tot1_sum[1] ; \totalizador_1:tot1_sum[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.846      ;
-; 0.202 ; \totalizador_1:tot1_sum[0] ; \totalizador_1:tot1_sum[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.830      ;
-; 0.202 ; \totalizador_1:tot1_sum[0] ; \totalizador_1:tot1_sum[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.830      ;
-; 0.218 ; \totalizador_2:tot2_sum[1] ; \totalizador_2:tot2_sum[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.814      ;
-; 0.249 ; \totalizador_1:tot1_sum[1] ; \totalizador_1:tot1_sum[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.783      ;
-; 0.254 ; \totalizador_2:tot2_sum[2] ; \totalizador_2:tot2_sum[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.778      ;
-; 0.255 ; \totalizador_2:tot2_sum[1] ; \totalizador_2:tot2_sum[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.777      ;
-; 0.262 ; \totalizador_1:tot1_sum[2] ; \totalizador_1:tot1_sum[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.770      ;
-; 0.322 ; \totalizador_2:tot2_sum[0] ; tot_2[0]                   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.710      ;
-; 0.328 ; \totalizador_2:tot2_sum[0] ; \totalizador_2:tot2_sum[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.704      ;
-; 0.336 ; \totalizador_2:tot2_sum[2] ; \totalizador_2:tot2_sum[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.696      ;
-; 0.337 ; \totalizador_2:tot2_sum[2] ; \totalizador_2:tot2_sum[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.695      ;
-; 0.340 ; \totalizador_1:tot1_sum[0] ; tot_1[0]                   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.692      ;
-; 0.344 ; \totalizador_2:tot2_sum[1] ; tot_2[0]                   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.688      ;
-; 0.421 ; \totalizador_1:tot1_sum[2] ; tot_1[0]                   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.611      ;
-; 0.423 ; \totalizador_1:tot1_sum[2] ; tot_1[1]                   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.609      ;
-; 0.425 ; \totalizador_2:tot2_sum[2] ; tot_2[1]                   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.607      ;
-; 0.426 ; \totalizador_2:tot2_sum[1] ; tot_2[1]                   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.606      ;
-; 0.427 ; \totalizador_2:tot2_sum[0] ; tot_2[2]                   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.605      ;
-; 0.437 ; \totalizador_1:tot1_sum[1] ; tot_1[0]                   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.595      ;
-; 0.439 ; \totalizador_1:tot1_sum[1] ; tot_1[1]                   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.593      ;
-; 0.456 ; \totalizador_1:tot1_sum[0] ; tot_1[2]                   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.576      ;
-; 0.457 ; \totalizador_1:tot1_sum[0] ; tot_1[1]                   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.575      ;
-; 0.466 ; \totalizador_2:tot2_sum[1] ; tot_2[2]                   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.566      ;
-; 0.499 ; \totalizador_2:tot2_sum[0] ; tot_2[1]                   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.533      ;
-; 0.503 ; \totalizador_1:tot1_sum[1] ; tot_1[2]                   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.529      ;
-; 0.516 ; \totalizador_1:tot1_sum[2] ; tot_1[2]                   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.516      ;
-; 0.584 ; \totalizador_2:tot2_sum[2] ; tot_2[2]                   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.448      ;
-; 0.587 ; \totalizador_2:tot2_sum[2] ; tot_2[0]                   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.445      ;
-+-------+----------------------------+----------------------------+--------------+-------------+--------------+------------+------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'clk'                                                                                                                                                              ;
++--------+---------------------------------------------------+---------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                         ; To Node                                           ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------------------------------+---------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -0.161 ; totalizador_A:tots_A|output_count[0]              ; totalizador_A:tots_A|output_intern[1]             ; clk          ; clk         ; 1.000        ; 0.002      ; 1.195      ;
+; -0.161 ; totalizador_A:tots_A|output_count[0]              ; totalizador_A:tots_A|output_intern[2]             ; clk          ; clk         ; 1.000        ; 0.002      ; 1.195      ;
+; -0.146 ; totalizador_A:tots_A|output_count[3]              ; totalizador_A:tots_A|output_intern[1]             ; clk          ; clk         ; 1.000        ; 0.002      ; 1.180      ;
+; -0.146 ; totalizador_A:tots_A|output_count[3]              ; totalizador_A:tots_A|output_intern[2]             ; clk          ; clk         ; 1.000        ; 0.002      ; 1.180      ;
+; -0.114 ; totalizador_A:tots_A|output_count[2]              ; totalizador_A:tots_A|output_intern[1]             ; clk          ; clk         ; 1.000        ; 0.002      ; 1.148      ;
+; -0.114 ; totalizador_A:tots_A|output_count[2]              ; totalizador_A:tots_A|output_intern[2]             ; clk          ; clk         ; 1.000        ; 0.002      ; 1.148      ;
+; -0.089 ; totalizador_A:tots_A|output_count[4]              ; totalizador_A:tots_A|output_intern[1]             ; clk          ; clk         ; 1.000        ; 0.002      ; 1.123      ;
+; -0.089 ; totalizador_A:tots_A|output_count[4]              ; totalizador_A:tots_A|output_intern[2]             ; clk          ; clk         ; 1.000        ; 0.002      ; 1.123      ;
+; -0.063 ; totalizador_A:tots_A|output_count[1]              ; totalizador_A:tots_A|output_intern[1]             ; clk          ; clk         ; 1.000        ; 0.002      ; 1.097      ;
+; -0.063 ; totalizador_A:tots_A|output_count[1]              ; totalizador_A:tots_A|output_intern[2]             ; clk          ; clk         ; 1.000        ; 0.002      ; 1.097      ;
+; 0.083  ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[0] ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.949      ;
+; 0.089  ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[0] ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.943      ;
+; 0.101  ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[2] ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.931      ;
+; 0.133  ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[0] ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.899      ;
+; 0.138  ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[1] ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.894      ;
+; 0.159  ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[1] ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.873      ;
+; 0.171  ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[2] ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.861      ;
+; 0.172  ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[0] ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.860      ;
+; 0.178  ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[2] ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.854      ;
+; 0.188  ; totalizador_A:tots_A|output_count[0]              ; totalizador_A:tots_A|output_intern[0]             ; clk          ; clk         ; 1.000        ; 0.000      ; 0.844      ;
+; 0.203  ; totalizador_A:tots_A|output_count[3]              ; totalizador_A:tots_A|output_intern[0]             ; clk          ; clk         ; 1.000        ; 0.000      ; 0.829      ;
+; 0.211  ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[2] ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.821      ;
+; 0.214  ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[1] ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.818      ;
+; 0.235  ; totalizador_A:tots_A|output_count[2]              ; totalizador_A:tots_A|output_intern[0]             ; clk          ; clk         ; 1.000        ; 0.000      ; 0.797      ;
+; 0.235  ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[0] ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.797      ;
+; 0.252  ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[1] ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.780      ;
+; 0.253  ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[1] ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.779      ;
+; 0.260  ; totalizador_A:tots_A|output_count[4]              ; totalizador_A:tots_A|output_intern[0]             ; clk          ; clk         ; 1.000        ; 0.000      ; 0.772      ;
+; 0.271  ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[0] ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.761      ;
+; 0.286  ; totalizador_A:tots_A|output_count[1]              ; totalizador_A:tots_A|output_intern[0]             ; clk          ; clk         ; 1.000        ; 0.000      ; 0.746      ;
+; 0.299  ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[0] ; totalizadores_B:tots_B|tot_1[0]                   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.733      ;
+; 0.334  ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[2] ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.698      ;
+; 0.336  ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[0] ; totalizadores_B:tots_B|tot_2[0]                   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.696      ;
+; 0.339  ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[1] ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.693      ;
+; 0.344  ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[2] ; totalizadores_B:tots_B|tot_1[0]                   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.688      ;
+; 0.382  ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[2] ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.650      ;
+; 0.408  ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[1] ; totalizadores_B:tots_B|tot_1[2]                   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.624      ;
+; 0.418  ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[0] ; totalizadores_B:tots_B|tot_2[1]                   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.614      ;
+; 0.424  ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[0] ; totalizadores_B:tots_B|tot_2[2]                   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.608      ;
+; 0.424  ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[2] ; totalizadores_B:tots_B|tot_2[0]                   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.608      ;
+; 0.430  ; totalizador_A:tots_A|output_count[1]              ; totalizador_A:tots_A|output_count[2]              ; clk          ; clk         ; 1.000        ; 0.000      ; 0.602      ;
+; 0.430  ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[2] ; totalizadores_B:tots_B|tot_2[1]                   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.602      ;
+; 0.449  ; totalizador_A:tots_A|output_count[3]              ; totalizador_A:tots_A|output_count[4]              ; clk          ; clk         ; 1.000        ; 0.000      ; 0.583      ;
+; 0.463  ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[2] ; totalizadores_B:tots_B|tot_1[1]                   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.569      ;
+; 0.467  ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[1] ; totalizadores_B:tots_B|tot_2[0]                   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.565      ;
+; 0.467  ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[1] ; totalizadores_B:tots_B|tot_2[1]                   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.565      ;
+; 0.487  ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[0] ; totalizadores_B:tots_B|tot_1[1]                   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.545      ;
+; 0.504  ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[1] ; totalizadores_B:tots_B|tot_2[2]                   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.528      ;
+; 0.505  ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[1] ; totalizadores_B:tots_B|tot_1[0]                   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.527      ;
+; 0.505  ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[1] ; totalizadores_B:tots_B|tot_1[1]                   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.527      ;
+; 0.520  ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[0] ; totalizadores_B:tots_B|tot_1[2]                   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.512      ;
+; 0.522  ; totalizador_A:tots_A|output_intern[1]             ; totalizador_A:tots_A|output_intern[2]             ; clk          ; clk         ; 1.000        ; 0.000      ; 0.510      ;
+; 0.542  ; totalizador_A:tots_A|output_intern[0]             ; totalizador_A:tots_A|output_intern[1]             ; clk          ; clk         ; 1.000        ; 0.002      ; 0.492      ;
+; 0.544  ; totalizador_A:tots_A|output_intern[0]             ; totalizador_A:tots_A|output_intern[2]             ; clk          ; clk         ; 1.000        ; 0.002      ; 0.490      ;
+; 0.558  ; totalizador_A:tots_A|output_count[2]              ; totalizador_A:tots_A|output_count[3]              ; clk          ; clk         ; 1.000        ; 0.000      ; 0.474      ;
+; 0.586  ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[2] ; totalizadores_B:tots_B|tot_2[2]                   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.446      ;
+; 0.631  ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[2] ; totalizadores_B:tots_B|tot_1[2]                   ; clk          ; clk         ; 1.000        ; 0.000      ; 0.401      ;
+; 0.636  ; totalizador_A:tots_A|output_count[0]              ; totalizador_A:tots_A|output_count[1]              ; clk          ; clk         ; 1.000        ; 0.000      ; 0.396      ;
+; 0.665  ; totalizador_A:tots_A|output_intern[0]             ; totalizador_A:tots_A|output_intern[0]             ; clk          ; clk         ; 1.000        ; 0.000      ; 0.367      ;
+; 0.665  ; totalizador_A:tots_A|output_intern[2]             ; totalizador_A:tots_A|output_intern[2]             ; clk          ; clk         ; 1.000        ; 0.000      ; 0.367      ;
+; 0.665  ; totalizador_A:tots_A|output_intern[1]             ; totalizador_A:tots_A|output_intern[1]             ; clk          ; clk         ; 1.000        ; 0.000      ; 0.367      ;
++--------+---------------------------------------------------+---------------------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------+
-; Fast Model Hold: 'clk'                                                                                                                ;
-+-------+----------------------------+----------------------------+--------------+-------------+--------------+------------+------------+
-; Slack ; From Node                  ; To Node                    ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+-------+----------------------------+----------------------------+--------------+-------------+--------------+------------+------------+
-; 0.293 ; \totalizador_2:tot2_sum[2] ; tot_2[0]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.445      ;
-; 0.296 ; \totalizador_2:tot2_sum[2] ; tot_2[2]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.448      ;
-; 0.364 ; \totalizador_1:tot1_sum[2] ; tot_1[2]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.516      ;
-; 0.377 ; \totalizador_1:tot1_sum[1] ; tot_1[2]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.529      ;
-; 0.381 ; \totalizador_2:tot2_sum[0] ; tot_2[1]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.533      ;
-; 0.414 ; \totalizador_2:tot2_sum[1] ; tot_2[2]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.566      ;
-; 0.420 ; \totalizador_1:tot1_sum[0] ; tot_1[0]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.572      ;
-; 0.423 ; \totalizador_1:tot1_sum[0] ; tot_1[1]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.575      ;
-; 0.424 ; \totalizador_1:tot1_sum[0] ; tot_1[2]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.576      ;
-; 0.441 ; \totalizador_1:tot1_sum[1] ; tot_1[1]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.593      ;
-; 0.443 ; \totalizador_1:tot1_sum[1] ; tot_1[0]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.595      ;
-; 0.449 ; \totalizador_2:tot2_sum[0] ; tot_2[0]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.601      ;
-; 0.453 ; \totalizador_2:tot2_sum[0] ; tot_2[2]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.605      ;
-; 0.454 ; \totalizador_2:tot2_sum[1] ; tot_2[1]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.606      ;
-; 0.455 ; \totalizador_2:tot2_sum[2] ; tot_2[1]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.607      ;
-; 0.457 ; \totalizador_1:tot1_sum[2] ; tot_1[1]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.609      ;
-; 0.459 ; \totalizador_1:tot1_sum[2] ; tot_1[0]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.611      ;
-; 0.536 ; \totalizador_2:tot2_sum[1] ; tot_2[0]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.688      ;
-; 0.543 ; \totalizador_2:tot2_sum[2] ; \totalizador_2:tot2_sum[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.695      ;
-; 0.544 ; \totalizador_2:tot2_sum[2] ; \totalizador_2:tot2_sum[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.696      ;
-; 0.552 ; \totalizador_2:tot2_sum[0] ; \totalizador_2:tot2_sum[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.704      ;
-; 0.618 ; \totalizador_1:tot1_sum[2] ; \totalizador_1:tot1_sum[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.770      ;
-; 0.625 ; \totalizador_2:tot2_sum[1] ; \totalizador_2:tot2_sum[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.777      ;
-; 0.626 ; \totalizador_2:tot2_sum[2] ; \totalizador_2:tot2_sum[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.778      ;
-; 0.631 ; \totalizador_1:tot1_sum[1] ; \totalizador_1:tot1_sum[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.783      ;
-; 0.662 ; \totalizador_2:tot2_sum[1] ; \totalizador_2:tot2_sum[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.814      ;
-; 0.671 ; \totalizador_1:tot1_sum[0] ; \totalizador_1:tot1_sum[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.823      ;
-; 0.678 ; \totalizador_1:tot1_sum[0] ; \totalizador_1:tot1_sum[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.830      ;
-; 0.678 ; \totalizador_1:tot1_sum[0] ; \totalizador_1:tot1_sum[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.830      ;
-; 0.694 ; \totalizador_1:tot1_sum[1] ; \totalizador_1:tot1_sum[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.846      ;
-; 0.696 ; \totalizador_1:tot1_sum[1] ; \totalizador_1:tot1_sum[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.848      ;
-; 0.699 ; \totalizador_2:tot2_sum[0] ; \totalizador_2:tot2_sum[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.851      ;
-; 0.701 ; \totalizador_2:tot2_sum[0] ; \totalizador_2:tot2_sum[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.853      ;
-; 0.710 ; \totalizador_1:tot1_sum[2] ; \totalizador_1:tot1_sum[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.862      ;
-; 0.712 ; \totalizador_1:tot1_sum[2] ; \totalizador_1:tot1_sum[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.864      ;
-; 0.786 ; \totalizador_2:tot2_sum[1] ; \totalizador_2:tot2_sum[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.938      ;
-+-------+----------------------------+----------------------------+--------------+-------------+--------------+------------+------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'clk'                                                                                                                                                              ;
++-------+---------------------------------------------------+---------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                         ; To Node                                           ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------------------------------------------+---------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.215 ; totalizador_A:tots_A|output_intern[0]             ; totalizador_A:tots_A|output_intern[0]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; totalizador_A:tots_A|output_intern[1]             ; totalizador_A:tots_A|output_intern[1]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; totalizador_A:tots_A|output_intern[2]             ; totalizador_A:tots_A|output_intern[2]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.244 ; totalizador_A:tots_A|output_count[0]              ; totalizador_A:tots_A|output_count[1]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.396      ;
+; 0.249 ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[2] ; totalizadores_B:tots_B|tot_1[2]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.401      ;
+; 0.294 ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[2] ; totalizadores_B:tots_B|tot_2[2]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.446      ;
+; 0.322 ; totalizador_A:tots_A|output_count[2]              ; totalizador_A:tots_A|output_count[3]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.474      ;
+; 0.336 ; totalizador_A:tots_A|output_intern[0]             ; totalizador_A:tots_A|output_intern[2]             ; clk          ; clk         ; 0.000        ; 0.002      ; 0.490      ;
+; 0.338 ; totalizador_A:tots_A|output_intern[0]             ; totalizador_A:tots_A|output_intern[1]             ; clk          ; clk         ; 0.000        ; 0.002      ; 0.492      ;
+; 0.358 ; totalizador_A:tots_A|output_intern[1]             ; totalizador_A:tots_A|output_intern[2]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.510      ;
+; 0.360 ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[0] ; totalizadores_B:tots_B|tot_1[2]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.512      ;
+; 0.375 ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[1] ; totalizadores_B:tots_B|tot_1[0]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.527      ;
+; 0.375 ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[1] ; totalizadores_B:tots_B|tot_1[1]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.527      ;
+; 0.376 ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[1] ; totalizadores_B:tots_B|tot_2[2]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.528      ;
+; 0.393 ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[0] ; totalizadores_B:tots_B|tot_1[1]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.545      ;
+; 0.394 ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[0] ; totalizadores_B:tots_B|tot_1[0]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.546      ;
+; 0.413 ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[1] ; totalizadores_B:tots_B|tot_2[0]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.565      ;
+; 0.413 ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[1] ; totalizadores_B:tots_B|tot_2[1]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.565      ;
+; 0.417 ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[2] ; totalizadores_B:tots_B|tot_1[1]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.569      ;
+; 0.431 ; totalizador_A:tots_A|output_count[3]              ; totalizador_A:tots_A|output_count[4]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.583      ;
+; 0.450 ; totalizador_A:tots_A|output_count[1]              ; totalizador_A:tots_A|output_count[2]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.602      ;
+; 0.450 ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[2] ; totalizadores_B:tots_B|tot_2[1]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.602      ;
+; 0.456 ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[0] ; totalizadores_B:tots_B|tot_2[2]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.608      ;
+; 0.456 ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[2] ; totalizadores_B:tots_B|tot_2[0]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.608      ;
+; 0.462 ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[0] ; totalizadores_B:tots_B|tot_2[0]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.614      ;
+; 0.462 ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[0] ; totalizadores_B:tots_B|tot_2[1]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.614      ;
+; 0.472 ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[1] ; totalizadores_B:tots_B|tot_1[2]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.624      ;
+; 0.498 ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[2] ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.650      ;
+; 0.536 ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[2] ; totalizadores_B:tots_B|tot_1[0]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.688      ;
+; 0.541 ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[1] ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.693      ;
+; 0.546 ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[2] ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.698      ;
+; 0.560 ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[0] ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.712      ;
+; 0.594 ; totalizador_A:tots_A|output_count[1]              ; totalizador_A:tots_A|output_intern[0]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.746      ;
+; 0.609 ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[0] ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.761      ;
+; 0.620 ; totalizador_A:tots_A|output_count[4]              ; totalizador_A:tots_A|output_intern[0]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.772      ;
+; 0.627 ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[1] ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.779      ;
+; 0.628 ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[1] ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.780      ;
+; 0.645 ; totalizador_A:tots_A|output_count[2]              ; totalizador_A:tots_A|output_intern[0]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.797      ;
+; 0.645 ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[0] ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.797      ;
+; 0.666 ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[1] ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.818      ;
+; 0.669 ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[2] ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.821      ;
+; 0.677 ; totalizador_A:tots_A|output_count[3]              ; totalizador_A:tots_A|output_intern[0]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.829      ;
+; 0.692 ; totalizador_A:tots_A|output_count[0]              ; totalizador_A:tots_A|output_intern[0]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.844      ;
+; 0.702 ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[2] ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.854      ;
+; 0.708 ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[0] ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.860      ;
+; 0.709 ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[2] ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.861      ;
+; 0.715 ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[0] ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.867      ;
+; 0.721 ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[1] ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.873      ;
+; 0.742 ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[1] ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.894      ;
+; 0.779 ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[2] ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.931      ;
+; 0.791 ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[0] ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.943      ;
+; 0.943 ; totalizador_A:tots_A|output_count[1]              ; totalizador_A:tots_A|output_intern[1]             ; clk          ; clk         ; 0.000        ; 0.002      ; 1.097      ;
+; 0.943 ; totalizador_A:tots_A|output_count[1]              ; totalizador_A:tots_A|output_intern[2]             ; clk          ; clk         ; 0.000        ; 0.002      ; 1.097      ;
+; 0.969 ; totalizador_A:tots_A|output_count[4]              ; totalizador_A:tots_A|output_intern[1]             ; clk          ; clk         ; 0.000        ; 0.002      ; 1.123      ;
+; 0.969 ; totalizador_A:tots_A|output_count[4]              ; totalizador_A:tots_A|output_intern[2]             ; clk          ; clk         ; 0.000        ; 0.002      ; 1.123      ;
+; 0.994 ; totalizador_A:tots_A|output_count[2]              ; totalizador_A:tots_A|output_intern[1]             ; clk          ; clk         ; 0.000        ; 0.002      ; 1.148      ;
+; 0.994 ; totalizador_A:tots_A|output_count[2]              ; totalizador_A:tots_A|output_intern[2]             ; clk          ; clk         ; 0.000        ; 0.002      ; 1.148      ;
+; 1.026 ; totalizador_A:tots_A|output_count[3]              ; totalizador_A:tots_A|output_intern[1]             ; clk          ; clk         ; 0.000        ; 0.002      ; 1.180      ;
+; 1.026 ; totalizador_A:tots_A|output_count[3]              ; totalizador_A:tots_A|output_intern[2]             ; clk          ; clk         ; 0.000        ; 0.002      ; 1.180      ;
+; 1.041 ; totalizador_A:tots_A|output_count[0]              ; totalizador_A:tots_A|output_intern[1]             ; clk          ; clk         ; 0.000        ; 0.002      ; 1.195      ;
+; 1.041 ; totalizador_A:tots_A|output_count[0]              ; totalizador_A:tots_A|output_intern[2]             ; clk          ; clk         ; 0.000        ; 0.002      ; 1.195      ;
++-------+---------------------------------------------------+---------------------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------+
-; Fast Model Minimum Pulse Width: 'clk'                                                                           ;
-+--------+--------------+----------------+------------------+-------+------------+--------------------------------+
-; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                         ;
-+--------+--------------+----------------+------------------+-------+------------+--------------------------------+
-; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; clk   ; Rise       ; clk                            ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \totalizador_1:tot1_sum[0]     ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \totalizador_1:tot1_sum[0]     ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \totalizador_1:tot1_sum[1]     ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \totalizador_1:tot1_sum[1]     ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \totalizador_1:tot1_sum[2]     ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \totalizador_1:tot1_sum[2]     ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \totalizador_2:tot2_sum[0]     ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \totalizador_2:tot2_sum[0]     ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \totalizador_2:tot2_sum[1]     ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \totalizador_2:tot2_sum[1]     ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \totalizador_2:tot2_sum[2]     ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \totalizador_2:tot2_sum[2]     ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \totalizador_3:tot3_int[0]     ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \totalizador_3:tot3_int[0]     ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \totalizador_3:tot3_int[1]     ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \totalizador_3:tot3_int[1]     ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \totalizador_3:tot3_int[2]     ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \totalizador_3:tot3_int[2]     ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; tot_1[0]                       ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; tot_1[0]                       ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; tot_1[1]                       ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; tot_1[1]                       ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; tot_1[2]                       ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; tot_1[2]                       ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; tot_2[0]                       ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; tot_2[0]                       ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; tot_2[1]                       ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; tot_2[1]                       ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; tot_2[2]                       ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; tot_2[2]                       ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; tot_4[0]                       ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; tot_4[0]                       ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; tot_4[1]                       ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; tot_4[1]                       ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; tot_4[2]                       ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; tot_4[2]                       ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \totalizador_1:tot1_sum[0]|clk ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \totalizador_1:tot1_sum[0]|clk ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \totalizador_1:tot1_sum[1]|clk ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \totalizador_1:tot1_sum[1]|clk ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \totalizador_1:tot1_sum[2]|clk ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \totalizador_1:tot1_sum[2]|clk ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \totalizador_2:tot2_sum[0]|clk ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \totalizador_2:tot2_sum[0]|clk ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \totalizador_2:tot2_sum[1]|clk ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \totalizador_2:tot2_sum[1]|clk ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \totalizador_2:tot2_sum[2]|clk ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \totalizador_2:tot2_sum[2]|clk ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \totalizador_3:tot3_int[0]|clk ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \totalizador_3:tot3_int[0]|clk ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \totalizador_3:tot3_int[1]|clk ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \totalizador_3:tot3_int[1]|clk ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \totalizador_3:tot3_int[2]|clk ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \totalizador_3:tot3_int[2]|clk ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk|combout                    ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk|combout                    ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk~clkctrl|inclk[0]           ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk~clkctrl|inclk[0]           ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk~clkctrl|outclk             ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk~clkctrl|outclk             ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; tot_1[0]|clk                   ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; tot_1[0]|clk                   ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; tot_1[1]|clk                   ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; tot_1[1]|clk                   ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; tot_1[2]|clk                   ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; tot_1[2]|clk                   ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; tot_2[0]|clk                   ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; tot_2[0]|clk                   ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; tot_2[1]|clk                   ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; tot_2[1]|clk                   ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; tot_2[2]|clk                   ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; tot_2[2]|clk                   ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; tot_4[0]|clk                   ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; tot_4[0]|clk                   ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; tot_4[1]|clk                   ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; tot_4[1]|clk                   ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; tot_4[2]|clk                   ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; tot_4[2]|clk                   ;
-+--------+--------------+----------------+------------------+-------+------------+--------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'clk'                                                                                              ;
++--------+--------------+----------------+------------------+-------+------------+---------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                            ;
++--------+--------------+----------------+------------------+-------+------------+---------------------------------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; clk   ; Rise       ; clk                                               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; totalizador_A:tots_A|output_count[0]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; totalizador_A:tots_A|output_count[0]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; totalizador_A:tots_A|output_count[1]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; totalizador_A:tots_A|output_count[1]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; totalizador_A:tots_A|output_count[2]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; totalizador_A:tots_A|output_count[2]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; totalizador_A:tots_A|output_count[3]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; totalizador_A:tots_A|output_count[3]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; totalizador_A:tots_A|output_count[4]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; totalizador_A:tots_A|output_count[4]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; totalizador_A:tots_A|output_intern[0]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; totalizador_A:tots_A|output_intern[0]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; totalizador_A:tots_A|output_intern[1]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; totalizador_A:tots_A|output_intern[1]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; totalizador_A:tots_A|output_intern[2]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; totalizador_A:tots_A|output_intern[2]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[0] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[0] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[1] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[1] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[2] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; totalizadores_B:tots_B|\totalizador_1:tot1_sum[2] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[0] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[0] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[1] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[1] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[2] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; totalizadores_B:tots_B|\totalizador_2:tot2_sum[2] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; totalizadores_B:tots_B|\totalizador_3:tot3_int[0] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; totalizadores_B:tots_B|\totalizador_3:tot3_int[0] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; totalizadores_B:tots_B|\totalizador_3:tot3_int[1] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; totalizadores_B:tots_B|\totalizador_3:tot3_int[1] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; totalizadores_B:tots_B|\totalizador_3:tot3_int[2] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; totalizadores_B:tots_B|\totalizador_3:tot3_int[2] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; totalizadores_B:tots_B|tot_1[0]                   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; totalizadores_B:tots_B|tot_1[0]                   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; totalizadores_B:tots_B|tot_1[1]                   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; totalizadores_B:tots_B|tot_1[1]                   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; totalizadores_B:tots_B|tot_1[2]                   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; totalizadores_B:tots_B|tot_1[2]                   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; totalizadores_B:tots_B|tot_2[0]                   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; totalizadores_B:tots_B|tot_2[0]                   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; totalizadores_B:tots_B|tot_2[1]                   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; totalizadores_B:tots_B|tot_2[1]                   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; totalizadores_B:tots_B|tot_2[2]                   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; totalizadores_B:tots_B|tot_2[2]                   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; totalizadores_B:tots_B|tot_4[0]                   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; totalizadores_B:tots_B|tot_4[0]                   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; totalizadores_B:tots_B|tot_4[1]                   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; totalizadores_B:tots_B|tot_4[1]                   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; totalizadores_B:tots_B|tot_4[2]                   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; totalizadores_B:tots_B|tot_4[2]                   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; totalizadores_B:tots_B|tot_5[0]                   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; totalizadores_B:tots_B|tot_5[0]                   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; totalizadores_B:tots_B|tot_5[1]                   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; totalizadores_B:tots_B|tot_5[1]                   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; totalizadores_B:tots_B|tot_5[2]                   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; totalizadores_B:tots_B|tot_5[2]                   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; totalizadores_B:tots_B|tot_6[0]                   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; totalizadores_B:tots_B|tot_6[0]                   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; totalizadores_B:tots_B|tot_6[1]                   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; totalizadores_B:tots_B|tot_6[1]                   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; totalizadores_B:tots_B|tot_6[2]                   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; totalizadores_B:tots_B|tot_6[2]                   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk|combout                                       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk|combout                                       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk~clkctrl|inclk[0]                              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk~clkctrl|inclk[0]                              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk~clkctrl|outclk                                ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk~clkctrl|outclk                                ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; tots_A|output_count[0]|clk                        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; tots_A|output_count[0]|clk                        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; tots_A|output_count[1]|clk                        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; tots_A|output_count[1]|clk                        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; tots_A|output_count[2]|clk                        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; tots_A|output_count[2]|clk                        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; tots_A|output_count[3]|clk                        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; tots_A|output_count[3]|clk                        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; tots_A|output_count[4]|clk                        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; tots_A|output_count[4]|clk                        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; tots_A|output_intern[0]|clk                       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; tots_A|output_intern[0]|clk                       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; tots_A|output_intern[1]|clk                       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; tots_A|output_intern[1]|clk                       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; tots_A|output_intern[2]|clk                       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; tots_A|output_intern[2]|clk                       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; tots_B|\totalizador_1:tot1_sum[0]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; tots_B|\totalizador_1:tot1_sum[0]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; tots_B|\totalizador_1:tot1_sum[1]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; tots_B|\totalizador_1:tot1_sum[1]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; tots_B|\totalizador_1:tot1_sum[2]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; tots_B|\totalizador_1:tot1_sum[2]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; tots_B|\totalizador_2:tot2_sum[0]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; tots_B|\totalizador_2:tot2_sum[0]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; tots_B|\totalizador_2:tot2_sum[1]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; tots_B|\totalizador_2:tot2_sum[1]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; tots_B|\totalizador_2:tot2_sum[2]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; tots_B|\totalizador_2:tot2_sum[2]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; tots_B|\totalizador_3:tot3_int[0]|clk             ;
++--------+--------------+----------------+------------------+-------+------------+---------------------------------------------------+
+
+
++-------------------------------------------------------------------------+
+; Setup Times                                                             ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; clr       ; clk        ; 2.805  ; 2.805  ; Rise       ; clk             ;
+; input[*]  ; clk        ; 3.215  ; 3.215  ; Rise       ; clk             ;
+;  input[0] ; clk        ; 3.215  ; 3.215  ; Rise       ; clk             ;
+;  input[1] ; clk        ; 1.156  ; 1.156  ; Rise       ; clk             ;
+;  input[2] ; clk        ; 3.175  ; 3.175  ; Rise       ; clk             ;
+;  input[3] ; clk        ; 2.876  ; 2.876  ; Rise       ; clk             ;
+;  input[4] ; clk        ; 2.795  ; 2.795  ; Rise       ; clk             ;
+; rst       ; clk        ; -0.081 ; -0.081 ; Rise       ; clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; clr       ; clk        ; -1.760 ; -1.760 ; Rise       ; clk             ;
+; input[*]  ; clk        ; -0.076 ; -0.076 ; Rise       ; clk             ;
+;  input[0] ; clk        ; -1.859 ; -1.859 ; Rise       ; clk             ;
+;  input[1] ; clk        ; -0.076 ; -0.076 ; Rise       ; clk             ;
+;  input[2] ; clk        ; -2.029 ; -2.029 ; Rise       ; clk             ;
+;  input[3] ; clk        ; -1.861 ; -1.861 ; Rise       ; clk             ;
+;  input[4] ; clk        ; -1.648 ; -1.648 ; Rise       ; clk             ;
+; rst       ; clk        ; 0.206  ; 0.206  ; Rise       ; clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++------------------------------------------------------------------------+
+; Clock to Output Times                                                  ;
++------------+------------+-------+-------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------+------------+-------+-------+------------+-----------------+
+; tot_a[*]   ; clk        ; 3.671 ; 3.671 ; Rise       ; clk             ;
+;  tot_a[0]  ; clk        ; 3.567 ; 3.567 ; Rise       ; clk             ;
+;  tot_a[1]  ; clk        ; 3.656 ; 3.656 ; Rise       ; clk             ;
+;  tot_a[2]  ; clk        ; 3.671 ; 3.671 ; Rise       ; clk             ;
+; tot_b1[*]  ; clk        ; 3.466 ; 3.466 ; Rise       ; clk             ;
+;  tot_b1[0] ; clk        ; 3.450 ; 3.450 ; Rise       ; clk             ;
+;  tot_b1[1] ; clk        ; 3.466 ; 3.466 ; Rise       ; clk             ;
+;  tot_b1[2] ; clk        ; 3.460 ; 3.460 ; Rise       ; clk             ;
+; tot_b2[*]  ; clk        ; 3.934 ; 3.934 ; Rise       ; clk             ;
+;  tot_b2[0] ; clk        ; 3.934 ; 3.934 ; Rise       ; clk             ;
+;  tot_b2[1] ; clk        ; 3.703 ; 3.703 ; Rise       ; clk             ;
+;  tot_b2[2] ; clk        ; 3.690 ; 3.690 ; Rise       ; clk             ;
+; tot_b3[*]  ; clk        ; 3.698 ; 3.698 ; Rise       ; clk             ;
+;  tot_b3[0] ; clk        ; 3.556 ; 3.556 ; Rise       ; clk             ;
+;  tot_b3[1] ; clk        ; 3.698 ; 3.698 ; Rise       ; clk             ;
+;  tot_b3[2] ; clk        ; 3.436 ; 3.436 ; Rise       ; clk             ;
+; tot_b4[*]  ; clk        ; 3.470 ; 3.470 ; Rise       ; clk             ;
+;  tot_b4[0] ; clk        ; 3.470 ; 3.470 ; Rise       ; clk             ;
+;  tot_b4[1] ; clk        ; 3.436 ; 3.436 ; Rise       ; clk             ;
+;  tot_b4[2] ; clk        ; 3.440 ; 3.440 ; Rise       ; clk             ;
+; tot_b5[*]  ; clk        ; 3.705 ; 3.705 ; Rise       ; clk             ;
+;  tot_b5[0] ; clk        ; 3.696 ; 3.696 ; Rise       ; clk             ;
+;  tot_b5[1] ; clk        ; 3.432 ; 3.432 ; Rise       ; clk             ;
+;  tot_b5[2] ; clk        ; 3.705 ; 3.705 ; Rise       ; clk             ;
+; tot_b6[*]  ; clk        ; 3.834 ; 3.834 ; Rise       ; clk             ;
+;  tot_b6[0] ; clk        ; 3.721 ; 3.721 ; Rise       ; clk             ;
+;  tot_b6[1] ; clk        ; 3.450 ; 3.450 ; Rise       ; clk             ;
+;  tot_b6[2] ; clk        ; 3.834 ; 3.834 ; Rise       ; clk             ;
++------------+------------+-------+-------+------------+-----------------+
+
+
++------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                          ;
++------------+------------+-------+-------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------+------------+-------+-------+------------+-----------------+
+; tot_a[*]   ; clk        ; 3.567 ; 3.567 ; Rise       ; clk             ;
+;  tot_a[0]  ; clk        ; 3.567 ; 3.567 ; Rise       ; clk             ;
+;  tot_a[1]  ; clk        ; 3.656 ; 3.656 ; Rise       ; clk             ;
+;  tot_a[2]  ; clk        ; 3.671 ; 3.671 ; Rise       ; clk             ;
+; tot_b1[*]  ; clk        ; 3.450 ; 3.450 ; Rise       ; clk             ;
+;  tot_b1[0] ; clk        ; 3.450 ; 3.450 ; Rise       ; clk             ;
+;  tot_b1[1] ; clk        ; 3.466 ; 3.466 ; Rise       ; clk             ;
+;  tot_b1[2] ; clk        ; 3.460 ; 3.460 ; Rise       ; clk             ;
+; tot_b2[*]  ; clk        ; 3.690 ; 3.690 ; Rise       ; clk             ;
+;  tot_b2[0] ; clk        ; 3.934 ; 3.934 ; Rise       ; clk             ;
+;  tot_b2[1] ; clk        ; 3.703 ; 3.703 ; Rise       ; clk             ;
+;  tot_b2[2] ; clk        ; 3.690 ; 3.690 ; Rise       ; clk             ;
+; tot_b3[*]  ; clk        ; 3.436 ; 3.436 ; Rise       ; clk             ;
+;  tot_b3[0] ; clk        ; 3.556 ; 3.556 ; Rise       ; clk             ;
+;  tot_b3[1] ; clk        ; 3.698 ; 3.698 ; Rise       ; clk             ;
+;  tot_b3[2] ; clk        ; 3.436 ; 3.436 ; Rise       ; clk             ;
+; tot_b4[*]  ; clk        ; 3.436 ; 3.436 ; Rise       ; clk             ;
+;  tot_b4[0] ; clk        ; 3.470 ; 3.470 ; Rise       ; clk             ;
+;  tot_b4[1] ; clk        ; 3.436 ; 3.436 ; Rise       ; clk             ;
+;  tot_b4[2] ; clk        ; 3.440 ; 3.440 ; Rise       ; clk             ;
+; tot_b5[*]  ; clk        ; 3.432 ; 3.432 ; Rise       ; clk             ;
+;  tot_b5[0] ; clk        ; 3.696 ; 3.696 ; Rise       ; clk             ;
+;  tot_b5[1] ; clk        ; 3.432 ; 3.432 ; Rise       ; clk             ;
+;  tot_b5[2] ; clk        ; 3.705 ; 3.705 ; Rise       ; clk             ;
+; tot_b6[*]  ; clk        ; 3.450 ; 3.450 ; Rise       ; clk             ;
+;  tot_b6[0] ; clk        ; 3.721 ; 3.721 ; Rise       ; clk             ;
+;  tot_b6[1] ; clk        ; 3.450 ; 3.450 ; Rise       ; clk             ;
+;  tot_b6[2] ; clk        ; 3.834 ; 3.834 ; Rise       ; clk             ;
++------------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                           ;
++------------------+---------+-------+----------+---------+---------------------+
+; Clock            ; Setup   ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+---------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -1.427  ; 0.215 ; N/A      ; N/A     ; -1.380              ;
+;  clk             ; -1.427  ; 0.215 ; N/A      ; N/A     ; -1.380              ;
+; Design-wide TNS  ; -11.218 ; 0.0   ; 0.0      ; 0.0     ; -33.38              ;
+;  clk             ; -11.218 ; 0.000 ; N/A      ; N/A     ; -33.380             ;
++------------------+---------+-------+----------+---------+---------------------+
 
 
 +-----------------------------------------------------------------------+
@@ -624,14 +906,14 @@ No paths to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; clr       ; clk        ; 0.519 ; 0.519 ; Rise       ; clk             ;
-; input[*]  ; clk        ; 2.868 ; 2.868 ; Rise       ; clk             ;
-;  input[0] ; clk        ; 2.860 ; 2.860 ; Rise       ; clk             ;
-;  input[1] ; clk        ; 2.821 ; 2.821 ; Rise       ; clk             ;
-;  input[2] ; clk        ; 2.702 ; 2.702 ; Rise       ; clk             ;
-;  input[3] ; clk        ; 2.818 ; 2.818 ; Rise       ; clk             ;
-;  input[4] ; clk        ; 2.868 ; 2.868 ; Rise       ; clk             ;
-; rst       ; clk        ; 0.478 ; 0.478 ; Rise       ; clk             ;
+; clr       ; clk        ; 5.326 ; 5.326 ; Rise       ; clk             ;
+; input[*]  ; clk        ; 6.479 ; 6.479 ; Rise       ; clk             ;
+;  input[0] ; clk        ; 6.479 ; 6.479 ; Rise       ; clk             ;
+;  input[1] ; clk        ; 3.184 ; 3.184 ; Rise       ; clk             ;
+;  input[2] ; clk        ; 6.404 ; 6.404 ; Rise       ; clk             ;
+;  input[3] ; clk        ; 5.676 ; 5.676 ; Rise       ; clk             ;
+;  input[4] ; clk        ; 5.570 ; 5.570 ; Rise       ; clk             ;
+; rst       ; clk        ; 0.279 ; 0.279 ; Rise       ; clk             ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -640,155 +922,87 @@ No paths to report.
 +-----------+------------+--------+--------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +-----------+------------+--------+--------+------------+-----------------+
-; clr       ; clk        ; -0.007 ; -0.007 ; Rise       ; clk             ;
-; input[*]  ; clk        ; -1.718 ; -1.718 ; Rise       ; clk             ;
-;  input[0] ; clk        ; -1.914 ; -1.914 ; Rise       ; clk             ;
-;  input[1] ; clk        ; -1.858 ; -1.858 ; Rise       ; clk             ;
-;  input[2] ; clk        ; -1.805 ; -1.805 ; Rise       ; clk             ;
-;  input[3] ; clk        ; -1.867 ; -1.867 ; Rise       ; clk             ;
-;  input[4] ; clk        ; -1.718 ; -1.718 ; Rise       ; clk             ;
-; rst       ; clk        ; -0.358 ; -0.358 ; Rise       ; clk             ;
+; clr       ; clk        ; -1.760 ; -1.760 ; Rise       ; clk             ;
+; input[*]  ; clk        ; -0.076 ; -0.076 ; Rise       ; clk             ;
+;  input[0] ; clk        ; -1.859 ; -1.859 ; Rise       ; clk             ;
+;  input[1] ; clk        ; -0.076 ; -0.076 ; Rise       ; clk             ;
+;  input[2] ; clk        ; -2.029 ; -2.029 ; Rise       ; clk             ;
+;  input[3] ; clk        ; -1.861 ; -1.861 ; Rise       ; clk             ;
+;  input[4] ; clk        ; -1.648 ; -1.648 ; Rise       ; clk             ;
+; rst       ; clk        ; 0.206  ; 0.206  ; Rise       ; clk             ;
 +-----------+------------+--------+--------+------------+-----------------+
 
 
-+-----------------------------------------------------------------------+
-; Clock to Output Times                                                 ;
-+-----------+------------+-------+-------+------------+-----------------+
-; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
-+-----------+------------+-------+-------+------------+-----------------+
-; tot1[*]   ; clk        ; 3.457 ; 3.457 ; Rise       ; clk             ;
-;  tot1[0]  ; clk        ; 3.457 ; 3.457 ; Rise       ; clk             ;
-;  tot1[1]  ; clk        ; 3.423 ; 3.423 ; Rise       ; clk             ;
-;  tot1[2]  ; clk        ; 3.447 ; 3.447 ; Rise       ; clk             ;
-; tot2[*]   ; clk        ; 3.516 ; 3.516 ; Rise       ; clk             ;
-;  tot2[0]  ; clk        ; 3.516 ; 3.516 ; Rise       ; clk             ;
-;  tot2[1]  ; clk        ; 3.466 ; 3.466 ; Rise       ; clk             ;
-;  tot2[2]  ; clk        ; 3.466 ; 3.466 ; Rise       ; clk             ;
-; tot3[*]   ; clk        ; 3.604 ; 3.604 ; Rise       ; clk             ;
-;  tot3[0]  ; clk        ; 3.432 ; 3.432 ; Rise       ; clk             ;
-;  tot3[1]  ; clk        ; 3.455 ; 3.455 ; Rise       ; clk             ;
-;  tot3[2]  ; clk        ; 3.604 ; 3.604 ; Rise       ; clk             ;
-; tot4[*]   ; clk        ; 3.526 ; 3.526 ; Rise       ; clk             ;
-;  tot4[0]  ; clk        ; 3.526 ; 3.526 ; Rise       ; clk             ;
-;  tot4[1]  ; clk        ; 3.485 ; 3.485 ; Rise       ; clk             ;
-;  tot4[2]  ; clk        ; 3.433 ; 3.433 ; Rise       ; clk             ;
-+-----------+------------+-------+-------+------------+-----------------+
++------------------------------------------------------------------------+
+; Clock to Output Times                                                  ;
++------------+------------+-------+-------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------+------------+-------+-------+------------+-----------------+
+; tot_a[*]   ; clk        ; 6.535 ; 6.535 ; Rise       ; clk             ;
+;  tot_a[0]  ; clk        ; 6.290 ; 6.290 ; Rise       ; clk             ;
+;  tot_a[1]  ; clk        ; 6.528 ; 6.528 ; Rise       ; clk             ;
+;  tot_a[2]  ; clk        ; 6.535 ; 6.535 ; Rise       ; clk             ;
+; tot_b1[*]  ; clk        ; 6.090 ; 6.090 ; Rise       ; clk             ;
+;  tot_b1[0] ; clk        ; 6.059 ; 6.059 ; Rise       ; clk             ;
+;  tot_b1[1] ; clk        ; 6.090 ; 6.090 ; Rise       ; clk             ;
+;  tot_b1[2] ; clk        ; 6.070 ; 6.070 ; Rise       ; clk             ;
+; tot_b2[*]  ; clk        ; 7.033 ; 7.033 ; Rise       ; clk             ;
+;  tot_b2[0] ; clk        ; 7.033 ; 7.033 ; Rise       ; clk             ;
+;  tot_b2[1] ; clk        ; 6.582 ; 6.582 ; Rise       ; clk             ;
+;  tot_b2[2] ; clk        ; 6.563 ; 6.563 ; Rise       ; clk             ;
+; tot_b3[*]  ; clk        ; 6.582 ; 6.582 ; Rise       ; clk             ;
+;  tot_b3[0] ; clk        ; 6.279 ; 6.279 ; Rise       ; clk             ;
+;  tot_b3[1] ; clk        ; 6.582 ; 6.582 ; Rise       ; clk             ;
+;  tot_b3[2] ; clk        ; 6.045 ; 6.045 ; Rise       ; clk             ;
+; tot_b4[*]  ; clk        ; 6.087 ; 6.087 ; Rise       ; clk             ;
+;  tot_b4[0] ; clk        ; 6.087 ; 6.087 ; Rise       ; clk             ;
+;  tot_b4[1] ; clk        ; 6.045 ; 6.045 ; Rise       ; clk             ;
+;  tot_b4[2] ; clk        ; 6.057 ; 6.057 ; Rise       ; clk             ;
+; tot_b5[*]  ; clk        ; 6.584 ; 6.584 ; Rise       ; clk             ;
+;  tot_b5[0] ; clk        ; 6.584 ; 6.584 ; Rise       ; clk             ;
+;  tot_b5[1] ; clk        ; 6.046 ; 6.046 ; Rise       ; clk             ;
+;  tot_b5[2] ; clk        ; 6.584 ; 6.584 ; Rise       ; clk             ;
+; tot_b6[*]  ; clk        ; 6.806 ; 6.806 ; Rise       ; clk             ;
+;  tot_b6[0] ; clk        ; 6.609 ; 6.609 ; Rise       ; clk             ;
+;  tot_b6[1] ; clk        ; 6.059 ; 6.059 ; Rise       ; clk             ;
+;  tot_b6[2] ; clk        ; 6.806 ; 6.806 ; Rise       ; clk             ;
++------------+------------+-------+-------+------------+-----------------+
 
 
-+-----------------------------------------------------------------------+
-; Minimum Clock to Output Times                                         ;
-+-----------+------------+-------+-------+------------+-----------------+
-; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
-+-----------+------------+-------+-------+------------+-----------------+
-; tot1[*]   ; clk        ; 3.423 ; 3.423 ; Rise       ; clk             ;
-;  tot1[0]  ; clk        ; 3.457 ; 3.457 ; Rise       ; clk             ;
-;  tot1[1]  ; clk        ; 3.423 ; 3.423 ; Rise       ; clk             ;
-;  tot1[2]  ; clk        ; 3.447 ; 3.447 ; Rise       ; clk             ;
-; tot2[*]   ; clk        ; 3.466 ; 3.466 ; Rise       ; clk             ;
-;  tot2[0]  ; clk        ; 3.516 ; 3.516 ; Rise       ; clk             ;
-;  tot2[1]  ; clk        ; 3.466 ; 3.466 ; Rise       ; clk             ;
-;  tot2[2]  ; clk        ; 3.466 ; 3.466 ; Rise       ; clk             ;
-; tot3[*]   ; clk        ; 3.432 ; 3.432 ; Rise       ; clk             ;
-;  tot3[0]  ; clk        ; 3.432 ; 3.432 ; Rise       ; clk             ;
-;  tot3[1]  ; clk        ; 3.455 ; 3.455 ; Rise       ; clk             ;
-;  tot3[2]  ; clk        ; 3.604 ; 3.604 ; Rise       ; clk             ;
-; tot4[*]   ; clk        ; 3.433 ; 3.433 ; Rise       ; clk             ;
-;  tot4[0]  ; clk        ; 3.526 ; 3.526 ; Rise       ; clk             ;
-;  tot4[1]  ; clk        ; 3.485 ; 3.485 ; Rise       ; clk             ;
-;  tot4[2]  ; clk        ; 3.433 ; 3.433 ; Rise       ; clk             ;
-+-----------+------------+-------+-------+------------+-----------------+
-
-
-+------------------------------------------------------------------------------+
-; Multicorner Timing Analysis Summary                                          ;
-+------------------+--------+-------+----------+---------+---------------------+
-; Clock            ; Setup  ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
-+------------------+--------+-------+----------+---------+---------------------+
-; Worst-case Slack ; -0.967 ; 0.293 ; N/A      ; N/A     ; -1.380              ;
-;  clk             ; -0.967 ; 0.293 ; N/A      ; N/A     ; -1.380              ;
-; Design-wide TNS  ; -6.416 ; 0.0   ; 0.0      ; 0.0     ; -19.38              ;
-;  clk             ; -6.416 ; 0.000 ; N/A      ; N/A     ; -19.380             ;
-+------------------+--------+-------+----------+---------+---------------------+
-
-
-+-----------------------------------------------------------------------+
-; Setup Times                                                           ;
-+-----------+------------+-------+-------+------------+-----------------+
-; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
-+-----------+------------+-------+-------+------------+-----------------+
-; clr       ; clk        ; 1.622 ; 1.622 ; Rise       ; clk             ;
-; input[*]  ; clk        ; 5.675 ; 5.675 ; Rise       ; clk             ;
-;  input[0] ; clk        ; 5.657 ; 5.657 ; Rise       ; clk             ;
-;  input[1] ; clk        ; 5.594 ; 5.594 ; Rise       ; clk             ;
-;  input[2] ; clk        ; 5.326 ; 5.326 ; Rise       ; clk             ;
-;  input[3] ; clk        ; 5.630 ; 5.630 ; Rise       ; clk             ;
-;  input[4] ; clk        ; 5.675 ; 5.675 ; Rise       ; clk             ;
-; rst       ; clk        ; 1.284 ; 1.284 ; Rise       ; clk             ;
-+-----------+------------+-------+-------+------------+-----------------+
-
-
-+-------------------------------------------------------------------------+
-; Hold Times                                                              ;
-+-----------+------------+--------+--------+------------+-----------------+
-; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
-+-----------+------------+--------+--------+------------+-----------------+
-; clr       ; clk        ; -0.007 ; -0.007 ; Rise       ; clk             ;
-; input[*]  ; clk        ; -1.718 ; -1.718 ; Rise       ; clk             ;
-;  input[0] ; clk        ; -1.914 ; -1.914 ; Rise       ; clk             ;
-;  input[1] ; clk        ; -1.858 ; -1.858 ; Rise       ; clk             ;
-;  input[2] ; clk        ; -1.805 ; -1.805 ; Rise       ; clk             ;
-;  input[3] ; clk        ; -1.867 ; -1.867 ; Rise       ; clk             ;
-;  input[4] ; clk        ; -1.718 ; -1.718 ; Rise       ; clk             ;
-; rst       ; clk        ; -0.358 ; -0.358 ; Rise       ; clk             ;
-+-----------+------------+--------+--------+------------+-----------------+
-
-
-+-----------------------------------------------------------------------+
-; Clock to Output Times                                                 ;
-+-----------+------------+-------+-------+------------+-----------------+
-; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
-+-----------+------------+-------+-------+------------+-----------------+
-; tot1[*]   ; clk        ; 6.062 ; 6.062 ; Rise       ; clk             ;
-;  tot1[0]  ; clk        ; 6.062 ; 6.062 ; Rise       ; clk             ;
-;  tot1[1]  ; clk        ; 6.009 ; 6.009 ; Rise       ; clk             ;
-;  tot1[2]  ; clk        ; 6.052 ; 6.052 ; Rise       ; clk             ;
-; tot2[*]   ; clk        ; 6.122 ; 6.122 ; Rise       ; clk             ;
-;  tot2[0]  ; clk        ; 6.122 ; 6.122 ; Rise       ; clk             ;
-;  tot2[1]  ; clk        ; 6.071 ; 6.071 ; Rise       ; clk             ;
-;  tot2[2]  ; clk        ; 6.072 ; 6.072 ; Rise       ; clk             ;
-; tot3[*]   ; clk        ; 6.369 ; 6.369 ; Rise       ; clk             ;
-;  tot3[0]  ; clk        ; 6.019 ; 6.019 ; Rise       ; clk             ;
-;  tot3[1]  ; clk        ; 6.059 ; 6.059 ; Rise       ; clk             ;
-;  tot3[2]  ; clk        ; 6.369 ; 6.369 ; Rise       ; clk             ;
-; tot4[*]   ; clk        ; 6.236 ; 6.236 ; Rise       ; clk             ;
-;  tot4[0]  ; clk        ; 6.236 ; 6.236 ; Rise       ; clk             ;
-;  tot4[1]  ; clk        ; 6.175 ; 6.175 ; Rise       ; clk             ;
-;  tot4[2]  ; clk        ; 6.019 ; 6.019 ; Rise       ; clk             ;
-+-----------+------------+-------+-------+------------+-----------------+
-
-
-+-----------------------------------------------------------------------+
-; Minimum Clock to Output Times                                         ;
-+-----------+------------+-------+-------+------------+-----------------+
-; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
-+-----------+------------+-------+-------+------------+-----------------+
-; tot1[*]   ; clk        ; 3.423 ; 3.423 ; Rise       ; clk             ;
-;  tot1[0]  ; clk        ; 3.457 ; 3.457 ; Rise       ; clk             ;
-;  tot1[1]  ; clk        ; 3.423 ; 3.423 ; Rise       ; clk             ;
-;  tot1[2]  ; clk        ; 3.447 ; 3.447 ; Rise       ; clk             ;
-; tot2[*]   ; clk        ; 3.466 ; 3.466 ; Rise       ; clk             ;
-;  tot2[0]  ; clk        ; 3.516 ; 3.516 ; Rise       ; clk             ;
-;  tot2[1]  ; clk        ; 3.466 ; 3.466 ; Rise       ; clk             ;
-;  tot2[2]  ; clk        ; 3.466 ; 3.466 ; Rise       ; clk             ;
-; tot3[*]   ; clk        ; 3.432 ; 3.432 ; Rise       ; clk             ;
-;  tot3[0]  ; clk        ; 3.432 ; 3.432 ; Rise       ; clk             ;
-;  tot3[1]  ; clk        ; 3.455 ; 3.455 ; Rise       ; clk             ;
-;  tot3[2]  ; clk        ; 3.604 ; 3.604 ; Rise       ; clk             ;
-; tot4[*]   ; clk        ; 3.433 ; 3.433 ; Rise       ; clk             ;
-;  tot4[0]  ; clk        ; 3.526 ; 3.526 ; Rise       ; clk             ;
-;  tot4[1]  ; clk        ; 3.485 ; 3.485 ; Rise       ; clk             ;
-;  tot4[2]  ; clk        ; 3.433 ; 3.433 ; Rise       ; clk             ;
-+-----------+------------+-------+-------+------------+-----------------+
++------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                          ;
++------------+------------+-------+-------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------+------------+-------+-------+------------+-----------------+
+; tot_a[*]   ; clk        ; 3.567 ; 3.567 ; Rise       ; clk             ;
+;  tot_a[0]  ; clk        ; 3.567 ; 3.567 ; Rise       ; clk             ;
+;  tot_a[1]  ; clk        ; 3.656 ; 3.656 ; Rise       ; clk             ;
+;  tot_a[2]  ; clk        ; 3.671 ; 3.671 ; Rise       ; clk             ;
+; tot_b1[*]  ; clk        ; 3.450 ; 3.450 ; Rise       ; clk             ;
+;  tot_b1[0] ; clk        ; 3.450 ; 3.450 ; Rise       ; clk             ;
+;  tot_b1[1] ; clk        ; 3.466 ; 3.466 ; Rise       ; clk             ;
+;  tot_b1[2] ; clk        ; 3.460 ; 3.460 ; Rise       ; clk             ;
+; tot_b2[*]  ; clk        ; 3.690 ; 3.690 ; Rise       ; clk             ;
+;  tot_b2[0] ; clk        ; 3.934 ; 3.934 ; Rise       ; clk             ;
+;  tot_b2[1] ; clk        ; 3.703 ; 3.703 ; Rise       ; clk             ;
+;  tot_b2[2] ; clk        ; 3.690 ; 3.690 ; Rise       ; clk             ;
+; tot_b3[*]  ; clk        ; 3.436 ; 3.436 ; Rise       ; clk             ;
+;  tot_b3[0] ; clk        ; 3.556 ; 3.556 ; Rise       ; clk             ;
+;  tot_b3[1] ; clk        ; 3.698 ; 3.698 ; Rise       ; clk             ;
+;  tot_b3[2] ; clk        ; 3.436 ; 3.436 ; Rise       ; clk             ;
+; tot_b4[*]  ; clk        ; 3.436 ; 3.436 ; Rise       ; clk             ;
+;  tot_b4[0] ; clk        ; 3.470 ; 3.470 ; Rise       ; clk             ;
+;  tot_b4[1] ; clk        ; 3.436 ; 3.436 ; Rise       ; clk             ;
+;  tot_b4[2] ; clk        ; 3.440 ; 3.440 ; Rise       ; clk             ;
+; tot_b5[*]  ; clk        ; 3.432 ; 3.432 ; Rise       ; clk             ;
+;  tot_b5[0] ; clk        ; 3.696 ; 3.696 ; Rise       ; clk             ;
+;  tot_b5[1] ; clk        ; 3.432 ; 3.432 ; Rise       ; clk             ;
+;  tot_b5[2] ; clk        ; 3.705 ; 3.705 ; Rise       ; clk             ;
+; tot_b6[*]  ; clk        ; 3.450 ; 3.450 ; Rise       ; clk             ;
+;  tot_b6[0] ; clk        ; 3.721 ; 3.721 ; Rise       ; clk             ;
+;  tot_b6[1] ; clk        ; 3.450 ; 3.450 ; Rise       ; clk             ;
+;  tot_b6[2] ; clk        ; 3.834 ; 3.834 ; Rise       ; clk             ;
++------------+------------+-------+-------+------------+-----------------+
 
 
 +-------------------------------------------------------------------+
@@ -796,7 +1010,7 @@ No paths to report.
 +------------+----------+----------+----------+----------+----------+
 ; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------+----------+----------+----------+----------+----------+
-; clk        ; clk      ; 40       ; 0        ; 0        ; 0        ;
+; clk        ; clk      ; 65       ; 0        ; 0        ; 0        ;
 +------------+----------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -806,7 +1020,7 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +------------+----------+----------+----------+----------+----------+
 ; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------+----------+----------+----------+----------+----------+
-; clk        ; clk      ; 40       ; 0        ; 0        ; 0        ;
+; clk        ; clk      ; 65       ; 0        ; 0        ; 0        ;
 +------------+----------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -831,9 +1045,9 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 0     ; 0    ;
 ; Unconstrained Input Ports       ; 7     ; 7    ;
-; Unconstrained Input Port Paths  ; 126   ; 126  ;
-; Unconstrained Output Ports      ; 12    ; 12   ;
-; Unconstrained Output Port Paths ; 12    ; 12   ;
+; Unconstrained Input Port Paths  ; 199   ; 199  ;
+; Unconstrained Output Ports      ; 21    ; 21   ;
+; Unconstrained Output Port Paths ; 21    ; 21   ;
 +---------------------------------+-------+------+
 
 
@@ -843,7 +1057,7 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Tue Apr 21 19:49:24 2026
+    Info: Processing started: Wed Apr 22 15:12:01 2026
 Info: Command: quartus_sta totalizadores -c totalizadores
 Info: qsta_default_script.tcl version: #1
 Warning (20028): Parallel compilation is not licensed and has been disabled
@@ -856,43 +1070,43 @@ Info (332105): Deriving Clocks
 Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow Model
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -0.967
+Info (332146): Worst-case setup slack is -1.427
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):    -0.967        -6.416 clk 
-Info (332146): Worst-case hold slack is 0.660
+    Info (332119):    -1.427       -11.218 clk 
+Info (332146): Worst-case hold slack is 0.391
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):     0.660         0.000 clk 
+    Info (332119):     0.391         0.000 clk 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -1.380
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):    -1.380       -19.380 clk 
+    Info (332119):    -1.380       -33.380 clk 
 Info (332001): The selected device family is not supported by the report_metastability command.
 Info: Analyzing Fast Model
-Info (332146): Worst-case setup slack is 0.072
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -0.161
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):     0.072         0.000 clk 
-Info (332146): Worst-case hold slack is 0.293
+    Info (332119):    -0.161        -0.322 clk 
+Info (332146): Worst-case hold slack is 0.215
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):     0.293         0.000 clk 
+    Info (332119):     0.215         0.000 clk 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Critical Warning (332148): Timing requirements not met
 Info (332146): Worst-case minimum pulse width slack is -1.380
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):    -1.380       -19.380 clk 
+    Info (332119):    -1.380       -33.380 clk 
 Info (332001): The selected device family is not supported by the report_metastability command.
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
     Info: Peak virtual memory: 4551 megabytes
-    Info: Processing ended: Tue Apr 21 19:49:25 2026
+    Info: Processing ended: Wed Apr 22 15:12:02 2026
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
