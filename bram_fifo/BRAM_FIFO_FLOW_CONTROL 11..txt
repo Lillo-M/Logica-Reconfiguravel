@@ -1,0 +1,56 @@
+                        BlockRAM, FIFO E Controle de fluxo
+=========================================================================================================================
+
+BIBLIOGRAFIA: VOLNEI PEDRONI, DOUGLAS PERRY
+
+
+1) OBJETIVO
+_ Exercitar o controle de fluxo entre elementos de lógica reconfigurável.
+_ A BRAM será preenchida com valores crescentes e consecutivos de 0 a 2047
+_ A escrita da BRAM para a FIFO se dá a uma velocidade 7 vezez maior que a leitura da FIFO e escrita na segunda BRAM 
+
+         ----------                ----------                ----------
+        | BRAM     |    8 bits    | FIFO     |    8 bits    | BRAM     |
+        | 2048 x 8 |------|-------| 1024     |------|-------| 2048 x 8 |
+        |          |              |          |              |          |
+         ----------                ----------                ----------
+
+
+2)Diagramas de estado simplificados
+                                                     ---------------------<---------------------
+                                                    |                                           |
+         ----------      --------  NOT          ----------  CNT>=75%/    ----------  CNT<=50%/  |
+WRITE   |          |    |        | COMPLETE    |          |  WE = 0     |          |  WE = 1    |     
+        | RESET    |--->| LOAD   |------------>| WR_FIFO  |------------>| WR_WAIT  |------------>
+        |          |    | BRAM   |--           |          |--           |          |--     
+         ----------      --------   |COMPLETE   ----------   |CNT        ----------   |CNT>50%/
+                             |      |                |       |<75%/              |    | WE = 0
+WR_speed / RD_speed = 7       <-----                  <------ WE = 1              <---       
+     
+                                         ---------------------<---------------------
+                                        |                                           |
+         ----------                ----------   CNT=0/      ----------              |
+READ    |          |  CNT /= 0    |          |  RE=0*      |          |  CNT/=0     |     
+        | RESET    |------------->| RD_FIFO  |------------>| RD_WAIT  |------------>
+        |          |--            |          |--           |          |--     
+         ----------   |CNT=0       ----------   |CNT/=0/    ----------   |CNT=0
+                      |                    |    |RE=1*        |     |    | 
+                      |                     <---              |      <---   
+                       --------------->----------->-----------
+* RE deve também respeitar a razão de 7 vezes mais lento que WE
+
+3)Tarefas:
+1) Implementar os blocos individuais e testá-los separadamente.
+2) Completar e corrigir a máquina de estados.
+3) Implementar as máquinas de utilizando FIFO e BRAM como componentes
+4) Simular no Modelsim os blocos individuais e os circuitos completos, utilizando scripts
+5) Entregas:
+   a) Projeto no Quartus (de cada bloco testado individualmente e do circuito todo)
+   b) entregar snapshots e scripts da simulação no Modelsim 
+   
+
+
+NÃO Fazer
+5) Fazer o download na placa e capturar evidências de execução com o SignalTap
+   c) entregar evidências de execução no signalTap
+                       
