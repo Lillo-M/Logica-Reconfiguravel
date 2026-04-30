@@ -1,5 +1,5 @@
 Analysis & Synthesis report for bram
-Sun Apr 26 20:46:39 2026
+Wed Apr 29 23:24:17 2026
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -13,10 +13,16 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Multiplexer Restructuring Statistics (Restructuring Performed)
- 10. Elapsed Time Per Partition
- 11. Analysis & Synthesis Messages
+  8. Analysis & Synthesis RAM Summary
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Registers Added for RAM Pass-Through Logic
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Source assignments for altsyncram:conteudo_bram_rtl_0|altsyncram_utg1:auto_generated
+ 14. Parameter Settings for Inferred Entity Instance: altsyncram:conteudo_bram_rtl_0
+ 15. altsyncram Parameter Settings by Entity Instance
+ 16. Elapsed Time Per Partition
+ 17. Analysis & Synthesis Messages
 
 
 
@@ -42,18 +48,18 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Apr 26 20:46:39 2026           ;
+; Analysis & Synthesis Status        ; Successful - Wed Apr 29 23:24:17 2026           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; bram                                            ;
 ; Top-level Entity Name              ; fifo                                            ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 14,747                                          ;
-;     Total combinational functions  ; 6,555                                           ;
-;     Dedicated logic registers      ; 8,221                                           ;
-; Total registers                    ; 8221                                            ;
-; Total pins                         ; 32                                              ;
+; Total logic elements               ; 91                                              ;
+;     Total combinational functions  ; 74                                              ;
+;     Dedicated logic registers      ; 57                                              ;
+; Total registers                    ; 57                                              ;
+; Total pins                         ; 36                                              ;
 ; Total virtual pins                 ; 0                                               ;
-; Total memory bits                  ; 0                                               ;
+; Total memory bits                  ; 8,192                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                               ;
 ; Total PLLs                         ; 0                                               ;
 +------------------------------------+-------------------------------------------------+
@@ -154,53 +160,94 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                      ;
-+----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                               ; Library ;
-+----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------------------+---------+
-; fifo.vhd                         ; yes             ; User VHDL File  ; C:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/fifo/fifo.vhd ;         ;
-+----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                 ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                             ; Library ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------------------+---------+
+; fifo.vhd                         ; yes             ; User VHDL File               ; C:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/fifo/fifo.vhd               ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altsyncram.tdf                                         ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/stratix_ram_block.inc                                  ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_mux.inc                                            ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_decode.inc                                         ;         ;
+; aglobal130.inc                   ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/aglobal130.inc                                         ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/a_rdenreg.inc                                          ;         ;
+; altrom.inc                       ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altrom.inc                                             ;         ;
+; altram.inc                       ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altram.inc                                             ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altdpram.inc                                           ;         ;
+; db/altsyncram_utg1.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/fifo/db/altsyncram_utg1.tdf ;         ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------------------+---------+
 
 
-+------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary          ;
-+---------------------------------------------+--------+
-; Resource                                    ; Usage  ;
-+---------------------------------------------+--------+
-; Estimated Total logic elements              ; 14,747 ;
-;                                             ;        ;
-; Total combinational functions               ; 6555   ;
-; Logic element usage by number of LUT inputs ;        ;
-;     -- 4 input functions                    ; 6520   ;
-;     -- 3 input functions                    ; 20     ;
-;     -- <=2 input functions                  ; 15     ;
-;                                             ;        ;
-; Logic elements by mode                      ;        ;
-;     -- normal mode                          ; 6528   ;
-;     -- arithmetic mode                      ; 27     ;
-;                                             ;        ;
-; Total registers                             ; 8221   ;
-;     -- Dedicated logic registers            ; 8221   ;
-;     -- I/O registers                        ; 0      ;
-;                                             ;        ;
-; I/O pins                                    ; 32     ;
-; Embedded Multiplier 9-bit elements          ; 0      ;
-; Maximum fan-out node                        ; clk    ;
-; Maximum fan-out                             ; 8221   ;
-; Total fan-out                               ; 50871  ;
-; Average fan-out                             ; 3.44   ;
-+---------------------------------------------+--------+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Estimated Total logic elements              ; 91    ;
+;                                             ;       ;
+; Total combinational functions               ; 74    ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 17    ;
+;     -- 3 input functions                    ; 32    ;
+;     -- <=2 input functions                  ; 25    ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 46    ;
+;     -- arithmetic mode                      ; 28    ;
+;                                             ;       ;
+; Total registers                             ; 57    ;
+;     -- Dedicated logic registers            ; 57    ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 36    ;
+; Total memory bits                           ; 8192  ;
+; Embedded Multiplier 9-bit elements          ; 0     ;
+; Maximum fan-out node                        ; clk   ;
+; Maximum fan-out                             ; 65    ;
+; Total fan-out                               ; 609   ;
+; Average fan-out                             ; 3.48  ;
++---------------------------------------------+-------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                         ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
-; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
-; |fifo                      ; 6555 (6555)       ; 8221 (8221)  ; 0           ; 0            ; 0       ; 0         ; 32   ; 0            ; |fifo               ; work         ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                     ;
++----------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node             ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                 ; Library Name ;
++----------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------+--------------+
+; |fifo                                  ; 74 (74)           ; 57 (57)      ; 8192        ; 0            ; 0       ; 0         ; 36   ; 0            ; |fifo                                                               ; work         ;
+;    |altsyncram:conteudo_bram_rtl_0|    ; 0 (0)             ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |fifo|altsyncram:conteudo_bram_rtl_0                                ; work         ;
+;       |altsyncram_utg1:auto_generated| ; 0 (0)             ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |fifo|altsyncram:conteudo_bram_rtl_0|altsyncram_utg1:auto_generated ; work         ;
++----------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                             ;
++--------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+; Name                                                                     ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF  ;
++--------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+; altsyncram:conteudo_bram_rtl_0|altsyncram_utg1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 1024         ; 8            ; 1024         ; 8            ; 8192 ; None ;
++--------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+
+
++--------------------------------------------------------------+
+; Registers Removed During Synthesis                           ;
++----------------------------------------+---------------------+
+; Register name                          ; Reason for Removal  ;
++----------------------------------------+---------------------+
+; conteudo_bram_rtl_0_bypass[20]         ; Merged with tail[9] ;
+; conteudo_bram_rtl_0_bypass[18]         ; Merged with tail[8] ;
+; conteudo_bram_rtl_0_bypass[16]         ; Merged with tail[7] ;
+; conteudo_bram_rtl_0_bypass[14]         ; Merged with tail[6] ;
+; conteudo_bram_rtl_0_bypass[12]         ; Merged with tail[5] ;
+; conteudo_bram_rtl_0_bypass[10]         ; Merged with tail[4] ;
+; conteudo_bram_rtl_0_bypass[8]          ; Merged with tail[3] ;
+; conteudo_bram_rtl_0_bypass[6]          ; Merged with tail[2] ;
+; conteudo_bram_rtl_0_bypass[4]          ; Merged with tail[1] ;
+; conteudo_bram_rtl_0_bypass[2]          ; Merged with tail[0] ;
+; Total Number of Removed Registers = 10 ;                     ;
++----------------------------------------+---------------------+
 
 
 +------------------------------------------------------+
@@ -208,14 +255,51 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 8221  ;
-; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 21    ;
+; Total registers                              ; 57    ;
+; Number of registers using Synchronous Clear  ; 11    ;
+; Number of registers using Synchronous Load   ; 8     ;
+; Number of registers using Asynchronous Clear ; 22    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 8220  ;
+; Number of registers using Clock Enable       ; 27    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++------------------------------------------------------+
+; Registers Added for RAM Pass-Through Logic           ;
++--------------------------------+---------------------+
+; Register Name                  ; RAM Name            ;
++--------------------------------+---------------------+
+; conteudo_bram_rtl_0_bypass[0]  ; conteudo_bram_rtl_0 ;
+; conteudo_bram_rtl_0_bypass[1]  ; conteudo_bram_rtl_0 ;
+; conteudo_bram_rtl_0_bypass[2]  ; conteudo_bram_rtl_0 ;
+; conteudo_bram_rtl_0_bypass[3]  ; conteudo_bram_rtl_0 ;
+; conteudo_bram_rtl_0_bypass[4]  ; conteudo_bram_rtl_0 ;
+; conteudo_bram_rtl_0_bypass[5]  ; conteudo_bram_rtl_0 ;
+; conteudo_bram_rtl_0_bypass[6]  ; conteudo_bram_rtl_0 ;
+; conteudo_bram_rtl_0_bypass[7]  ; conteudo_bram_rtl_0 ;
+; conteudo_bram_rtl_0_bypass[8]  ; conteudo_bram_rtl_0 ;
+; conteudo_bram_rtl_0_bypass[9]  ; conteudo_bram_rtl_0 ;
+; conteudo_bram_rtl_0_bypass[10] ; conteudo_bram_rtl_0 ;
+; conteudo_bram_rtl_0_bypass[11] ; conteudo_bram_rtl_0 ;
+; conteudo_bram_rtl_0_bypass[12] ; conteudo_bram_rtl_0 ;
+; conteudo_bram_rtl_0_bypass[13] ; conteudo_bram_rtl_0 ;
+; conteudo_bram_rtl_0_bypass[14] ; conteudo_bram_rtl_0 ;
+; conteudo_bram_rtl_0_bypass[15] ; conteudo_bram_rtl_0 ;
+; conteudo_bram_rtl_0_bypass[16] ; conteudo_bram_rtl_0 ;
+; conteudo_bram_rtl_0_bypass[17] ; conteudo_bram_rtl_0 ;
+; conteudo_bram_rtl_0_bypass[18] ; conteudo_bram_rtl_0 ;
+; conteudo_bram_rtl_0_bypass[19] ; conteudo_bram_rtl_0 ;
+; conteudo_bram_rtl_0_bypass[20] ; conteudo_bram_rtl_0 ;
+; conteudo_bram_rtl_0_bypass[21] ; conteudo_bram_rtl_0 ;
+; conteudo_bram_rtl_0_bypass[22] ; conteudo_bram_rtl_0 ;
+; conteudo_bram_rtl_0_bypass[23] ; conteudo_bram_rtl_0 ;
+; conteudo_bram_rtl_0_bypass[24] ; conteudo_bram_rtl_0 ;
+; conteudo_bram_rtl_0_bypass[25] ; conteudo_bram_rtl_0 ;
+; conteudo_bram_rtl_0_bypass[26] ; conteudo_bram_rtl_0 ;
+; conteudo_bram_rtl_0_bypass[27] ; conteudo_bram_rtl_0 ;
+; conteudo_bram_rtl_0_bypass[28] ; conteudo_bram_rtl_0 ;
++--------------------------------+---------------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------+
@@ -223,8 +307,100 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; 3:1                ; 11 bits   ; 22 LEs        ; 0 LEs                ; 22 LEs                 ; Yes        ; |fifo|count[0]             ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |fifo|data_out[0]~reg0     ;
+; 4:1                ; 11 bits   ; 22 LEs        ; 11 LEs               ; 11 LEs                 ; Yes        ; |fifo|count[0]             ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |fifo|tail                 ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
++--------------------------------------------------------------------------------------+
+; Source assignments for altsyncram:conteudo_bram_rtl_0|altsyncram_utg1:auto_generated ;
++---------------------------------+--------------------+------+------------------------+
+; Assignment                      ; Value              ; From ; To                     ;
++---------------------------------+--------------------+------+------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                      ;
++---------------------------------+--------------------+------+------------------------+
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: altsyncram:conteudo_bram_rtl_0 ;
++------------------------------------+----------------------+---------------------+
+; Parameter Name                     ; Value                ; Type                ;
++------------------------------------+----------------------+---------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped             ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY          ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY        ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE        ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE      ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped             ;
+; OPERATION_MODE                     ; DUAL_PORT            ; Untyped             ;
+; WIDTH_A                            ; 8                    ; Untyped             ;
+; WIDTHAD_A                          ; 10                   ; Untyped             ;
+; NUMWORDS_A                         ; 1024                 ; Untyped             ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped             ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped             ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped             ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped             ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped             ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped             ;
+; WIDTH_B                            ; 8                    ; Untyped             ;
+; WIDTHAD_B                          ; 10                   ; Untyped             ;
+; NUMWORDS_B                         ; 1024                 ; Untyped             ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped             ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped             ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped             ;
+; ADDRESS_REG_B                      ; CLOCK0               ; Untyped             ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped             ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped             ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped             ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped             ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped             ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped             ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped             ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped             ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Untyped             ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped             ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped             ;
+; BYTE_SIZE                          ; 8                    ; Untyped             ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; OLD_DATA             ; Untyped             ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped             ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped             ;
+; INIT_FILE                          ; UNUSED               ; Untyped             ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped             ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped             ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped             ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped             ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped             ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped             ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped             ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped             ;
+; ENABLE_ECC                         ; FALSE                ; Untyped             ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped             ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped             ;
+; DEVICE_FAMILY                      ; Cyclone II           ; Untyped             ;
+; CBXI_PARAMETER                     ; altsyncram_utg1      ; Untyped             ;
++------------------------------------+----------------------+---------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                           ;
++-------------------------------------------+--------------------------------+
+; Name                                      ; Value                          ;
++-------------------------------------------+--------------------------------+
+; Number of entity instances                ; 1                              ;
+; Entity Instance                           ; altsyncram:conteudo_bram_rtl_0 ;
+;     -- OPERATION_MODE                     ; DUAL_PORT                      ;
+;     -- WIDTH_A                            ; 8                              ;
+;     -- NUMWORDS_A                         ; 1024                           ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                   ;
+;     -- WIDTH_B                            ; 8                              ;
+;     -- NUMWORDS_B                         ; 1024                           ;
+;     -- ADDRESS_REG_B                      ; CLOCK0                         ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                   ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                           ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; OLD_DATA                       ;
++-------------------------------------------+--------------------------------+
 
 
 +-------------------------------+
@@ -232,7 +408,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:11     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -242,25 +418,64 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Sun Apr 26 20:46:25 2026
+    Info: Processing started: Wed Apr 29 23:24:16 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off bram -c bram
 Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 2 design units, including 1 entities, in source file fifo_tb.vhd
+    Info (12022): Found design unit 1: fifo_tb-fifo_tb_arch
+    Info (12023): Found entity 1: fifo_tb
 Info (12021): Found 2 design units, including 1 entities, in source file fifo.vhd
     Info (12022): Found design unit 1: fifo-a_fifo
     Info (12023): Found entity 1: fifo
 Info (12127): Elaborating entity "fifo" for the top level hierarchy
-Info (276014): Found 1 instances of uninferred RAM logic
-    Info (276007): RAM logic "conteudo_bram" is uninferred due to asynchronous read logic
+Warning (276020): Inferred RAM node "conteudo_bram_rtl_0" from synchronous design logic.  Pass-through logic has been added to match the read-during-write behavior of the original design.
+Info (19000): Inferred 1 megafunctions from design logic
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "conteudo_bram_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
+        Info (286033): Parameter WIDTH_A set to 8
+        Info (286033): Parameter WIDTHAD_A set to 10
+        Info (286033): Parameter NUMWORDS_A set to 1024
+        Info (286033): Parameter WIDTH_B set to 8
+        Info (286033): Parameter WIDTHAD_B set to 10
+        Info (286033): Parameter NUMWORDS_B set to 1024
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
+        Info (286033): Parameter ADDRESS_REG_B set to CLOCK0
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+        Info (286033): Parameter READ_DURING_WRITE_MODE_MIXED_PORTS set to OLD_DATA
+Info (12130): Elaborated megafunction instantiation "altsyncram:conteudo_bram_rtl_0"
+Info (12133): Instantiated megafunction "altsyncram:conteudo_bram_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
+    Info (12134): Parameter "WIDTH_A" = "8"
+    Info (12134): Parameter "WIDTHAD_A" = "10"
+    Info (12134): Parameter "NUMWORDS_A" = "1024"
+    Info (12134): Parameter "WIDTH_B" = "8"
+    Info (12134): Parameter "WIDTHAD_B" = "10"
+    Info (12134): Parameter "NUMWORDS_B" = "1024"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_REG_B" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_B" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_B" = "NONE"
+    Info (12134): Parameter "ADDRESS_REG_B" = "CLOCK0"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+    Info (12134): Parameter "READ_DURING_WRITE_MODE_MIXED_PORTS" = "OLD_DATA"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_utg1.tdf
+    Info (12023): Found entity 1: altsyncram_utg1
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 14779 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 156 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 13 input pins
-    Info (21059): Implemented 19 output pins
-    Info (21061): Implemented 14747 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4690 megabytes
-    Info: Processing ended: Sun Apr 26 20:46:39 2026
-    Info: Elapsed time: 00:00:14
-    Info: Total CPU time (on all processors): 00:00:14
+    Info (21059): Implemented 23 output pins
+    Info (21061): Implemented 112 logic cells
+    Info (21064): Implemented 8 RAM segments
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 4656 megabytes
+    Info: Processing ended: Wed Apr 29 23:24:17 2026
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
 
 

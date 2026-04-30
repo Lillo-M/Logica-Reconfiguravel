@@ -10,260 +10,2184 @@
 # ** Warning: Copied C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
 #          Updated modelsim.ini.
 # 
-# vcom -93 -work work {C:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/bram/bram.vhd}
+# vcom -93 -work work {C:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/fifo/fifo.vhd}
 # Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Loading package NUMERIC_STD
-# -- Compiling entity bram
-# -- Compiling architecture a_bram of bram
+# -- Compiling entity fifo
+# -- Compiling architecture a_fifo of fifo
 # 
-vcom -reportprogress 300 -work work C:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/bram/bram_tb.vhd
+vcom -reportprogress 300 -work work C:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/fifo/fifo_tb.vhd
 # Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Loading package NUMERIC_STD
-# -- Loading entity bram
-# -- Compiling entity bram_tb
-# -- Compiling architecture bram_tb_arch of bram_tb
-vsim -voptargs=+acc work.bram_tb
-# vsim -voptargs=+acc work.bram_tb 
+# -- Loading entity fifo
+# -- Compiling entity fifo_tb
+# -- Compiling architecture fifo_tb_arch of fifo_tb
+vsim -voptargs=+acc work.fifo_tb
+# vsim -voptargs=+acc work.fifo_tb 
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
 # Loading ieee.numeric_std(body)
-# Loading work.bram_tb(bram_tb_arch)
-# Loading work.bram(a_bram)
+# Loading work.fifo_tb(fifo_tb_arch)
+# Loading work.fifo(a_fifo)
 add wave -position insertpoint  \
-sim:/bram_tb/wr_en \
-sim:/bram_tb/dado_out \
-sim:/bram_tb/dado_in \
-sim:/bram_tb/clk \
-sim:/bram_tb/address
+sim:/fifo_tb/wr_en \
+sim:/fifo_tb/rst \
+sim:/fifo_tb/rd_en \
+sim:/fifo_tb/isFull \
+sim:/fifo_tb/isEmpty \
+sim:/fifo_tb/isAlmostFull \
+sim:/fifo_tb/isAlmostEmpty \
+sim:/fifo_tb/dado_out \
+sim:/fifo_tb/dado_in \
+sim:/fifo_tb/count \
+sim:/fifo_tb/clr \
+sim:/fifo_tb/clk
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 # 
 #           File in use by: Lillo  Hostname: DESKTOP-N3U8L45  ProcessID: 26232
 # 
-#           Attempting to use alternate WLF file "./wlftzad1r3".
+#           Attempting to use alternate WLF file "./wlft0hgynm".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
 # 
-#           Using alternate file: ./wlftzad1r3
+#           Using alternate file: ./wlft0hgynm
 # 
-run 1000 ns
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 0  Instance: /bram_tb/ram
-quit -sim
-vcom -work work -O0 C:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/bram/bram_tb.vhd
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading entity bram
-# -- Compiling entity bram_tb
-# -- Compiling architecture bram_tb_arch of bram_tb
-# ** Error: C:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/bram/bram_tb.vhd(40): (vcom-1226) A wait statement is illegal for a process with a sensitivity list.
-# 
-# ** Error: C:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/bram/bram_tb.vhd(112): VHDL Compiler exiting
-# C:/altera/13.0sp1/modelsim_ase/win32aloem/vcom failed.
-vsim -voptargs=+acc work.bram_tb
-# vsim -voptargs=+acc work.bram_tb 
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.bram_tb(bram_tb_arch)
-# Loading work.bram(a_bram)
-add wave -position insertpoint  \
-sim:/bram_tb/wr_en \
-sim:/bram_tb/dado_out \
-sim:/bram_tb/dado_in \
-sim:/bram_tb/clk \
-sim:/bram_tb/address
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-# 
-#           File in use by: Lillo  Hostname: DESKTOP-N3U8L45  ProcessID: 26232
-# 
-#           Attempting to use alternate WLF file "./wlft29hzwb".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-# 
-#           Using alternate file: ./wlft29hzwb
-# 
-run 1 us
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 0  Instance: /bram_tb/ram
-quit -sim
-vcom -work work -O0 C:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/bram/bram_tb.vhd
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading entity bram
-# -- Compiling entity bram_tb
-# -- Compiling architecture bram_tb_arch of bram_tb
-# ** Error: C:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/bram/bram_tb.vhd(40): (vcom-1226) A wait statement is illegal for a process with a sensitivity list.
-# 
-# ** Error: C:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/bram/bram_tb.vhd(112): VHDL Compiler exiting
-# C:/altera/13.0sp1/modelsim_ase/win32aloem/vcom failed.
-vsim -voptargs=+acc work.bram_tb
-# vsim -voptargs=+acc work.bram_tb 
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.bram_tb(bram_tb_arch)
-# Loading work.bram(a_bram)
-add wave -position insertpoint  \
-sim:/bram_tb/wr_en \
-sim:/bram_tb/dado_out \
-sim:/bram_tb/dado_in \
-sim:/bram_tb/address
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-# 
-#           File in use by: Lillo  Hostname: DESKTOP-N3U8L45  ProcessID: 26232
-# 
-#           Attempting to use alternate WLF file "./wlftn53cg0".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-# 
-#           Using alternate file: ./wlftn53cg0
-# 
-run 1 us
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 0  Instance: /bram_tb/ram
-quit -sim
-vcom -work work -O0 C:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/bram/bram_tb.vhd
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading entity bram
-# -- Compiling entity bram_tb
-# -- Compiling architecture bram_tb_arch of bram_tb
-# ** Error: C:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/bram/bram_tb.vhd(40): (vcom-1226) A wait statement is illegal for a process with a sensitivity list.
-# 
-# ** Error: C:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/bram/bram_tb.vhd(105): VHDL Compiler exiting
-# C:/altera/13.0sp1/modelsim_ase/win32aloem/vcom failed.
-vsim -voptargs=+acc work.bram_tb
-# vsim -voptargs=+acc work.bram_tb 
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.bram_tb(bram_tb_arch)
-# Loading work.bram(a_bram)
-add wave -position insertpoint  \
-sim:/bram_tb/wr_en \
-sim:/bram_tb/dado_out \
-sim:/bram_tb/dado_in \
-sim:/bram_tb/clk \
-sim:/bram_tb/address
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-# 
-#           File in use by: Lillo  Hostname: DESKTOP-N3U8L45  ProcessID: 26232
-# 
-#           Attempting to use alternate WLF file "./wlftj07232".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-# 
-#           Using alternate file: ./wlftj07232
-# 
-run 1 us
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 0  Instance: /bram_tb/ram
-quit -sim
-vcom -reportprogress 300 -work work C:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/bram/bram_tb.vhd
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading entity bram
-# -- Compiling entity bram_tb
-# -- Compiling architecture bram_tb_arch of bram_tb
-# ** Error: C:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/bram/bram_tb.vhd(40): (vcom-1226) A wait statement is illegal for a process with a sensitivity list.
-# 
-# ** Error: C:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/bram/bram_tb.vhd(107): VHDL Compiler exiting
-vcom -reportprogress 300 -work work C:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/bram/bram_tb.vhd
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading entity bram
-# -- Compiling entity bram_tb
-# -- Compiling architecture bram_tb_arch of bram_tb
-# ** Error: C:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/bram/bram_tb.vhd(40): (vcom-1226) A wait statement is illegal for a process with a sensitivity list.
-# 
-# ** Error: C:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/bram/bram_tb.vhd(107): VHDL Compiler exiting
-vcom -reportprogress 300 -work work C:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/bram/bram_tb.vhd
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading entity bram
-# -- Compiling entity bram_tb
-# -- Compiling architecture bram_tb_arch of bram_tb
-# ** Error: C:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/bram/bram_tb.vhd(40): (vcom-1226) A wait statement is illegal for a process with a sensitivity list.
-# 
-# ** Error: C:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/bram/bram_tb.vhd(107): VHDL Compiler exiting
-vcom -reportprogress 300 -work work C:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/bram/bram_tb.vhd
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading entity bram
-# -- Compiling entity bram_tb
-# -- Compiling architecture bram_tb_arch of bram_tb
-# ** Error: C:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/bram/bram_tb.vhd(40): (vcom-1226) A wait statement is illegal for a process with a sensitivity list.
-# 
-# ** Error: C:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/bram/bram_tb.vhd(107): VHDL Compiler exiting
-vcom -reportprogress 300 -work work C:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/bram/bram_tb.vhd
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading entity bram
-# -- Compiling entity bram_tb
-# -- Compiling architecture bram_tb_arch of bram_tb
-vsim -voptargs=+acc work.bram_tb
-# vsim -voptargs=+acc work.bram_tb 
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.bram_tb(bram_tb_arch)
-# Loading work.bram(a_bram)
-add wave -position insertpoint  \
-sim:/bram_tb/rst \
-sim:/bram_tb/dado_out \
-sim:/bram_tb/dado_in \
-sim:/bram_tb/clk \
-sim:/bram_tb/address
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-# 
-#           File in use by: Lillo  Hostname: DESKTOP-N3U8L45  ProcessID: 26232
-# 
-#           Attempting to use alternate WLF file "./wlftc8r34r".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-# 
-#           Using alternate file: ./wlftc8r34r
-# 
-run 1 us
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 0  Instance: /bram_tb/ram
-add wave -position insertpoint  \
-sim:/bram_tb/wr_en \
-sim:/bram_tb/dado_out \
-sim:/bram_tb/dado_in \
-sim:/bram_tb/address
-run
+run 10960 ns
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /fifo_tb/ram
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /fifo_tb/ram
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /fifo_tb/ram
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5145 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5165 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5185 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5205 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5225 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5245 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5265 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5285 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5305 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5325 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5345 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5365 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5385 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5405 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5425 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5445 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5465 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5485 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5505 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5525 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5545 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5565 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5585 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5605 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5625 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5645 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5665 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5685 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5705 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5725 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5745 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5765 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5785 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5805 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5825 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5845 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5865 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5885 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5905 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5925 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5945 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5965 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5985 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6005 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6025 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6045 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6065 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6085 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6105 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6125 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6145 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6165 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6185 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6205 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6225 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6245 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6265 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6285 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6305 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6325 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6345 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6365 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6385 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6405 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6425 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6445 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6465 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6485 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6505 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6525 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6545 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6565 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6585 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6605 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6625 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6645 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6665 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6685 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6705 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6725 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6745 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6765 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6785 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6805 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6825 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6845 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6865 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6885 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6905 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6925 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6945 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6965 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6985 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7005 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7025 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7045 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7065 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7085 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7105 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7125 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7145 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7165 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7185 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7205 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7225 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7245 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7265 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7285 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7305 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7325 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7345 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7365 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7385 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7405 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7425 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7445 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7465 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7485 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7505 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7525 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7545 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7565 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7585 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7605 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7625 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7645 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7665 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7685 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7705 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7725 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7745 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7765 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7785 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7805 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7825 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7845 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7865 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7885 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7905 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7925 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7945 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7965 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7985 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8005 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8025 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8045 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8065 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8085 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8105 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8125 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8145 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8165 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8185 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8205 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8225 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8245 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8265 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8285 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8305 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8325 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8345 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8365 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8385 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8405 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8425 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8445 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8465 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8485 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8505 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8525 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8545 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8565 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8585 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8605 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8625 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8645 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8665 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8685 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8705 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8725 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8745 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8765 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8785 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8805 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8825 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8845 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8865 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8885 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8905 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8925 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8945 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8965 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8985 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9005 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9025 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9045 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9065 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9085 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9105 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9125 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9145 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9165 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9185 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9205 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9225 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9245 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9265 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9285 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9305 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9325 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9345 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9365 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9385 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9405 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9425 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9445 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9465 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9485 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9505 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9525 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9545 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9565 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9585 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9605 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9625 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9645 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9665 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9685 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9705 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9725 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9745 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9765 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9785 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9805 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9825 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9845 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9865 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9885 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9905 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9925 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9945 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9965 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9985 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10005 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10025 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10045 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10065 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10085 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10105 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10125 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10145 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10165 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10185 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10205 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10225 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10245 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10265 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10285 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10305 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10325 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10345 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10365 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10385 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10405 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10425 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10445 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10465 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10485 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10505 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10525 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10545 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10565 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10585 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10605 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10625 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10645 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10665 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10685 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10705 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10725 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10745 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10765 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10785 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10805 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10825 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10845 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10865 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10885 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10905 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10925 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10945 ns  Iteration: 1  Instance: /fifo_tb
 restart
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 0  Instance: /bram_tb/ram
+run 20960 ns
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /fifo_tb/ram
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /fifo_tb/ram
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /fifo_tb/ram
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5145 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5165 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5185 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5205 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5225 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5245 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5265 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5285 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5305 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5325 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5345 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5365 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5385 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5405 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5425 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5445 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5465 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5485 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5505 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5525 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5545 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5565 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5585 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5605 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5625 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5645 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5665 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5685 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5705 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5725 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5745 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5765 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5785 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5805 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5825 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5845 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5865 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5885 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5905 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5925 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5945 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5965 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5985 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6005 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6025 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6045 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6065 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6085 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6105 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6125 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6145 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6165 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6185 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6205 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6225 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6245 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6265 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6285 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6305 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6325 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6345 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6365 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6385 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6405 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6425 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6445 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6465 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6485 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6505 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6525 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6545 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6565 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6585 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6605 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6625 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6645 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6665 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6685 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6705 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6725 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6745 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6765 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6785 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6805 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6825 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6845 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6865 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6885 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6905 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6925 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6945 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6965 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6985 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7005 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7025 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7045 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7065 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7085 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7105 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7125 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7145 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7165 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7185 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7205 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7225 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7245 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7265 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7285 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7305 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7325 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7345 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7365 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7385 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7405 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7425 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7445 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7465 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7485 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7505 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7525 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7545 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7565 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7585 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7605 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7625 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7645 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7665 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7685 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7705 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7725 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7745 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7765 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7785 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7805 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7825 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7845 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7865 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7885 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7905 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7925 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7945 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7965 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 7985 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8005 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8025 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8045 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8065 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8085 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8105 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8125 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8145 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8165 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8185 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8205 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8225 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8245 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8265 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8285 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8305 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8325 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8345 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8365 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8385 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8405 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8425 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8445 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8465 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8485 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8505 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8525 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8545 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8565 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8585 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8605 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8625 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8645 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8665 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8685 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8705 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8725 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8745 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8765 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8785 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8805 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8825 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8845 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8865 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8885 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8905 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8925 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8945 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8965 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 8985 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9005 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9025 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9045 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9065 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9085 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9105 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9125 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9145 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9165 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9185 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9205 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9225 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9245 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9265 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9285 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9305 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9325 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9345 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9365 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9385 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9405 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9425 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9445 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9465 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9485 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9505 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9525 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9545 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9565 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9585 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9605 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9625 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9645 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9665 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9685 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9705 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9725 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9745 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9765 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9785 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9805 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9825 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9845 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9865 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9885 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9905 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9925 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9945 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9965 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 9985 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10005 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10025 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10045 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10065 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10085 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10105 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10125 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10145 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10165 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10185 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10205 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10225 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10245 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10265 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10285 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10305 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10325 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10345 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10365 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10385 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10405 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10425 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10445 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10465 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10485 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10505 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10525 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10545 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10565 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10585 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10605 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10625 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10645 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10665 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10685 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10705 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10725 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10745 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10765 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10785 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10805 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10825 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10845 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10865 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10885 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10905 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10925 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10945 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10965 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 10985 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 11005 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 11025 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 11045 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 11065 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 11085 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 11105 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 11125 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 11145 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 11165 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 11185 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 11205 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 11225 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 11245 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 11265 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 11285 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 11305 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 11325 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 11345 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 11365 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 11385 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 11405 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 11425 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 11445 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 11465 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 11485 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 11505 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 11525 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 11545 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 11565 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 11585 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 11605 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 11625 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 11645 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 11665 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 11685 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 11705 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 11725 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 11745 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 11765 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 11785 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 11805 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 11825 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 11845 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 11865 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 11885 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 11905 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 11925 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 11945 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 11965 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 11985 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 12005 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 12025 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 12045 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 12065 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 12085 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 12105 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 12125 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 12145 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 12165 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 12185 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 12205 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 12225 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 12245 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 12265 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 12285 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 12305 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 12325 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 12345 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 12365 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 12385 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 12405 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 12425 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 12445 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 12465 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 12485 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 12505 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 12525 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 12545 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 12565 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 12585 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 12605 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 12625 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 12645 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 12665 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 12685 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 12705 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 12725 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 12745 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 12765 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 12785 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 12805 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 12825 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 12845 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 12865 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 12885 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 12905 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 12925 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 12945 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 12965 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 12985 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 13005 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 13025 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 13045 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 13065 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 13085 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 13105 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 13125 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 13145 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 13165 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 13185 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 13205 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 13225 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 13245 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 13265 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 13285 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 13305 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 13325 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 13345 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 13365 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 13385 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 13405 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 13425 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 13445 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 13465 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 13485 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 13505 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 13525 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 13545 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 13565 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 13585 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 13605 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 13625 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 13645 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 13665 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 13685 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 13705 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 13725 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 13745 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 13765 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 13785 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 13805 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 13825 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 13845 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 13865 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 13885 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 13905 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 13925 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 13945 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 13965 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 13985 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 14005 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 14025 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 14045 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 14065 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 14085 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 14105 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 14125 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 14145 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 14165 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 14185 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 14205 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 14225 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 14245 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 14265 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 14285 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 14305 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 14325 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 14345 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 14365 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 14385 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 14405 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 14425 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 14445 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 14465 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 14485 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 14505 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 14525 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 14545 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 14565 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 14585 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 14605 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 14625 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 14645 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 14665 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 14685 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 14705 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 14725 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 14745 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 14765 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 14785 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 14805 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 14825 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 14845 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 14865 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 14885 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 14905 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 14925 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 14945 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 14965 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 14985 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 15005 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 15025 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 15045 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 15065 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 15085 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 15105 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 15125 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 15145 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 15165 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 15185 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 15205 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 15225 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 15245 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 15265 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 15285 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 15305 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 15325 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 15345 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 15365 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 15385 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 15405 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 15425 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 15445 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 15465 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 15485 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 15505 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 15525 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 15545 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 15565 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 15585 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 15605 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 15625 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 15645 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 15665 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 15685 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 15705 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 15725 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 15745 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 15765 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 15785 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 15805 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 15825 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 15845 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 15865 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 15885 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 15905 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 15925 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 15945 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 15965 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 15985 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 16005 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 16025 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 16045 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 16065 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 16085 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 16105 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 16125 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 16145 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 16165 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 16185 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 16205 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 16225 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 16245 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 16265 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 16285 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 16305 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 16325 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 16345 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 16365 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 16385 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 16405 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 16425 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 16445 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 16465 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 16485 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 16505 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 16525 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 16545 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 16565 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 16585 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 16605 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 16625 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 16645 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 16665 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 16685 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 16705 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 16725 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 16745 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 16765 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 16785 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 16805 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 16825 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 16845 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 16865 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 16885 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 16905 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 16925 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 16945 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 16965 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 16985 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 17005 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 17025 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 17045 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 17065 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 17085 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 17105 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 17125 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 17145 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 17165 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 17185 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 17205 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 17225 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 17245 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 17265 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 17285 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 17305 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 17325 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 17345 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 17365 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 17385 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 17405 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 17425 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 17445 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 17465 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 17485 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 17505 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 17525 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 17545 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 17565 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 17585 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 17605 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 17625 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 17645 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 17665 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 17685 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 17705 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 17725 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 17745 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 17765 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 17785 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 17805 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 17825 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 17845 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 17865 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 17885 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 17905 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 17925 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 17945 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 17965 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 17985 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 18005 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 18025 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 18045 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 18065 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 18085 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 18105 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 18125 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 18145 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 18165 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 18185 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 18205 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 18225 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 18245 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 18265 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 18285 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 18305 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 18325 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 18345 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 18365 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 18385 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 18405 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 18425 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 18445 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 18465 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 18485 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 18505 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 18525 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 18545 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 18565 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 18585 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 18605 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 18625 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 18645 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 18665 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 18685 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 18705 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 18725 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 18745 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 18765 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 18785 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 18805 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 18825 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 18845 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 18865 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 18885 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 18905 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 18925 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 18945 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 18965 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 18985 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 19005 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 19025 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 19045 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 19065 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 19085 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 19105 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 19125 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 19145 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 19165 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 19185 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 19205 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 19225 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 19245 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 19265 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 19285 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 19305 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 19325 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 19345 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 19365 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 19385 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 19405 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 19425 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 19445 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 19465 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 19485 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 19505 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 19525 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 19545 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 19565 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 19585 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 19605 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 19625 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 19645 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 19665 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 19685 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 19705 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 19725 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 19745 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 19765 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 19785 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 19805 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 19825 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 19845 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 19865 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 19885 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 19905 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 19925 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 19945 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 19965 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 19985 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 20005 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 20025 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 20045 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 20065 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 20085 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 20105 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 20125 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 20145 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 20165 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 20185 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 20205 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 20225 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 20245 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 20265 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 20285 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 20305 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 20325 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 20345 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 20365 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 20385 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 20405 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 20425 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 20445 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 20465 ns  Iteration: 1  Instance: /fifo_tb
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 20485 ns  Iteration: 1  Instance: /fifo_tb

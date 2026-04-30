@@ -1,5 +1,5 @@
 Flow report for bram
-Sun Apr 26 20:48:35 2026
+Wed Apr 29 23:24:23 2026
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -40,21 +40,21 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Flow Summary                                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Flow Status                        ; Successful - Sun Apr 26 20:48:35 2026           ;
+; Flow Status                        ; Successful - Wed Apr 29 23:24:23 2026           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; bram                                            ;
 ; Top-level Entity Name              ; fifo                                            ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 10,824 / 14,448 ( 75 % )                        ;
-;     Total combinational functions  ; 6,555 / 14,448 ( 45 % )                         ;
-;     Dedicated logic registers      ; 8,221 / 14,448 ( 57 % )                         ;
-; Total registers                    ; 8221                                            ;
-; Total pins                         ; 32 / 152 ( 21 % )                               ;
+; Total logic elements               ; 93 / 4,608 ( 2 % )                              ;
+;     Total combinational functions  ; 75 / 4,608 ( 2 % )                              ;
+;     Dedicated logic registers      ; 57 / 4,608 ( 1 % )                              ;
+; Total registers                    ; 57                                              ;
+; Total pins                         ; 36 / 89 ( 40 % )                                ;
 ; Total virtual pins                 ; 0                                               ;
-; Total memory bits                  ; 0 / 239,616 ( 0 % )                             ;
-; Embedded Multiplier 9-bit elements ; 0 / 52 ( 0 % )                                  ;
-; Total PLLs                         ; 0 / 4 ( 0 % )                                   ;
-; Device                             ; EP2C15AF256C6                                   ;
+; Total memory bits                  ; 8,192 / 119,808 ( 7 % )                         ;
+; Embedded Multiplier 9-bit elements ; 0 / 26 ( 0 % )                                  ;
+; Total PLLs                         ; 0 / 2 ( 0 % )                                   ;
+; Device                             ; EP2C5T144C6                                     ;
 ; Timing Models                      ; Final                                           ;
 +------------------------------------+-------------------------------------------------+
 
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 04/26/2026 20:46:26 ;
+; Start date & time ; 04/29/2026 23:24:17 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; bram                ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ applicable agreement for further details.
 +-------------------------------------+--------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                          ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+--------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 27214208538326.177724718517080 ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 27214208538326.177751585703580 ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                           ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)         ; <None>        ; --          ; --             ;
 ; PARTITION_COLOR                     ; 16764057                       ; --            ; fifo        ; Top            ;
@@ -91,12 +91,12 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:13     ; 1.0                     ; 4690 MB             ; 00:00:13                           ;
-; Fitter                    ; 00:01:43     ; 1.0                     ; 4973 MB             ; 00:01:41                           ;
-; Assembler                 ; 00:00:02     ; 1.0                     ; 4602 MB             ; 00:00:01                           ;
-; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 4691 MB             ; 00:00:02                           ;
-; EDA Netlist Writer        ; 00:00:04     ; 1.0                     ; 4641 MB             ; 00:00:04                           ;
-; Total                     ; 00:02:04     ; --                      ; --                  ; 00:02:01                           ;
+; Analysis & Synthesis      ; 00:00:01     ; 1.0                     ; 4656 MB             ; 00:00:01                           ;
+; Fitter                    ; 00:00:02     ; 1.0                     ; 4808 MB             ; 00:00:02                           ;
+; Assembler                 ; 00:00:00     ; 1.0                     ; 4551 MB             ; 00:00:01                           ;
+; TimeQuest Timing Analyzer ; 00:00:00     ; 1.0                     ; 4550 MB             ; 00:00:01                           ;
+; EDA Netlist Writer        ; 00:00:00     ; 1.0                     ; 4516 MB             ; 00:00:00                           ;
+; Total                     ; 00:00:03     ; --                      ; --                  ; 00:00:05                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

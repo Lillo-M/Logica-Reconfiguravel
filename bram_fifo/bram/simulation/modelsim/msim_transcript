@@ -19,6 +19,10 @@
 # -- Compiling entity bram
 # -- Compiling architecture a_bram of bram
 # 
+run 542*20 ns
+# No Design Loaded!
+run 10800 ns
+# No Design Loaded!
 vcom -reportprogress 300 -work work C:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/bram/bram_tb.vhd
 # Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 # -- Loading package STANDARD
@@ -28,6 +32,14 @@ vcom -reportprogress 300 -work work C:/Users/Lillo/Desktop/logica_reconfiguravel
 # -- Loading entity bram
 # -- Compiling entity bram_tb
 # -- Compiling architecture bram_tb_arch of bram_tb
+vsim work.bram
+# vsim work.bram 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.bram(a_bram)
+quit -sim
 vsim -voptargs=+acc work.bram_tb
 # vsim -voptargs=+acc work.bram_tb 
 # Loading std.standard
@@ -38,208 +50,6 @@ vsim -voptargs=+acc work.bram_tb
 # Loading work.bram(a_bram)
 add wave -position insertpoint  \
 sim:/bram_tb/wr_en \
-sim:/bram_tb/dado_out \
-sim:/bram_tb/dado_in \
-sim:/bram_tb/clk \
-sim:/bram_tb/address
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-# 
-#           File in use by: Lillo  Hostname: DESKTOP-N3U8L45  ProcessID: 26232
-# 
-#           Attempting to use alternate WLF file "./wlftzad1r3".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-# 
-#           Using alternate file: ./wlftzad1r3
-# 
-run 1000 ns
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 0  Instance: /bram_tb/ram
-quit -sim
-vcom -work work -O0 C:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/bram/bram_tb.vhd
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading entity bram
-# -- Compiling entity bram_tb
-# -- Compiling architecture bram_tb_arch of bram_tb
-# ** Error: C:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/bram/bram_tb.vhd(40): (vcom-1226) A wait statement is illegal for a process with a sensitivity list.
-# 
-# ** Error: C:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/bram/bram_tb.vhd(112): VHDL Compiler exiting
-# C:/altera/13.0sp1/modelsim_ase/win32aloem/vcom failed.
-vsim -voptargs=+acc work.bram_tb
-# vsim -voptargs=+acc work.bram_tb 
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.bram_tb(bram_tb_arch)
-# Loading work.bram(a_bram)
-add wave -position insertpoint  \
-sim:/bram_tb/wr_en \
-sim:/bram_tb/dado_out \
-sim:/bram_tb/dado_in \
-sim:/bram_tb/clk \
-sim:/bram_tb/address
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-# 
-#           File in use by: Lillo  Hostname: DESKTOP-N3U8L45  ProcessID: 26232
-# 
-#           Attempting to use alternate WLF file "./wlft29hzwb".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-# 
-#           Using alternate file: ./wlft29hzwb
-# 
-run 1 us
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 0  Instance: /bram_tb/ram
-quit -sim
-vcom -work work -O0 C:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/bram/bram_tb.vhd
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading entity bram
-# -- Compiling entity bram_tb
-# -- Compiling architecture bram_tb_arch of bram_tb
-# ** Error: C:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/bram/bram_tb.vhd(40): (vcom-1226) A wait statement is illegal for a process with a sensitivity list.
-# 
-# ** Error: C:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/bram/bram_tb.vhd(112): VHDL Compiler exiting
-# C:/altera/13.0sp1/modelsim_ase/win32aloem/vcom failed.
-vsim -voptargs=+acc work.bram_tb
-# vsim -voptargs=+acc work.bram_tb 
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.bram_tb(bram_tb_arch)
-# Loading work.bram(a_bram)
-add wave -position insertpoint  \
-sim:/bram_tb/wr_en \
-sim:/bram_tb/dado_out \
-sim:/bram_tb/dado_in \
-sim:/bram_tb/address
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-# 
-#           File in use by: Lillo  Hostname: DESKTOP-N3U8L45  ProcessID: 26232
-# 
-#           Attempting to use alternate WLF file "./wlftn53cg0".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-# 
-#           Using alternate file: ./wlftn53cg0
-# 
-run 1 us
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 0  Instance: /bram_tb/ram
-quit -sim
-vcom -work work -O0 C:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/bram/bram_tb.vhd
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading entity bram
-# -- Compiling entity bram_tb
-# -- Compiling architecture bram_tb_arch of bram_tb
-# ** Error: C:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/bram/bram_tb.vhd(40): (vcom-1226) A wait statement is illegal for a process with a sensitivity list.
-# 
-# ** Error: C:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/bram/bram_tb.vhd(105): VHDL Compiler exiting
-# C:/altera/13.0sp1/modelsim_ase/win32aloem/vcom failed.
-vsim -voptargs=+acc work.bram_tb
-# vsim -voptargs=+acc work.bram_tb 
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.bram_tb(bram_tb_arch)
-# Loading work.bram(a_bram)
-add wave -position insertpoint  \
-sim:/bram_tb/wr_en \
-sim:/bram_tb/dado_out \
-sim:/bram_tb/dado_in \
-sim:/bram_tb/clk \
-sim:/bram_tb/address
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-# 
-#           File in use by: Lillo  Hostname: DESKTOP-N3U8L45  ProcessID: 26232
-# 
-#           Attempting to use alternate WLF file "./wlftj07232".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-# 
-#           Using alternate file: ./wlftj07232
-# 
-run 1 us
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 0  Instance: /bram_tb/ram
-quit -sim
-vcom -reportprogress 300 -work work C:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/bram/bram_tb.vhd
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading entity bram
-# -- Compiling entity bram_tb
-# -- Compiling architecture bram_tb_arch of bram_tb
-# ** Error: C:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/bram/bram_tb.vhd(40): (vcom-1226) A wait statement is illegal for a process with a sensitivity list.
-# 
-# ** Error: C:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/bram/bram_tb.vhd(107): VHDL Compiler exiting
-vcom -reportprogress 300 -work work C:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/bram/bram_tb.vhd
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading entity bram
-# -- Compiling entity bram_tb
-# -- Compiling architecture bram_tb_arch of bram_tb
-# ** Error: C:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/bram/bram_tb.vhd(40): (vcom-1226) A wait statement is illegal for a process with a sensitivity list.
-# 
-# ** Error: C:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/bram/bram_tb.vhd(107): VHDL Compiler exiting
-vcom -reportprogress 300 -work work C:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/bram/bram_tb.vhd
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading entity bram
-# -- Compiling entity bram_tb
-# -- Compiling architecture bram_tb_arch of bram_tb
-# ** Error: C:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/bram/bram_tb.vhd(40): (vcom-1226) A wait statement is illegal for a process with a sensitivity list.
-# 
-# ** Error: C:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/bram/bram_tb.vhd(107): VHDL Compiler exiting
-vcom -reportprogress 300 -work work C:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/bram/bram_tb.vhd
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading entity bram
-# -- Compiling entity bram_tb
-# -- Compiling architecture bram_tb_arch of bram_tb
-# ** Error: C:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/bram/bram_tb.vhd(40): (vcom-1226) A wait statement is illegal for a process with a sensitivity list.
-# 
-# ** Error: C:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/bram/bram_tb.vhd(107): VHDL Compiler exiting
-vcom -reportprogress 300 -work work C:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/bram/bram_tb.vhd
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading entity bram
-# -- Compiling entity bram_tb
-# -- Compiling architecture bram_tb_arch of bram_tb
-vsim -voptargs=+acc work.bram_tb
-# vsim -voptargs=+acc work.bram_tb 
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.bram_tb(bram_tb_arch)
-# Loading work.bram(a_bram)
-add wave -position insertpoint  \
 sim:/bram_tb/rst \
 sim:/bram_tb/dado_out \
 sim:/bram_tb/dado_in \
@@ -249,21 +59,14 @@ sim:/bram_tb/address
 # 
 #           File in use by: Lillo  Hostname: DESKTOP-N3U8L45  ProcessID: 26232
 # 
-#           Attempting to use alternate WLF file "./wlftc8r34r".
+#           Attempting to use alternate WLF file "./wlftn1reig".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
 # 
-#           Using alternate file: ./wlftc8r34r
+#           Using alternate file: ./wlftn1reig
 # 
-run 1 us
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 0  Instance: /bram_tb/ram
-add wave -position insertpoint  \
-sim:/bram_tb/wr_en \
-sim:/bram_tb/dado_out \
-sim:/bram_tb/dado_in \
-sim:/bram_tb/address
-run
-restart
-run
+run 548 * 20 ns
+# ** Error: (vsim-4001) Incorrect number of arguments.
+# Usage: run [<timesteps> [<time_units>]] | -all | -continue | -next | -step | -over | -out | -init | -final
+run 10960 ns
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ps  Iteration: 0  Instance: /bram_tb/ram
