@@ -1,0 +1,153 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\Lillo\Desktop\logica_reconfiguravel\Logica-Reconfiguravel\bram_fifo\bram_fifo\simulation\modelsim
+Ebram
+Z1 w1777233454
+Z2 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
+Z3 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z4 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z5 dC:\Users\Lillo\Desktop\logica_reconfiguravel\Logica-Reconfiguravel\bram_fifo\bram_fifo\simulation\modelsim
+Z6 8C:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/bram_fifo/bram.vhd
+Z7 FC:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/bram_fifo/bram.vhd
+l0
+L5
+VE]@QXAfN?51CATEU[9_i^3
+Z8 OV;C;10.1d;51
+32
+Z9 !s108 1777782246.645000
+Z10 !s90 -reportprogress|300|-work|work|C:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/bram_fifo/bram.vhd|
+Z11 !s107 C:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/bram_fifo/bram.vhd|
+Z12 o-work work -O0
+Z13 tExplicit 1
+!s100 oKIYd^3UlL<]J1]aGFiXG2
+!i10b 1
+Aa_bram
+R2
+R3
+R4
+DEx4 work 4 bram 0 22 E]@QXAfN?51CATEU[9_i^3
+l18
+L15
+V1YVVbV`KAH7=cVi6V9XTB1
+R8
+32
+R9
+R10
+R11
+R12
+R13
+!s100 flH5A4FdAIA75fI90R[Lo3
+!i10b 1
+Ebram_fifo
+Z14 w1777782209
+R2
+R3
+R4
+R5
+Z15 8C:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/bram_fifo/bram_fifo.vhd
+Z16 FC:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/bram_fifo/bram_fifo.vhd
+l0
+L5
+V:9IC`PUel1aFQZB^L?O371
+R8
+32
+Z17 !s108 1777782246.722000
+Z18 !s90 -reportprogress|300|-work|work|C:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/bram_fifo/bram_fifo.vhd|
+Z19 !s107 C:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/bram_fifo/bram_fifo.vhd|
+R12
+R13
+!s100 nQDS5Z=Q:nZn`J^DND6S30
+!i10b 1
+Aa_bram_fifo
+R2
+R3
+R4
+DEx4 work 9 bram_fifo 0 22 :9IC`PUel1aFQZB^L?O371
+l78
+L18
+VelZ>nAO5J=1HK_n^:FM4S0
+R8
+32
+R17
+R18
+R19
+R12
+R13
+!s100 W;STGWdR^=cOK1>OjOCVf2
+!i10b 1
+Ebram_fifo_tb
+Z20 w1777775862
+R2
+R3
+R4
+R5
+Z21 8C:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/bram_fifo/bram_fifo_tb.vhd
+Z22 FC:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/bram_fifo/bram_fifo_tb.vhd
+l0
+L5
+VjcG]_HPnk^=Cga<;3KUEC2
+R8
+32
+Z23 !s108 1777782246.794000
+Z24 !s90 -reportprogress|300|-work|work|C:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/bram_fifo/bram_fifo_tb.vhd|
+Z25 !s107 C:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/bram_fifo/bram_fifo_tb.vhd|
+R12
+R13
+!s100 `OB=JCD?LE?<zS0<<IhQ[1
+!i10b 1
+Abram_fifo_tb_arch
+R2
+R3
+R4
+DEx4 work 12 bram_fifo_tb 0 22 jcG]_HPnk^=Cga<;3KUEC2
+l34
+L8
+V`?IbX20LfjAi3Ja?bjObK2
+!s100 W3e1mlLdLJXM63n2;^B0`1
+R8
+32
+R23
+R24
+R25
+R12
+R13
+!i10b 1
+Efifo
+Z26 w1777778982
+R2
+R3
+R4
+R5
+Z27 8C:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/bram_fifo/fifo.vhd
+Z28 FC:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/bram_fifo/fifo.vhd
+l0
+L5
+VeA0nNcDj:Ul0;bJO^=h?<0
+!s100 clXRVfzDUiEBFiCh8hRFA3
+R8
+32
+!i10b 1
+Z29 !s108 1777782246.863000
+Z30 !s90 -reportprogress|300|-work|work|C:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/bram_fifo/fifo.vhd|
+Z31 !s107 C:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/bram_fifo/fifo.vhd|
+R12
+R13
+Aa_fifo
+R2
+R3
+R4
+Z32 DEx4 work 4 fifo 0 22 eA0nNcDj:Ul0;bJO^=h?<0
+l37
+L22
+Z33 V;Rj=OLBmR2cd7oPol0AzK1
+Z34 !s100 7BRORO9lBQXTBQ1FS_m[g3
+R8
+32
+!i10b 1
+R29
+R30
+R31
+R12
+R13

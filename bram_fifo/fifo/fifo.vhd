@@ -58,15 +58,20 @@ begin
         tail  <= (others => '0');
         count <= (others => '0');
       else
-        if wr_en = '1' and isFull = '0' then
+        if wr_en = '1' and isFull = '0' and rd_en = '0' then
           conteudo_bram(to_integer(head)) <= data_in;
           count                           <= count + 1;
-        end if;
-        if rd_en = '1' and isEmpty = '0' then
+        elsif rd_en = '1' and isEmpty = '0' and wr_en = '0' then
           data_out <= conteudo_bram(to_integer(tail));
           count    <= count - 1;
           tail     <= tail + 1;
+        elsif wr_en = '1' and rd_en = '1' then
+          conteudo_bram(to_integer(head)) <= data_in;
+          data_out                        <= conteudo_bram(to_integer(tail));
+          conteudo_bram(to_integer(tail)) <= (others => 'U');
+          tail                            <= tail + 1;
         end if;
+
       end if;
     end if;
   end process;

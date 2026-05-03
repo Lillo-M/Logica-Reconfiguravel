@@ -1,0 +1,42 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+use IEEE.NUMERIC_STD.all;
+
+entity bram_fifo is
+  port(
+    clk : in std_logic;
+    );
+end entity bram_fifo;
+
+architecture a_bram_fifo of bram_fifo is
+  component fifo is
+    port(
+      clk          : in  std_logic;
+      rst          : in  std_logic;
+      clr          : in  std_logic;
+      wr_en        : in  std_logic;
+      rd_en        : in  std_logic;
+      data_in      : in  unsigned(7 downto 0);
+      data_out     : out unsigned(7 downto 0);
+      cnt          : out unsigned(10 downto 0);
+      full         : out std_logic;
+      almost_full  : out std_logic;
+      empty        : out std_logic;
+      almost_empty : out std_logic
+      );
+  end component fifo;
+
+  component bram is
+    port(
+      clk      : in  std_logic;
+      wr_en    : in  std_logic;
+      address  : in  unsigned(10 downto 0);
+      dado_in  : in  unsigned(7 downto 0);
+      dado_out : out unsigned(7 downto 0)
+      );
+  end component bram;
+
+
+begin
+
+end architecture a_bram_fifo;
