@@ -2,23 +2,23 @@ m255
 K3
 13
 cModel Technology
-Z0 dC:\Users\Lillo\Desktop\logica_reconfiguravel\Logica-Reconfiguravel\bram_fifo\fifo\simulation\modelsim
+Z0 d/home/lillo/Documents/Quartus/bram_fifo/fifo/simulation/modelsim
 Efifo
-Z1 w1777512569
+Z1 w1778071644
 Z2 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
 Z3 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
 Z4 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
-Z5 dC:\Users\Lillo\Desktop\logica_reconfiguravel\Logica-Reconfiguravel\bram_fifo\fifo\simulation\modelsim
-Z6 8C:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/fifo/fifo.vhd
-Z7 FC:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/fifo/fifo.vhd
+Z5 d/home/lillo/Documents/Quartus/bram_fifo/fifo/simulation/modelsim
+Z6 8/home/lillo/Documents/Quartus/bram_fifo/fifo/fifo.vhd
+Z7 F/home/lillo/Documents/Quartus/bram_fifo/fifo/fifo.vhd
 l0
 L5
 V_7KeWjP[X71iUEnlT6I1m2
 Z8 OV;C;10.1d;51
 31
-Z9 !s108 1777515873.366000
-Z10 !s90 -reportprogress|300|-93|-work|work|C:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/fifo/fifo.vhd|
-Z11 !s107 C:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/fifo/fifo.vhd|
+Z9 !s108 1778078214.053235
+Z10 !s90 -reportprogress|300|-93|-work|work|/home/lillo/Documents/Quartus/bram_fifo/fifo/fifo.vhd|
+Z11 !s107 /home/lillo/Documents/Quartus/bram_fifo/fifo/fifo.vhd|
 Z12 o-93 -work work -O0
 Z13 tExplicit 1
 !s100 clXRVfzDUiEBFiCh8hRFA3
@@ -30,7 +30,7 @@ R4
 Z14 DEx4 work 4 fifo 0 22 _7KeWjP[X71iUEnlT6I1m2
 l37
 L22
-V2f64Teen@iMMQ2JfOIT8D3
+VnVzIaVU>BQiYf6`;izQ1>0
 R8
 31
 R9
@@ -38,29 +38,29 @@ R10
 R11
 R12
 R13
-!s100 :0XzTmG=dhAJX>^Ik5ZF61
+!s100 7BRORO9lBQXTBQ1FS_m[g3
 !i10b 1
 Efifo_tb
-Z15 w1777510682
+Z15 w1778078446
 R14
 R2
 R3
 R4
 R5
-Z16 8C:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/fifo/fifo_tb.vhd
-Z17 FC:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/fifo/fifo_tb.vhd
+Z16 8/home/lillo/Documents/Quartus/bram_fifo/fifo/fifo_tb.vhd
+Z17 F/home/lillo/Documents/Quartus/bram_fifo/fifo/fifo_tb.vhd
 l0
 L6
 V9CK@H8U8]b:4HMn;n0SfV3
-!s100 8F_6<f9cLg;4W93[U0<H`0
 R8
 32
-!i10b 1
-Z18 !s108 1777515882.603000
-Z19 !s90 -reportprogress|300|-work|work|C:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/fifo/fifo_tb.vhd|
-Z20 !s107 C:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/fifo/fifo_tb.vhd|
+Z18 !s108 1778078454.578106
+Z19 !s90 -reportprogress|300|-work|work|/home/lillo/Documents/Quartus/bram_fifo/fifo/fifo_tb.vhd|
+Z20 !s107 /home/lillo/Documents/Quartus/bram_fifo/fifo/fifo_tb.vhd|
 Z21 o-work work -O0
 R13
+!s100 8F_6<f9cLg;4W93[U0<H`0
+!i10b 1
 Afifo_tb_arch
 R2
 R3
@@ -68,13 +68,48 @@ R4
 DEx4 work 7 fifo_tb 0 22 9CK@H8U8]b:4HMn;n0SfV3
 l44
 L9
-Vh1V``OJ@2L`cZGd@WRi`V2
-!s100 ka7IU89Knbi1LSfI`MUn93
+VY_OLNBd^39YHUTTBNRHQ23
 R8
 32
-!i10b 1
 R18
 R19
 R20
+R21
+R13
+!s100 nG`MSF6MGVb`_1:G8M1do2
+!i10b 1
+Efifowz
+Z22 w1778077673
+R3
+R4
+R5
+Z23 8/home/lillo/Documents/Quartus/bram_fifo/fifo/fifowz.vhd
+Z24 F/home/lillo/Documents/Quartus/bram_fifo/fifo/fifowz.vhd
+l0
+L42
+VP8Uk9Xi5OhZzaF6n;k:o80
+!s100 4K:SXOI49c:];cfcRA=cX0
+R8
+32
+!i10b 1
+Z25 !s108 1778078455.878083
+Z26 !s90 -reportprogress|300|-work|work|/home/lillo/Documents/Quartus/bram_fifo/fifo/fifowz.vhd|
+Z27 !s107 /home/lillo/Documents/Quartus/bram_fifo/fifo/fifowz.vhd|
+R21
+R13
+Asyn
+R3
+R4
+DEx4 work 6 fifowz 0 22 P8Uk9Xi5OhZzaF6n;k:o80
+l99
+L59
+V4BG>VXRBz=fGEI[@?Zf@<2
+!s100 9MC^jCnQRl9Az@_SS_dH_0
+R8
+32
+!i10b 1
+R25
+R26
+R27
 R21
 R13

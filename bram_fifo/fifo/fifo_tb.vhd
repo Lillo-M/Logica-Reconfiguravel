@@ -14,9 +14,9 @@ architecture fifo_tb_arch of fifo_tb is
   signal clr           : std_logic;
   signal wr_en         : std_logic;
   signal rd_en         : std_logic;
-  signal dado_in       : unsigned (7 downto 0);
-  signal dado_out      : unsigned (7 downto 0);
-  signal count         : unsigned (10 downto 0);
+  signal dado_in       : std_logic_vector (7 downto 0);
+  signal dado_out      : std_logic_vector (7 downto 0);
+  signal count         : std_logic_vector (9 downto 0);
   signal isEmpty       : std_logic;
   signal isAlmostEmpty : std_logic;
   signal isFull        : std_logic;
@@ -24,34 +24,32 @@ architecture fifo_tb_arch of fifo_tb is
 
   constant period_time : time := 20 ns;
 
-  component fifo is
-    port(
-      clk          : in  std_logic;
-      rst          : in  std_logic;
-      clr          : in  std_logic;
-      wr_en        : in  std_logic;
-      rd_en        : in  std_logic;
-      data_in      : in  unsigned(7 downto 0);
-      data_out     : out unsigned(7 downto 0);
-      cnt          : out unsigned(10 downto 0);
-      full         : out std_logic;
-      almost_full  : out std_logic;
-      empty        : out std_logic;
-      almost_empty : out std_logic
-      );
-  end component fifo;
+
+  component fifowz is
+    port
+      (
+        clock        : in  std_logic;
+        data         : in  std_logic_vector (7 downto 0);
+        rdreq        : in  std_logic;
+        wrreq        : in  std_logic;
+        almost_empty : out std_logic;
+        almost_full  : out std_logic;
+        empty        : out std_logic;
+        full         : out std_logic;
+        q            : out std_logic_vector (7 downto 0);
+        usedw        : out std_logic_vector (9 downto 0)
+        );
+  end component fifowz;
 
 begin
-  ram : component fifo
+  ram : component fifowz
     port map (
-      clk          => clk,
-      rst          => rst,
-      clr          => clr,
-      rd_en        => rd_en,
-      wr_en        => wr_en,
-      data_in      => dado_in,
-      data_out     => dado_out,
-      cnt          => count,
+      clock        => clk,
+      rdreq        => rd_en,
+      wrreq        => wr_en,
+      data         => dado_in,
+      q            => dado_out,
+      usedw        => count,
       full         => isFull,
       almost_full  => isAlmostFull,
       almost_empty => isAlmostEmpty,
@@ -64,13 +62,14 @@ begin
   begin
     if (clk'event and clk = '1') then
       if(i < 1024) then
+        rd_en   <= '0';
         wr_en   <= '1';
-        dado_in <= to_unsigned(i, dado_in'length);
+        dado_in <= std_logic_vector(to_unsigned(i, dado_in'length));
         i       := i + 1;
       elsif (j < 1024) then
-        wr_en   <= '0';
-        rd_en   <= '1';
-        j       := j + 1;
+        wr_en <= '0';
+        rd_en <= '1';
+        j     := j + 1;
       end if;
     end if;
   end process data_filling;

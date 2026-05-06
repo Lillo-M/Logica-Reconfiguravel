@@ -1,6 +1,5 @@
 <?xml version="1.0" ?>
 <LOG_ROOT>
 	<PROJECT NAME="bram">
-		<CBX_INST_ENTRY INSTANCE_NAME="|fifo|altsyncram:conteudo_bram_rtl_0" CBX_FILE_NAME="altsyncram_utg1.tdf"/>
 	</PROJECT>
 </LOG_ROOT>

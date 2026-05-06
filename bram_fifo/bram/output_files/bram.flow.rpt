@@ -1,6 +1,6 @@
 Flow report for bram
-Sun Apr 26 17:53:35 2026
-Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+Wed May  6 11:16:22 2026
+Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
 ---------------------
@@ -40,21 +40,21 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Flow Summary                                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Flow Status                        ; Successful - Sun Apr 26 17:53:35 2026           ;
-; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Flow Status                        ; Successful - Wed May  6 11:16:22 2026           ;
+; Quartus II 32-bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; bram                                            ;
-; Top-level Entity Name              ; bram                                            ;
+; Top-level Entity Name              ; blockram                                        ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 21,217 / 33,216 ( 64 % )                        ;
-;     Total combinational functions  ; 13,025 / 33,216 ( 39 % )                        ;
-;     Dedicated logic registers      ; 16,384 / 33,216 ( 49 % )                        ;
-; Total registers                    ; 16384                                           ;
-; Total pins                         ; 29 / 322 ( 9 % )                                ;
+; Total logic elements               ; 0 / 4,608 ( 0 % )                               ;
+;     Total combinational functions  ; 0 / 4,608 ( 0 % )                               ;
+;     Dedicated logic registers      ; 0 / 4,608 ( 0 % )                               ;
+; Total registers                    ; 0                                               ;
+; Total pins                         ; 29 / 89 ( 33 % )                                ;
 ; Total virtual pins                 ; 0                                               ;
-; Total memory bits                  ; 0 / 483,840 ( 0 % )                             ;
-; Embedded Multiplier 9-bit elements ; 0 / 70 ( 0 % )                                  ;
-; Total PLLs                         ; 0 / 4 ( 0 % )                                   ;
-; Device                             ; EP2C35F484C6                                    ;
+; Total memory bits                  ; 16,384 / 119,808 ( 14 % )                       ;
+; Embedded Multiplier 9-bit elements ; 0 / 26 ( 0 % )                                  ;
+; Total PLLs                         ; 0 / 2 ( 0 % )                                   ;
+; Device                             ; EP2C5T144C6                                     ;
 ; Timing Models                      ; Final                                           ;
 +------------------------------------+-------------------------------------------------+
 
@@ -64,25 +64,29 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 04/26/2026 17:52:00 ;
+; Start date & time ; 05/06/2026 11:16:09 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; bram                ;
 +-------------------+---------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                    ;
-+-------------------------------------+--------------------------------+---------------+-------------+----------------+
-; Assignment Name                     ; Value                          ; Default Value ; Entity Name ; Section Id     ;
-+-------------------------------------+--------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 27214208538326.177723671923376 ; --            ; --          ; --             ;
-; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                           ; --            ; --          ; eda_simulation ;
-; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)         ; <None>        ; --          ; --             ;
-; PARTITION_COLOR                     ; 16764057                       ; --            ; --          ; Top            ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING          ; --            ; --          ; Top            ;
-; PARTITION_NETLIST_TYPE              ; SOURCE                         ; --            ; --          ; Top            ;
-; PROJECT_OUTPUT_DIRECTORY            ; output_files                   ; --            ; --          ; --             ;
-+-------------------------------------+--------------------------------+---------------+-------------+----------------+
++-------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                            ;
++-------------------------------------+------------------------+---------------+-------------+----------------+
+; Assignment Name                     ; Value                  ; Default Value ; Entity Name ; Section Id     ;
++-------------------------------------+------------------------+---------------+-------------+----------------+
+; COMPILER_SIGNATURE_ID               ; 0.177807696909244      ; --            ; --          ; --             ;
+; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                   ; --            ; --          ; eda_simulation ;
+; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL) ; <None>        ; --          ; --             ;
+; IP_TOOL_NAME                        ; RAM: 1-PORT            ; --            ; --          ; --             ;
+; IP_TOOL_VERSION                     ; 13.0                   ; --            ; --          ; --             ;
+; MISC_FILE                           ; blockram.cmp           ; --            ; --          ; --             ;
+; PARTITION_COLOR                     ; 16764057               ; --            ; blockram    ; Top            ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING  ; --            ; blockram    ; Top            ;
+; PARTITION_NETLIST_TYPE              ; SOURCE                 ; --            ; blockram    ; Top            ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files           ; --            ; --          ; --             ;
+; TOP_LEVEL_ENTITY                    ; blockram               ; bram          ; --          ; --             ;
++-------------------------------------+------------------------+---------------+-------------+----------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------+
@@ -90,26 +94,26 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:22     ; 1.0                     ; 4739 MB             ; 00:00:22                           ;
-; Fitter                    ; 00:00:54     ; 1.0                     ; 5128 MB             ; 00:00:54                           ;
-; Assembler                 ; 00:00:02     ; 1.0                     ; 4644 MB             ; 00:00:02                           ;
-; TimeQuest Timing Analyzer ; 00:00:04     ; 1.0                     ; 4851 MB             ; 00:00:04                           ;
-; EDA Netlist Writer        ; 00:00:06     ; 1.0                     ; 4744 MB             ; 00:00:06                           ;
-; Total                     ; 00:01:28     ; --                      ; --                  ; 00:01:28                           ;
+; Analysis & Synthesis      ; 00:00:02     ; 1.0                     ; 370 MB              ; 00:00:01                           ;
+; Fitter                    ; 00:00:03     ; 1.0                     ; 401 MB              ; 00:00:03                           ;
+; Assembler                 ; 00:00:00     ; 1.0                     ; 329 MB              ; 00:00:01                           ;
+; TimeQuest Timing Analyzer ; 00:00:00     ; 1.0                     ; 310 MB              ; 00:00:01                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 309 MB              ; 00:00:01                           ;
+; Total                     ; 00:00:06     ; --                      ; --                  ; 00:00:07                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+----------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                        ;
-+---------------------------+------------------+-----------+------------+----------------+
-; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
-+---------------------------+------------------+-----------+------------+----------------+
-; Analysis & Synthesis      ; DESKTOP-N3U8L45  ; Windows 7 ; 6.2        ; x86_64         ;
-; Fitter                    ; DESKTOP-N3U8L45  ; Windows 7 ; 6.2        ; x86_64         ;
-; Assembler                 ; DESKTOP-N3U8L45  ; Windows 7 ; 6.2        ; x86_64         ;
-; TimeQuest Timing Analyzer ; DESKTOP-N3U8L45  ; Windows 7 ; 6.2        ; x86_64         ;
-; EDA Netlist Writer        ; DESKTOP-N3U8L45  ; Windows 7 ; 6.2        ; x86_64         ;
-+---------------------------+------------------+-----------+------------+----------------+
++---------------------------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                                         ;
++---------------------------+------------------+--------------------+--------------------+----------------+
+; Module Name               ; Machine Hostname ; OS Name            ; OS Version         ; Processor type ;
++---------------------------+------------------+--------------------+--------------------+----------------+
+; Analysis & Synthesis      ; lillo            ; \S{PRETTY_NAME} \r ; \S{PRETTY_NAME} \r ; x86_64         ;
+; Fitter                    ; lillo            ; \S{PRETTY_NAME} \r ; \S{PRETTY_NAME} \r ; x86_64         ;
+; Assembler                 ; lillo            ; \S{PRETTY_NAME} \r ; \S{PRETTY_NAME} \r ; x86_64         ;
+; TimeQuest Timing Analyzer ; lillo            ; \S{PRETTY_NAME} \r ; \S{PRETTY_NAME} \r ; x86_64         ;
+; EDA Netlist Writer        ; lillo            ; \S{PRETTY_NAME} \r ; \S{PRETTY_NAME} \r ; x86_64         ;
++---------------------------+------------------+--------------------+--------------------+----------------+
 
 
 ------------
