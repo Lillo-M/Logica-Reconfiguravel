@@ -13,13 +13,13 @@ Z6 8C:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo
 Z7 FC:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/bram_fifo/bram.vhd
 l0
 L5
-VE]@QXAfN?51CATEU[9_i^3
+ViG[<kaI029^NL4jcgDej?0
 Z8 OV;C;10.1d;51
-32
-Z9 !s108 1777782246.645000
-Z10 !s90 -reportprogress|300|-work|work|C:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/bram_fifo/bram.vhd|
+31
+Z9 !s108 1778032240.829000
+Z10 !s90 -reportprogress|300|-93|-work|work|C:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/bram_fifo/bram.vhd|
 Z11 !s107 C:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/bram_fifo/bram.vhd|
-Z12 o-work work -O0
+Z12 o-93 -work work -O0
 Z13 tExplicit 1
 !s100 oKIYd^3UlL<]J1]aGFiXG2
 !i10b 1
@@ -27,12 +27,12 @@ Aa_bram
 R2
 R3
 R4
-DEx4 work 4 bram 0 22 E]@QXAfN?51CATEU[9_i^3
+DEx4 work 4 bram 0 22 iG[<kaI029^NL4jcgDej?0
 l18
 L15
-V1YVVbV`KAH7=cVi6V9XTB1
+V]09M1JO@9jVCYcg1FaSjF0
 R8
-32
+31
 R9
 R10
 R11
@@ -50,11 +50,11 @@ Z15 8C:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fif
 Z16 FC:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/bram_fifo/bram_fifo.vhd
 l0
 L5
-V:9IC`PUel1aFQZB^L?O371
+VS3fm<YSR[@:W7bUC:>dRi2
 R8
-32
-Z17 !s108 1777782246.722000
-Z18 !s90 -reportprogress|300|-work|work|C:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/bram_fifo/bram_fifo.vhd|
+31
+Z17 !s108 1778032240.669000
+Z18 !s90 -reportprogress|300|-93|-work|work|C:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/bram_fifo/bram_fifo.vhd|
 Z19 !s107 C:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/bram_fifo/bram_fifo.vhd|
 R12
 R13
@@ -64,12 +64,12 @@ Aa_bram_fifo
 R2
 R3
 R4
-DEx4 work 9 bram_fifo 0 22 :9IC`PUel1aFQZB^L?O371
+DEx4 work 9 bram_fifo 0 22 S3fm<YSR[@:W7bUC:>dRi2
 l78
 L18
-VelZ>nAO5J=1HK_n^:FM4S0
+VSgXHOX]<BcojMcIX;m4B:3
 R8
-32
+31
 R17
 R18
 R19
@@ -88,15 +88,15 @@ Z22 FC:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fif
 l0
 L5
 VjcG]_HPnk^=Cga<;3KUEC2
+!s100 `OB=JCD?LE?<zS0<<IhQ[1
 R8
 32
-Z23 !s108 1777782246.794000
+!i10b 1
+Z23 !s108 1778032285.551000
 Z24 !s90 -reportprogress|300|-work|work|C:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/bram_fifo/bram_fifo_tb.vhd|
 Z25 !s107 C:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/bram_fifo/bram_fifo_tb.vhd|
-R12
+Z26 o-work work -O0
 R13
-!s100 `OB=JCD?LE?<zS0<<IhQ[1
-!i10b 1
 Abram_fifo_tb_arch
 R2
 R3
@@ -108,46 +108,46 @@ V`?IbX20LfjAi3Ja?bjObK2
 !s100 W3e1mlLdLJXM63n2;^B0`1
 R8
 32
+!i10b 1
 R23
 R24
 R25
-R12
+R26
 R13
-!i10b 1
 Efifo
-Z26 w1777778982
+Z27 w1777778982
 R2
 R3
 R4
 R5
-Z27 8C:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/bram_fifo/fifo.vhd
-Z28 FC:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/bram_fifo/fifo.vhd
+Z28 8C:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/bram_fifo/fifo.vhd
+Z29 FC:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/bram_fifo/fifo.vhd
 l0
 L5
-VeA0nNcDj:Ul0;bJO^=h?<0
-!s100 clXRVfzDUiEBFiCh8hRFA3
+V_7KeWjP[X71iUEnlT6I1m2
 R8
-32
-!i10b 1
-Z29 !s108 1777782246.863000
-Z30 !s90 -reportprogress|300|-work|work|C:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/bram_fifo/fifo.vhd|
-Z31 !s107 C:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/bram_fifo/fifo.vhd|
+31
+Z30 !s108 1778032240.772000
+Z31 !s90 -reportprogress|300|-93|-work|work|C:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/bram_fifo/fifo.vhd|
+Z32 !s107 C:/Users/Lillo/Desktop/logica_reconfiguravel/Logica-Reconfiguravel/bram_fifo/bram_fifo/fifo.vhd|
 R12
 R13
+!s100 clXRVfzDUiEBFiCh8hRFA3
+!i10b 1
 Aa_fifo
 R2
 R3
 R4
-Z32 DEx4 work 4 fifo 0 22 eA0nNcDj:Ul0;bJO^=h?<0
+DEx4 work 4 fifo 0 22 _7KeWjP[X71iUEnlT6I1m2
 l37
 L22
-Z33 V;Rj=OLBmR2cd7oPol0AzK1
-Z34 !s100 7BRORO9lBQXTBQ1FS_m[g3
+VnVzIaVU>BQiYf6`;izQ1>0
 R8
-32
-!i10b 1
-R29
+31
 R30
 R31
+R32
 R12
 R13
+!s100 7BRORO9lBQXTBQ1FS_m[g3
+!i10b 1
