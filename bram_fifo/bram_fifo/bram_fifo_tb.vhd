@@ -7,17 +7,17 @@ end entity bram_fifo_tb;
 
 architecture bram_fifo_tb_arch of bram_fifo_tb is
 
-  signal loaded        : std_logic             := '0';
-  signal load_wr_en    : std_logic             := '0';
-  signal load_address  : unsigned(10 downto 0) := (others => '0');
-  signal load_data     : unsigned(7 downto 0);
-  signal load_en       : std_logic             := '0';
-  signal finished      : std_logic             := '0';
-  signal clk           : std_logic             := '0';
-  signal wr_en         : std_logic             := '0';
-  signal rst           : std_logic             := '0';
-  signal clr           : std_logic             := '0';
-  constant period_time : time                  := 20 ns;
+  signal loaded        : std_logic                     := '0';
+  signal load_wr_en    : std_logic                     := '0';
+  signal load_address  : std_logic_vector(10 downto 0) := (others => '0');
+  signal load_data     : std_logic_vector(7 downto 0)  := (others => '0');
+  signal load_en       : std_logic                     := '0';
+  signal finished      : std_logic                     := '0';
+  signal clk           : std_logic                     := '0';
+  signal wr_en         : std_logic                     := '0';
+  signal rst           : std_logic                     := '0';
+  signal clr           : std_logic                     := '0';
+  constant period_time : time                          := 20 ns;
 
   component bram_fifo is
     port(
@@ -26,8 +26,8 @@ architecture bram_fifo_tb_arch of bram_fifo_tb is
       rst          : in  std_logic;
       loaded       : in  std_logic;
       load_wr_en   : in  std_logic;
-      load_data    : in  unsigned(7 downto 0);
-      load_address : in  unsigned(10 downto 0);
+      load_data    : in  std_logic_vector(7 downto 0);
+      load_address : in  std_logic_vector(10 downto 0);
       load_en      : out std_logic
       );
   end component bram_fifo;
@@ -51,8 +51,8 @@ begin
       if(i < 2048) then
         if (load_en = '1') then
           load_wr_en   <= '1';
-          load_address <= to_unsigned(i, load_address'length);
-          load_data    <= to_unsigned(i, load_data'length);
+          load_address <= std_logic_vector(to_unsigned(i, load_address'length));
+          load_data    <= std_logic_vector(to_unsigned(i mod 256, load_data'length));
           i            := i + 1;
         end if;
       elsif (i = 2048) then
